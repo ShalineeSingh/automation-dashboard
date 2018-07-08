@@ -11,7 +11,7 @@ gulp.task('generateCss', function () {
     .pipe(autoprefixer({
       'browsers': ['last 3 versions', 'ie > 8', '> 1%']
     }))
-    .pipe(gulp.dest('./public/app'));
+    .pipe(gulp.dest('./public/css'));
 });
 gulp.task('watch', function () {
   gulp.watch('./scss/*.scss', ['generateCss']);

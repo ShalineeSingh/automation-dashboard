@@ -8,9 +8,6 @@
             url: '/main',
             abstract: true,
             cache: false,
-            ncyBreadcrumb: {
-              skip: true
-            },
             template: '<div ui-view="mainContent"></div>',
             controller: 'mainCtrl'
           });

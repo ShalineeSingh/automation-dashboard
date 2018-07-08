@@ -7,9 +7,6 @@
           url: '/',
           abstract: true,
           cache: false,
-          'ncyBreadcrumb': {
-            'skip': true
-          },
           views: {
             'mainContent': {
               template: '<div ui-view="basicContent"></div>'
