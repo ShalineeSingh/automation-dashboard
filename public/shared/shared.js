@@ -9,7 +9,7 @@
           cache: false,
           views: {
             'mainContent': {
-              template: '<div ui-view="basicContent"></div>'
+              template: '<div ui-view="appContent"></div>'
             }
           }
         });

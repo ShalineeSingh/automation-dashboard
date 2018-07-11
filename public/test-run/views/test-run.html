@@ -1,0 +1,20 @@
+<table>
+    <tr>
+        <th>Run ID</th>
+        <th>SuiteName</th>
+        <th>Platform</th>
+        <th>Release Environment</th>
+        <th>Status</th>
+        <th>Started</th>
+        <th> Completion %</th>
+    </tr>
+    <tr ng-repeat="data in test_run.list">
+        <td>{{data.id}}</td>
+        <td>{{data.suiteName}}</td>
+        <td>{{data.platform}}</td>
+        <td>{{data.release}}</td>
+        <td>{{data.Status}}</td>
+        <td>{{data.end_time}}</td>
+        <td>{{(data.failed_tests + data.passed_tests)/data.total_tests}}</td>
+    </tr>
+</table>
