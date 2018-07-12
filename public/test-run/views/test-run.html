@@ -1,20 +1,31 @@
-<table>
-    <tr>
-        <th>Run ID</th>
-        <th>SuiteName</th>
-        <th>Platform</th>
-        <th>Release Environment</th>
-        <th>Status</th>
-        <th>Started</th>
-        <th> Completion %</th>
-    </tr>
-    <tr ng-repeat="data in test_run.list">
-        <td>{{data.id}}</td>
-        <td>{{data.suiteName}}</td>
-        <td>{{data.platform}}</td>
-        <td>{{data.release}}</td>
-        <td>{{data.Status}}</td>
-        <td>{{data.end_time}}</td>
-        <td>{{(data.failed_tests + data.passed_tests)/data.total_tests}}</td>
-    </tr>
-</table>
+<div class="row">
+    <!-- Filters -->
+    <div class="col-md-3">
+        <div ng-include="'/public/test-run/views/test-run-filter.html'"></div>
+    </div>
+    <!-- table -->
+    <div class="col-md-9">
+        <div class="table-responsive test-run-table-wrappaer">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>Run ID</th>
+                    <th>SuiteName</th>
+                    <th>Platform</th>
+                    <th>Release Environment</th>
+                    <th>Status</th>
+                    <th>Started</th>
+                    <th> Completion %</th>
+                </tr>
+                <tr ng-repeat="data in test_run.list" class="cursor-pointer white-bg" ng-click="openRunDetails(data.id)">
+                    <td>{{data.id}}</td>
+                    <td>{{data.suiteName}}</td>
+                    <td>{{data.platform}}</td>
+                    <td>{{data.release}}</td>
+                    <td>{{data.Status}}</td>
+                    <td>{{data.end_time}}</td>
+                    <td>{{(data.failed_tests + data.passed_tests)/data.total_tests}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

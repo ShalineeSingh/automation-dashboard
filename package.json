@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ShalineeSingh/automation-dashboard#readme",
   "dependencies": {
+    "angular-filter": "^0.5.17",
     "angular-resource": "^1.7.2",
     "angular-sanitize": "^1.7.2",
     "express": "^4.16.3",

@@ -1,0 +1,29 @@
+<div class="row">
+    <!-- table -->
+    <div class="col-md-11">
+        <div class="table-responsive test-run-table-wrappaer">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>S.No</th>
+                    <th>Test Name</th>
+                    <th>Status</th>
+                    <th>Duration</th>
+                    <th>Status</th>
+                    <th>Error Message</th>
+                    <th>Details</th>
+                </tr>
+                <tr ng-repeat="data in test_run.list" class="cursor-pointer white-bg">
+                    <td>{{data.id}}</td>
+                    <td>{{data.suiteName}}</td>
+                    <td>{{data.platform}}</td>
+                    <td>{{data.release}}</td>
+                    <td>{{data.Status}}</td>
+                    <td>{{data.end_time}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Button</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
