@@ -1,9 +1,28 @@
 .filter-container {
-  background-color: white;
   min-height: 100vh;
-  padding: 20px;
+  padding: 0 20px;
+  top: 30px;
+  position: relative;
+  font-size: 13px;
 }
 
-.test-run-table-wrappaer {
-  width: 98%;
+.test-run-wrapper {
+  .filter-wrapper {
+    padding-left: 30px;
+  }
+  .test-run-table-wrapper {
+    .table-responsive {
+      width: 98%;
+    }
+    top: 30px;
+    .table {
+      tr th {
+        color: $primary;
+        background-color: $secondary;
+      }
+    }
+    .table-hover tbody tr:hover {
+      background-color: $secondary2;
+    }
+  }
 }

@@ -1,7 +1,7 @@
-<div class="row">
+<div class="test-run-wrapper">
     <!-- table -->
-    <div class="col-md-11">
-        <div class="table-responsive test-run-table-wrappaer">
+    <div class="col-md-11 test-run-table-wrapper">
+        <div class="table-responsive">
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>S.No</th>
@@ -12,15 +12,15 @@
                     <th>Error Message</th>
                     <th>Details</th>
                 </tr>
-                <tr ng-repeat="data in test_run.list" class="cursor-pointer white-bg">
+                <tr class="white-bg">
                     <td>{{data.id}}</td>
                     <td>{{data.suiteName}}</td>
-                    <td>{{data.platform}}</td>
+                    <td>{{1531405202874 | date}}</td>
                     <td>{{data.release}}</td>
                     <td>{{data.Status}}</td>
                     <td>{{data.end_time}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary">Button</button>
+                        <button type="button" class="btn btn-primary" ng-click="openTestDetails(test_id)">See Details</button>
                     </td>
                 </tr>
             </table>

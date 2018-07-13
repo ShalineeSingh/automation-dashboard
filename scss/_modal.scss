@@ -1,0 +1,23 @@
+.modal {
+  .modal-dialog {
+    .modal-content {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+      border: none;
+      .modal-header {
+        margin: 0 24px;
+        .icon-close {
+          margin-left: 24px;
+          float: right;
+          cursor: pointer;
+          font-size: 16px;
+          color: #BBBBBB;
+          ;
+        }
+      }
+      .modal-footer {
+        padding: 24px 0;
+        margin: 0 24px;
+      }
+    }
+  }
+}

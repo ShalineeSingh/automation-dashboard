@@ -14,7 +14,7 @@
           },
         })
         .state('main.app.basic.platform.id', {
-          url: '/:platform_id',
+          url: '/details',
           views: {
             'platformContent': {
               templateUrl: '/public/test-run/views/test-run.html',

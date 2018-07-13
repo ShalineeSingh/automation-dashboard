@@ -270,9 +270,9 @@
         "apiResponseStatus": "SUCCESS"
       };
 
-      $scope.openRunDetails = function (run_id) {
+      $scope.openRunDetails = function (platform, run_id) {
         $state.go('main.app.basic.platform.run', {
-          'platform_id': $state.params.platform_id,
+          'platform_id': platform,
           'run_id': run_id
         });
       };

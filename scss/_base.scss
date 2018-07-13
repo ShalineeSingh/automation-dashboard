@@ -1,7 +1,74 @@
+html {
+  box-sizing: border-box
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit
+}
+
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+
+body {
+  margin: 0;
+  background-color: $secondary1;
+  color: $primary;
+  overflow-x: hidden;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
 
 .white-bg {
   background-color: #ffffff;
+}
+
+.top-bar-container {
+  width: 100%;
+  top: 0;
+  padding: 8px;
+  overflow: hidden;
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+  color: $secondary3;
+  background-color: $primary;
+}
+
+.body-wrapper {
+  top: 45px;
+  position: relative;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border: 1px solid $primary;
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    background-color: $primary;
+    color: #ffffff;
+    border-color: $primary;
+    box-shadow: none;
+  }
 }
