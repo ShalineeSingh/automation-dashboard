@@ -10,10 +10,13 @@
   .filter-wrapper {
     padding-left: 30px;
   }
+  .test-stats-panel {
+    border-radius: 4px;
+    text-align: center;
+    padding: 15px;
+    min-height: 185px;
+  }
   .test-run-table-wrapper {
-    .table-responsive {
-      width: 98%;
-    }
     top: 30px;
     .table {
       tr th {

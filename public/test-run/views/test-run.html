@@ -23,9 +23,13 @@
                     <td>{{data.platform}}</td>
                     <td>{{data.release}}</td>
                     <td>{{data.env}}</td>
-                    <td>{{data.Status}}</td>
-                    <td>{{data.end_time}}</td>
-                    <td>{{(data.failed_tests + data.passed_tests)/data.total_tests | number: 2}}</td>
+                    <td>{{data.status}}</td>
+                    <td>{{data.end_time | date:'MMM d, y h:mm:s a'}}</td>
+                    <td>
+                        <uib-progressbar value="data.completionPercent" type="success">
+                            <span class="value-text">{{data.completionPercent}}</span>
+                        </uib-progressbar>
+                    </td>
                 </tr>
             </table>
         </div>

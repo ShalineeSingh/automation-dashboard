@@ -20,7 +20,7 @@
             "suiteName": "Sanity",
             "release": "R1",
             "total_tests": 20,
-            "passed_tests": 0,
+            "passed_tests": 10,
             "failed_tests": 0,
             "start_time": "2018-07-06T10:37:15.083Z",
             "end_time": "2018-07-06T11:37:15.083Z"
@@ -31,7 +31,7 @@
             "suiteName": "Regression",
             "release": "R2",
             "total_tests": 10,
-            "passed_tests": 0,
+            "passed_tests": 9,
             "failed_tests": 0
           },
           {
@@ -269,7 +269,10 @@
         ],
         "apiResponseStatus": "SUCCESS"
       };
-
+      $scope.test_run.list.forEach(function (obj) {
+        obj.completionPercent = (((obj.failed_tests + obj.passed_tests) / obj.total_tests) * 100).toFixed(2);
+        obj.status = obj.completionPercent < 100 ? 'In Progress' : 'Completed';
+      });
       $scope.openRunDetails = function (platform, run_id) {
         $state.go('main.app.basic.platform.run', {
           'platform_id': platform,

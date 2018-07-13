@@ -1,6 +1,44 @@
 <div class="test-run-wrapper">
+    <!-- summary section -->
+    <div class="col-sm-3">
+        <div class="test-stats-panel white-bg">
+            <p>Run ID:1234 </p>
+            <p>Suite name: Suite 1</p>
+            <p>Platform: Web</p>
+            <p>Release: R1</p>
+            <p>Environment: Dev</p>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="test-stats-panel white-bg">
+            <p>Total:12</p>
+            <p>Passed:10</p>
+            <p>Failed:2</p>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="test-stats-panel white-bg">
+            <p>Start Time: 12th June</p>
+            <p>End Time: 13th June</p>
+            <p>Elapsed Time: 1day</p>
+        </div>
+    </div>
+    <div class="col-sm-3" ng-if="run_details.platform ==='WEB' || run_details.platform ==='MOBILEWEB'">
+        <div class="test-stats-panel white-bg">
+            <p>Browser:Chrome</p>
+            <p>Headless:No</p>
+            <p>OS Name: Mac</p>
+        </div>
+    </div>
+    <div class="col-sm-3" ng-if="run_details.platform ==='MOBILE' || run_details.platform ==='MOBILEWEB'">
+        <div class="test-stats-panel white-bg">
+            <p>DEvice Id:123234</p>
+            <p>Build Id: 324872</p>
+            <p>Device NAme:Android</p>
+        </div>
+    </div>
     <!-- table -->
-    <div class="col-md-11 test-run-table-wrapper">
+    <div class="col-md-12 test-run-table-wrapper">
         <div class="table-responsive">
             <table class="table table-bordered table-hover">
                 <tr>
