@@ -11,9 +11,30 @@
     </div>
     <div class="col-sm-3">
         <div class="test-stats-panel white-bg">
-            <p>Total:12</p>
-            <p>Passed:10</p>
-            <p>Failed:2</p>
+            <span>PASSED TEST RUNS</span>
+            <p class="h1">50%</p>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-6">
+                        <div class="success-number h4">
+                            <span>10</span>
+                            <span>
+                                <i class="fa fa-check-circle"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="fail-number h4">
+                            <span>10</span>
+                            <span>
+                                <i class="fa fa-times-circle"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <p>(Out of 20)</p>
         </div>
     </div>
     <div class="col-sm-3">
@@ -23,15 +44,25 @@
             <p>Elapsed Time: 1day</p>
         </div>
     </div>
-    <div class="col-sm-3" ng-if="run_details.platform ==='WEB' || run_details.platform ==='MOBILEWEB'">
+    <div class="col-sm-3" ng-if="run_details.platform ==='WEB'">
         <div class="test-stats-panel white-bg">
             <p>Browser:Chrome</p>
             <p>Headless:No</p>
             <p>OS Name: Mac</p>
         </div>
     </div>
-    <div class="col-sm-3" ng-if="run_details.platform ==='MOBILE' || run_details.platform ==='MOBILEWEB'">
+    <div class="col-sm-3" ng-if="run_details.platform ==='ANDROID' || run_details.platform ==='IOS'">
         <div class="test-stats-panel white-bg">
+            <p>DEvice Id:123234</p>
+            <p>Build Id: 324872</p>
+            <p>Device NAme:Android</p>
+        </div>
+    </div>
+    <div class="col-sm-3" ng-if="run_details.platform ==='MOBILEWEB'">
+        <div class="test-stats-panel white-bg">
+            <p>Browser:Chrome</p>
+            <p>Headless:No</p>
+            <p>OS Name: Mac</p>
             <p>DEvice Id:123234</p>
             <p>Build Id: 324872</p>
             <p>Device NAme:Android</p>

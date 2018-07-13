@@ -1,17 +1,17 @@
 <div class="modal-dialog run-details-modal-container">
     <div class="modal-content">
         <ul class="nav nav-tabs">
-            <li class="active">
-                <a href="#">Home</a>
+            <li ng-click="changeTab('test_steps')" ng-class="{'active' : error_details.active_tab === 'test_steps'}">
+                <a href="javascript:void(0)">Test Steps</a>
             </li>
-            <li>
-                <a href="#">Menu 1</a>
+            <li ng-click="changeTab('screenshot')" ng-class="{'active' : error_details.active_tab === 'screenshot'}">
+                <a href="javascript:void(0)">Screenshot</a>
             </li>
-            <li>
-                <a href="#">Menu 2</a>
+            <li ng-click="changeTab('test_data')" ng-class="{'active' : error_details.active_tab === 'test_data'}">
+                <a href="javascript:void(0)">Test Data</a>
             </li>
-            <li>
-                <a href="#">Menu 3</a>
+            <li ng-click="changeTab('console_logs')" ng-class="{'active' : error_details.active_tab === 'console_logs'}">
+                <a href="javascript:void(0)">Console Logs</a>
             </li>
         </ul>
     </div>

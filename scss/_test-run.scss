@@ -15,6 +15,15 @@
     text-align: center;
     padding: 15px;
     min-height: 185px;
+    .fa {
+      vertical-align: middle;
+    }
+    .success-number {
+      color: $green;
+    }
+    .fail-number {
+      color: $red;
+    }
   }
   .test-run-table-wrapper {
     top: 30px;
@@ -26,6 +35,26 @@
     }
     .table-hover tbody tr:hover {
       background-color: $secondary2;
+    }
+    .progress-red {
+      .progress-bar {
+        background-color: $red;
+      }
+    }
+    .progress-orange {
+      .progress-bar {
+        background-color: $orange;
+      }
+    }
+    .progress-green {
+      .progress-bar {
+        background-color: $green;
+      }
+    }
+    .progress-blue {
+      .progress-bar {
+        background-color: $light-blue;
+      }
     }
   }
 }

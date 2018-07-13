@@ -19,8 +19,8 @@
             "platform": "WEB",
             "suiteName": "Sanity",
             "release": "R1",
-            "total_tests": 20,
-            "passed_tests": 10,
+            "total_tests": 100,
+            "passed_tests": 35,
             "failed_tests": 0,
             "start_time": "2018-07-06T10:37:15.083Z",
             "end_time": "2018-07-06T11:37:15.083Z"
@@ -30,8 +30,8 @@
             "platform": "WEB",
             "suiteName": "Regression",
             "release": "R2",
-            "total_tests": 10,
-            "passed_tests": 9,
+            "total_tests": 100,
+            "passed_tests": 98,
             "failed_tests": 0
           },
           {
@@ -39,8 +39,8 @@
             "platform": "WEB",
             "suiteName": "Sanity",
             "release": "R2",
-            "total_tests": 10,
-            "passed_tests": 2,
+            "total_tests": 100,
+            "passed_tests": 64,
             "failed_tests": 0
           },
           {
@@ -48,8 +48,8 @@
             "platform": "WEB",
             "suiteName": "Sanity",
             "release": "R3",
-            "total_tests": 10,
-            "passed_tests": 2,
+            "total_tests": 100,
+            "passed_tests": 20,
             "failed_tests": 0
           },
           {
@@ -57,9 +57,9 @@
             "platform": "ANDROID",
             "suiteName": "Sanity",
             "release": "R3",
-            "total_tests": 10,
-            "passed_tests": 2,
-            "failed_tests": 0
+            "total_tests": 100,
+            "passed_tests": 60,
+            "failed_tests": 40
           },
           {
             "id": 13,
@@ -272,6 +272,17 @@
       $scope.test_run.list.forEach(function (obj) {
         obj.completionPercent = (((obj.failed_tests + obj.passed_tests) / obj.total_tests) * 100).toFixed(2);
         obj.status = obj.completionPercent < 100 ? 'In Progress' : 'Completed';
+        if (obj.completionPercent <= 30) {
+          obj.progress_class = 'progress-red';
+        } else if (obj.completionPercent >= 31 && obj.completionPercent <= 60) {
+          obj.progress_class = 'progress-orange';
+        } else if (obj.completionPercent >= 61 && obj.completionPercent <= 90) {
+          obj.progress_class = 'progress-blue';
+        } else if (obj.completionPercent >= 91 && obj.completionPercent <= 100) {
+          obj.progress_class = 'progress-green';
+        }
+        console.log(obj.progress_class);
+
       });
       $scope.openRunDetails = function (platform, run_id) {
         $state.go('main.app.basic.platform.run', {

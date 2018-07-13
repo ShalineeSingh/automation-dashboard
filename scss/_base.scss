@@ -21,6 +21,11 @@ h5 {
   font-size: 15px;
 }
 
+.h1 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%
@@ -39,6 +44,19 @@ body {
 
 .white-bg {
   background-color: #ffffff;
+}
+
+.line {
+  border-top: 1px solid #dddddd;
+  margin-bottom: 10px;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-green {
+  color: $green;
 }
 
 .top-bar-container {

@@ -4,19 +4,19 @@
       $scope.run_details = {
         'platform': $state.params.platform_id
       };
+      $scope.error_details = {
+        'active_tab': 'test_steps'
+      };
       console.log($scope.run_details.platform);
       $scope.openTestDetails = function () {
         var modalInstance = $uibModal.open({
-          animation: true,
           templateUrl: '/public/test-run/views/test-case-detail-modal.html',
-          // controller: 'testCaseModalCtrl',
+          scope: $scope,
           size: 'lg',
-          // resolve: {
-          //   imageUrl: function () {
-          //     return imageUrl;
-          //   }
-          // }
         });
       };
+      $scope.changeTab = function (tab) {
+        $scope.error_details.active_tab = tab;
+      }
     }]);
 })();

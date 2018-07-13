@@ -23,12 +23,17 @@
                     <td>{{data.platform}}</td>
                     <td>{{data.release}}</td>
                     <td>{{data.env}}</td>
-                    <td>{{data.status}}</td>
+                    <td>
+                        <span ng-class="data.completionPercent < 100 ? 'text-orange' : 'text-green'"> {{data.status}}
+                        </span>
+                    </td>
                     <td>{{data.end_time | date:'MMM d, y h:mm:s a'}}</td>
                     <td>
-                        <uib-progressbar value="data.completionPercent" type="success">
-                            <span class="value-text">{{data.completionPercent}}</span>
-                        </uib-progressbar>
+                        <div ng-class="data.progress_class">
+                            <uib-progressbar value="data.completionPercent">
+                                <span class="value-text">{{data.completionPercent}}</span>
+                            </uib-progressbar>
+                        </div>
                     </td>
                 </tr>
             </table>
