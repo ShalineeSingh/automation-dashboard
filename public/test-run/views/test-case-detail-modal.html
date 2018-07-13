@@ -14,5 +14,17 @@
                 <a href="javascript:void(0)">Console Logs</a>
             </li>
         </ul>
+        <div class="modal-body" ng-if="error_details.active_tab === 'test_steps'">
+            <p>{{error_details.test_data.testSteps}}</p>
+        </div>
+        <div class="modal-body" ng-if="error_details.active_tab === 'screenshot'">
+            {{error_details.test_data.screenshot}}
+        </div>
+        <div class="modal-body" ng-if="error_details.active_tab === 'test_data'">
+            {{error_details.test_data.testData}}
+        </div>
+        <div class="modal-body" ng-if="error_details.active_tab === 'console_logs'">
+            {{error_details.test_data.consoleLogs}}
+        </div>
     </div>
 </div>
