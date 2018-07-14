@@ -1,0 +1,34 @@
+<div class="modal-dialog run-details-modal-container">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="col-md-12 test-run-table-wrapper">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>Run ID</th>
+                            <th>Date</th>
+                            <th>Environment</th>
+                            <th>Status</th>
+                            <th>BuildId</th>
+                        </tr>
+                        <tr ng-repeat="data in error_details.history_data" class="cursor-pointer white-bg" ng-click="openRunDetails(data.platform,data.id)">
+                            <td>{{data.id}}</td>
+                            <td>{{data.suiteName}}</td>
+                            <td>{{data.platform}}</td>
+                            <td>{{data.release}}</td>
+                            <td>{{data.env}}</td>
+                            <td>{{data.end_time | date:'MMM d, y h:mm:s a'}}</td>
+                            <td>
+                                <div ng-class="data.progress_class">
+                                    <uib-progressbar value="data.completionPercent">
+                                        <span class="value-text">{{data.completionPercent}}</span>
+                                    </uib-progressbar>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

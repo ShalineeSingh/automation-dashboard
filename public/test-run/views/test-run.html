@@ -1,42 +1,39 @@
 <div class="row test-run-wrapper">
     <!-- Filters -->
-    <div class="col-md-2 filter-wrapper">
+    <!-- <div class="col-md-2 filter-wrapper">
         <div ng-include="'/public/test-run/views/test-run-filter.html'"></div>
-    </div>
+    </div> -->
     <!-- table -->
-    <div class="col-md-10 test-run-table-wrapper">
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-                <tr>
-                    <th>Run ID</th>
-                    <th>SuiteName</th>
-                    <th>Platform</th>
-                    <th>Release</th>
-                    <th>Environment</th>
-                    <th>Status</th>
-                    <th>Started</th>
-                    <th> Completion %</th>
-                </tr>
-                <tr ng-repeat="data in test_run.list" class="cursor-pointer white-bg" ng-click="openRunDetails(data.platform,data.id)">
-                    <td>{{data.id}}</td>
-                    <td>{{data.suiteName}}</td>
-                    <td>{{data.platform}}</td>
-                    <td>{{data.release}}</td>
-                    <td>{{data.env}}</td>
-                    <td>
-                        <span ng-class="data.completionPercent < 100 ? 'text-orange' : 'text-green'"> {{data.status}}
-                        </span>
-                    </td>
-                    <td>{{data.end_time | date:'MMM d, y h:mm:s a'}}</td>
-                    <td>
-                        <div ng-class="data.progress_class">
-                            <uib-progressbar value="data.completionPercent">
-                                <span class="value-text">{{data.completionPercent}}</span>
-                            </uib-progressbar>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+    <div class="col-sm-11">
+        <div class="col-md-11 col-md-offset-1 test-run-table-wrapper">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>Run ID</th>
+                        <th>SuiteName</th>
+                        <th>Platform</th>
+                        <th>Release</th>
+                        <th>Environment</th>
+                        <th>Started</th>
+                        <th> Completion %</th>
+                    </tr>
+                    <tr ng-repeat="data in test_run.list" class="cursor-pointer white-bg" ng-click="openRunDetails(data.platform,data.id)">
+                        <td>{{data.id}}</td>
+                        <td>{{data.suiteName}}</td>
+                        <td>{{data.platform}}</td>
+                        <td>{{data.release}}</td>
+                        <td>{{data.env}}</td>
+                        <td>{{data.end_time | date:'MMM d, y h:mm:s a'}}</td>
+                        <td>
+                            <div ng-class="data.progress_class">
+                                <uib-progressbar value="data.completionPercent">
+                                    <span class="value-text">{{data.completionPercent}}</span>
+                                </uib-progressbar>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>

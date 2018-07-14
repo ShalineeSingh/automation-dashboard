@@ -91,6 +91,14 @@
           size: 'lg',
         });
       };
+      $scope.openRunHistoryDetails = function (test_data) {
+        $scope.error_details.history_data = test_data;
+        var modalInstance = $uibModal.open({
+          templateUrl: '/public/test-run/views/test-case-history-modal.html',
+          scope: $scope,
+          size: 'lg',
+        });
+      };
       $scope.changeTab = function (tab) {
         $scope.error_details.active_tab = tab;
       };

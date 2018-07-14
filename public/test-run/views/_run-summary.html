@@ -1,0 +1,69 @@
+<div class="col-sm-3">
+    <div class="test-stats-panel white-bg">
+        <p>Run ID:{{run_details.data.responseObject.testRunDetails.id}} </p>
+        <p>Suite name: {{run_details.data.responseObject.testRunDetails.suiteName}}</p>
+        <p>Platform: {{run_details.data.responseObject.testRunDetails.platform}}</p>
+        <p>Release: {{run_details.data.responseObject.testRunDetails.release}}</p>
+        <p>Environment: Dev</p>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="test-stats-panel white-bg">
+        <span>PASSED TEST RUNS</span>
+        <p class="h1">{{(run_details.data.responseObject.testRunDetails.passed_tests/run_details.data.responseObject.testRunDetails.total_tests)*100
+            | number:2}}</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <div class="success-number h4">
+                        <span>{{run_details.data.responseObject.testRunDetails.passed_tests}}</span>
+                        <span>
+                            <i class="fa fa-check-circle"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="fail-number h4">
+                        <span>{{run_details.data.responseObject.testRunDetails.failed_tests}}</span>
+                        <span>
+                            <i class="fa fa-times-circle"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <p>(Out of {{run_details.data.responseObject.testRunDetails.total_tests}})</p>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="test-stats-panel white-bg">
+        <p>Start Time:{{run_details.data.responseObject.testRunDetails.start_time | date:'MMM d, y h:mm:s a'}} </p>
+        <p>End Time: {{run_details.data.responseObject.testRunDetails.end_time | date:'MMM d, y h:mm:s a'}}</p>
+        <p>Elapsed Time: 1day</p>
+    </div>
+</div>
+<div class="col-sm-3" ng-if="run_details.platform ==='WEB'">
+    <div class="test-stats-panel white-bg">
+        <p>Browser:Chrome</p>
+        <p>Headless:No</p>
+        <p>OS Name: Mac</p>
+    </div>
+</div>
+<div class="col-sm-3" ng-if="run_details.platform ==='ANDROID' || run_details.platform ==='IOS'">
+    <div class="test-stats-panel white-bg">
+        <p>Device Id:{{run_details.data.responseObject.testRunDetails.deviceID}}</p>
+        <p>Build Id: {{run_details.data.responseObject.testRunDetails.buildID}}</p>
+        <p>Device Name:{{run_details.data.responseObject.testRunDetails.deviceName}}</p>
+    </div>
+</div>
+<div class="col-sm-3" ng-if="run_details.platform ==='MOBILEWEB'">
+    <div class="test-stats-panel white-bg">
+        <p>Browser:Chrome</p>
+        <p>Headless:No</p>
+        <p>OS Name: Mac</p>
+        <p>DEvice Id:123234</p>
+        <p>Build Id: 324872</p>
+        <p>Device NAme:Android</p>
+    </div>
+</div>

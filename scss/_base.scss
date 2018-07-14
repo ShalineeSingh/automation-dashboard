@@ -94,3 +94,11 @@ body {
     box-shadow: none;
   }
 }
+
+.success-number {
+  color: $green;
+}
+
+.fail-number {
+  color: $red;
+}
