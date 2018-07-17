@@ -74,11 +74,10 @@
             <p></p>
             <div class="line"></div>
             <p>Elapsed Time</p>
-            <p class="success-number h3">{{elapsedTime(run_details.data.testRunDetails.start_time,run_details.data.testRunDetails.end_time)}}</p>
+            <p class="success-number h3">{{getTimeFromSecs(run_details.data.testRunDetails.elapsedTime)}}</p>
         </div>
     </div>
 </div>
-
 <div class="col-sm-3" ng-if="run_details.platform ==='WEB'">
     <div class="test-stats-panel white-bg">
         <div class="page-loader small" ng-if="run_details.page_loader"></div>

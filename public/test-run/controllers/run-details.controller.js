@@ -1,6 +1,6 @@
 (function () {
   angular.module('basic.platform')
-    .controller('runDetailsCtrl', ['$scope', '$rootScope', '$state', 'runDetailsService', '$uibModal', function ($scope, $rootScope, $state, runDetailsService, $uibModal) {
+    .controller('runDetailsCtrl', ['$scope', '$rootScope', '$state', 'runDetailsService', '$uibModal', '$filter', '$timeout', function ($scope, $rootScope, $state, runDetailsService, $uibModal, $filter, $timeout) {
       $scope.error_details = {};
       $scope.run_details = {
         'platform': $state.params.platform_id,
@@ -132,6 +132,21 @@
       $scope.changeTab = function (tab) {
         $scope.error_details.active_tab = tab;
       };
-      getRunDetails();
+
+      $scope.getTimeFromSecs = function (elapsed) {
+        if (elapsed >= 0) {
+          var diff = {};
+          diff.days = Math.floor(elapsed / 86400);
+          diff.hours = Math.floor(elapsed / 3600 % 24);
+          diff.minutes = Math.floor(elapsed / 60 % 60);
+          diff.seconds = Math.floor(elapsed % 60);
+          message = diff.days + 'd ' + diff.hours + 'h ' + diff.minutes + 'm ' + diff.seconds + 's';
+          message = message.replace(/(?:0. )+/, '');
+          return message;
+        } else {
+          return '-';
+        }
+      };
+      setInterval(getRunDetails, 60 * 1000);
     }]);
 })();
