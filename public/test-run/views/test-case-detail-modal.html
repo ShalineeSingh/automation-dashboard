@@ -4,7 +4,7 @@
             <li ng-click="changeTab('test_steps')" ng-class="{'active' : error_details.active_tab === 'test_steps'}">
                 <a href="javascript:void(0)">Test Steps</a>
             </li>
-            <li ng-click="changeTab('screenshot')" ng-class="{'active' : error_details.active_tab === 'screenshot'}">
+            <li ng-if="error_details.test_data.testStatus === 'FAIL'" ng-click="changeTab('screenshot')" ng-class="{'active' : error_details.active_tab === 'screenshot'}">
                 <a href="javascript:void(0)">Screenshot</a>
             </li>
             <li ng-click="changeTab('test_data')" ng-class="{'active' : error_details.active_tab === 'test_data'}">
@@ -15,13 +15,23 @@
             </li>
         </ul>
         <div class="modal-body" ng-if="error_details.active_tab === 'test_steps'">
-            <p>{{error_details.test_data.testSteps}}</p>
+            <ol class="test-steps-list">
+                <li ng-repeat="line in error_details.test_data.test_steps_array">
+                    {{line}}
+                </li>
+            </ol>
         </div>
         <div class="modal-body" ng-if="error_details.active_tab === 'screenshot'">
-            {{error_details.test_data.screenshot}}
+            <div class="screenshot-image">
+                <img ng-src="{{error_details.test_data.screenshot}}">
+            </div>
         </div>
         <div class="modal-body" ng-if="error_details.active_tab === 'test_data'">
-            {{error_details.test_data.testData}}
+            <ul>
+                <li ng-repeat="line in error_details.test_data.test_data_array">
+                    {{line}}
+                </li>
+            </ul>
         </div>
         <div class="modal-body" ng-if="error_details.active_tab === 'console_logs'">
             {{error_details.test_data.consoleLogs}}

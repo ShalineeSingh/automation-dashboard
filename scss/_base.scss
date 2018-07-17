@@ -26,7 +26,8 @@ h5 {
   margin-bottom: 0;
 }
 
-.h4 {
+.h4,
+.h3 {
   margin-top: 0;
 }
 
@@ -37,8 +38,7 @@ html {
 
 body {
   margin: 0;
-  background-color: $secondary1;
-  color: $primary;
+  background-color: $secondary1; // color: $primary;
   overflow-x: hidden;
 }
 
@@ -72,8 +72,19 @@ body {
   position: fixed;
   width: 100%;
   z-index: 4;
-  color: $secondary3;
   background-color: $primary;
+  color: #fff;
+  box-shadow: 2px 2px 2px #ccc;
+  .right-menu {
+    .menu-items {
+      padding: 10px;
+      &.active {
+        background-color: #fff;
+        color: $primary;
+        border-radius: 0px 0px 4px 4px;
+      }
+    }
+  }
 }
 
 .body-wrapper {
@@ -101,4 +112,49 @@ body {
 
 .fail-number {
   color: $red;
+}
+
+.page-loader {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  z-index: 1;
+  margin: -75px 0 0 -75px;
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid $primary;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  &.small {
+    left: 64%;
+    top: 80%;
+  }
+}
+
+.breadcrumb-container {
+  .breadcrumb {
+    position: relative;
+    left: 40px;
+    margin-bottom: 10px;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

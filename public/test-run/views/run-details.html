@@ -1,20 +1,35 @@
 <div class="test-run-wrapper">
+    <div class="breadcrumb-container">
+        <ul class="breadcrumb">
+            <li>
+                <a ui-sref="main.app.basic.dashboard.detail">Dashboard</a>
+            </li>
+            <li>
+                <a ui-sref="main.app.basic.platform.id">Test Run Details</a>
+            </li>
+            <li class="active">
+                Test Case Results
+                <i>(Run ID - {{run_details.run_id}})</i>
+            </li>
+        </ul>
+    </div>
     <!-- summary section -->
     <div ng-include="'/public/test-run/views/_run-summary.html'"></div>
     <!-- table -->
-    <div class="col-md-12 test-run-table-wrapper">
+    <div class="col-md-12 test-run-table-wrapper run-details-table" ng-class="{'white-bg' : run_details.page_loader}">
         <div class="table-responsive">
-            <table class="table table-bordered table-hover">
+            <div class="page-loader" ng-if="run_details.page_loader"></div>
+            <table class="table table-bordered table-hover white-bg" ng-if="!run_details.page_loader">
                 <tr>
                     <th>S.No</th>
-                    <th>Test Name</th>
-                    <th>Status</th>
-                    <th>Duration</th>
+                    <th class="test-name-col">Test Name</th>
+                    <th class="status-col">Status</th>
+                    <th class="duration-col">Duration</th>
                     <th>Error Message</th>
                     <th>Details</th>
-                    <th>History</th>
+                    <!-- <th>History</th> -->
                 </tr>
-                <tr class="white-bg" ng-repeat="data in run_details.data.responseObject.testCaseResultDetails">
+                <tr class="white-bg" ng-repeat="data in run_details.data.testCaseResultDetails">
                     <td>{{data.id}}</td>
                     <td>{{data.testCaseName}}</td>
                     <td>
@@ -24,16 +39,23 @@
                         <span ng-if="data.testStatus === 'FAIL'" class="fail-number">
                             <i class="fa fa-times-circle"></i>
                         </span>
-                        <span>{{data.testStatus}}</span>
+                        <span>{{run_details.status_map[data.testStatus]}}</span>
 
                     </td>
-                    <td>{{data.start_time | date:'MMM d, y h:mm:s a'}} - {{data.end_time | date:'MMM d, y h:mm:s a'}}</td>
+                    <td>
+                        {{elapsedTime(data.start_time, data.end_time)}}
+                    </td>
                     <td>{{data.errorMessage}}</td>
                     <td>
                         <button type="button" class="btn btn-primary" ng-click="openTestDetails(data)">Details</button>
                     </td>
-                    <td>
+                    <!-- <td>
                         <button type="button" class="btn btn-primary" ng-click="openRunHistoryDetails(data)">Hisory</button>
+                    </td> -->
+                </tr>
+                <tr ng-if="run_details.data.testCaseResultDetails.length ===0">
+                    <td colspan="6" class="text-center" style="padding:100px">
+                        <p class="h1">No Runs Completed</p>
                     </td>
                 </tr>
             </table>

@@ -27,4 +27,15 @@
   min-height: 90vh;
   margin: 0;
   width: auto;
+  max-height: 90vh;
+  overflow-y: scroll;
+  .test-steps-list {
+    li {
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+  }
+  .screenshot-image {
+    min-height: 75vh;
+  }
 }
