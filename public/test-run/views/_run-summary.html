@@ -68,7 +68,8 @@
                 </tr>
                 <tr>
                     <td>End Time:</td>
-                    <td>{{run_details.data.testRunDetails.end_time | date:'MMM d, y h:mm:s a'}}</td>
+                    <td ng-if="run_details.data.testRunDetails.end_time">{{run_details.data.testRunDetails.end_time | date:'MMM d, y h:mm:s a'}}</td>
+                    <td ng-if="!run_details.data.testRunDetails.end_time">-</td>
                 </tr>
             </table>
             <p></p>

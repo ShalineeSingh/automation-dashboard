@@ -147,6 +147,7 @@
           return '-';
         }
       };
+      getRunDetails();
       setInterval(getRunDetails, 60 * 1000);
     }]);
 })();
