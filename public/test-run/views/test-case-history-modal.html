@@ -11,7 +11,7 @@
                             <th>Status</th>
                             <th>BuildId</th>
                         </tr>
-                        <tr ng-repeat="data in error_details.history_data" class="cursor-pointer white-bg" ng-click="openRunDetails(data.platform,data.id)">
+                        <tr ng-repeat="data in error_details.history_data track by $index" class="cursor-pointer white-bg" ng-click="openRunDetails(data.platform,data.id)">
                             <td>{{data.id}}</td>
                             <td>{{data.suiteName}}</td>
                             <td>{{data.platform}}</td>

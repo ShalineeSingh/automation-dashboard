@@ -16,7 +16,7 @@
         </ul>
         <div class="modal-body" ng-if="error_details.active_tab === 'test_steps'">
             <ol class="test-steps-list">
-                <li ng-repeat="line in error_details.test_data.test_steps_array">
+                <li ng-repeat="line in error_details.test_data.test_steps_array track by $index">
                     {{line}}
                 </li>
             </ol>
@@ -28,7 +28,7 @@
         </div>
         <div class="modal-body" ng-if="error_details.active_tab === 'test_data'">
             <ul>
-                <li ng-repeat="line in error_details.test_data.test_data_array">
+                <li ng-repeat="line in error_details.test_data.test_data_array track by $index">
                     {{line}}
                 </li>
             </ul>

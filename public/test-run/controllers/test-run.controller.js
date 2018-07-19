@@ -1,5 +1,3 @@
-// testRunService
-
 (function () {
   angular.module('basic.platform')
     .controller('testRunCtrl', ['$scope', '$rootScope', '$state', 'testRunService', function ($scope, $rootScope, $state, testRunService) {

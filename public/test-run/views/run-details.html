@@ -29,7 +29,7 @@
                     <th>Details</th>
                     <!-- <th>History</th> -->
                 </tr>
-                <tr class="white-bg" ng-repeat="data in run_details.data.testCaseResultDetails">
+                <tr class="white-bg" ng-repeat="data in run_details.data.testCaseResultDetails track by $index">
                     <td>{{data.id}}</td>
                     <td>{{data.testCaseName}}</td>
                     <td>
