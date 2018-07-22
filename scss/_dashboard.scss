@@ -1,3 +1,22 @@
 .dashboard-row {
   margin-bottom: 30px;
 }
+
+.tile_stats_count {
+  @media (min-width: 992px) {
+    width: 20%;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 160px;
+    border-left: 2px solid #ADB2B5;
+    margin-top: 10px;
+  }
+  &:first-child {
+    &::before {
+      border-left: 0;
+    }
+  }
+}

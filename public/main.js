@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('automation', ['ui.router', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'angular.filter', 'automation.app'])
+  angular.module('automation', ['ui.router', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'chart.js', 'angular.filter', 'automation.app'])
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
       function ($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider

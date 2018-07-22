@@ -1,13 +1,16 @@
 <!-- Top container -->
-<div class="top-bar-container">
-    <div class="pull-left">
-        <span class="h4 cursor-pointer" ui-sref="main.app.basic.dashboard.detail">Automation Dashboard</span>
+<div class="left-nav-container" ng-class="sidebar ? 'col-sm-2 open': 'col-sm-1 closed'" ng-include="'/public/basic/views/left-nav.html'"></div>
+<div class="muted-col" ng-class="sidebar ? 'col-sm-10': 'col-sm-11 sidebar-closed-body'">
+    <div class="top-bar-container" ng-class="{'sidebar-close' : !sidebar}">
+        <div class="pull-left toggle-menu" ng-click="toggleSideBar()">
+            <i class="fa fa-bars"></i>
+            <!-- <span class="h4 cursor-pointer" ui-sref="main.app.basic.dashboard.detail">Automation Dashboard</span> -->
+        </div>
+        <div class="pull-right filter-menu">
+            <i class="fa fa-filter"></i>
+            <!-- <span class="menu-items cursor-pointer" ui-sref="main.app.basic.dashboard.detail" ui-sref-active="{'active':'main.app.basic.dashboard.detail'}">Dashboard</span>
+            <span class="menu-items cursor-pointer">Test Runs</span> -->
+        </div>
     </div>
-    <div class="pull-right right-menu">
-        <span class="menu-items cursor-pointer" ui-sref="main.app.basic.dashboard.detail" ui-sref-active="{'active':'main.app.basic.dashboard.detail'}">Dashboard</span>
-        <span class="menu-items cursor-pointer" ui-sref="main.app.basic.platform.id" ui-sref-active="{'active':'main.app.basic.platform.**'}">Test Runs</span>
-    </div>
+    <div class="body-wrapper" ui-view="basicContent"></div>
 </div>
-<!-- <div ng-include=" '/public/basic/views/left-nav.html' "></div> -->
-<!-- <div class=""></div> -->
-<div class="body-wrapper" ui-view="basicContent"></div>

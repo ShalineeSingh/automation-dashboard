@@ -9,22 +9,21 @@
 .test-run-wrapper {
   .filter-wrapper {
     padding-left: 30px;
-  }
-  .test-stats-panel {
-    border-radius: 4px;
-    text-align: center;
-    padding: 15px;
-    min-height: 170px;
-    box-shadow: 2px 2px 2px #ccc;
-    margin-top: 10px;
-    .fa {
-      vertical-align: middle;
-    }
-    .stats-table {
-      width: 100%;
-      text-align: left;
-    }
-  }
+  } // .test-stats-panel {
+  //   border-radius: 4px;
+  //   text-align: center;
+  //   padding: 15px;
+  //   min-height: 170px;
+  //   box-shadow: 2px 2px 2px #ccc;
+  //   margin-top: 10px;
+  //   .fa {
+  //     vertical-align: middle;
+  //   }
+  //   .stats-table {
+  //     width: 100%;
+  //     text-align: left;
+  //   }
+  // }
   .test-run-table-wrapper {
     &.run-details-table {
       top: 30px;

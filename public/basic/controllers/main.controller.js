@@ -1,6 +1,7 @@
 (function () {
   angular.module('app.basic')
     .controller('mainCtrl', ['$scope', '$rootScope', '$filter', function ($scope, $rootScope, $filter) {
+      $scope.sidebar = false;
       $rootScope.maps = {
         'platform_map': {
           'WEB': 'Web',
@@ -56,6 +57,9 @@
         } else {
           return '-';
         }
+      };
+      $scope.toggleSideBar = function () {
+        $scope.sidebar = !$scope.sidebar;
       };
 
     }]);

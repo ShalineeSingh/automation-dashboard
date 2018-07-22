@@ -1,190 +1,37 @@
-<div class="test-run-wrapper col-sm-10" style="margin-top:20px;">
-    <div class="row">
-        <div class="col-sm-12 col-sm-offset-1 dashboard-row">
-            <div class="col-sm-4">
-                <div class="test-stats-panel white-bg cursor-pointer" ui-sref="main.app.basic.platform.id">
-                    <div class="test-stats-header">
-                        <p class="h4">WEB</p>
-                        <p class="h5">V1.5</p>
-                        <div class="line"></div>
-                    </div>
-                    <span>PASSED TEST RUNS</span>
-                    <p>
-                        <span class="h1">50</span>
-                        <span>%</span>
-                    </p>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-6">
-                                <div class="success-number h4">
-                                    <span>10</span>
-                                    <span>
-                                        <i class="fa fa-check-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="fail-number h4">
-                                    <span>10</span>
-                                    <span>
-                                        <i class="fa fa-times-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <p>(10 Out of 20)</p>
-                </div>
+<div class="test-run-wrapper" style="margin-top:20px;" ng-controller="dashboardCtrl">
+    <div class="col-sm-12">
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" ng-repeat="release in dashboard.release_data">
+            <div class="test-stats-header">
+                <p class="h5">Release {{release.version}}</p>
+                <div class="line"></div>
             </div>
-            <div class="col-sm-4">
-                <div class="test-stats-panel white-bg cursor-pointer" ui-sref="main.app.basic.platform.id">
-                    <div class="test-stats-header">
-                        <p class="h4">ANDROID</p>
-                        <p class="h5">V1.5</p>
-                        <div class="line"></div>
-                    </div>
-                    <span>PASSED TEST RUNS</span>
-                    <p>
-                        <span class="h1">66.66</span>
-                        <span>%</span>
-                    </p>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-6">
-                                <div class="success-number h4">
-                                    <span>2</span>
-                                    <span>
-                                        <i class="fa fa-check-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="fail-number h4">
-                                    <span>3</span>
-                                    <span>
-                                        <i class="fa fa-times-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <p>(2 Out of 3)</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="test-stats-panel white-bg cursor-pointer" ui-sref="main.app.basic.platform.id">
-                    <div class="test-stats-header">
-                        <p class="h4">MOBILEWEB</p>
-                        <p class="h5">V1.5</p>
-                        <div class="line"></div>
-                    </div>
-                    <span>PASSED TEST RUNS</span>
-                    <p>
-                        <span class="h1">56.66</span>
-                        <span>%</span>
-                    </p>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-6">
-                                <div class="success-number h4">
-                                    <span>17</span>
-                                    <span>
-                                        <i class="fa fa-check-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="fail-number h4">
-                                    <span>30</span>
-                                    <span>
-                                        <i class="fa fa-times-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <p>(17 Out of 20)</p>
-                </div>
-            </div>
+            <p>
+                <span>Web</span>
+                <span class="pull-right">{{release.web}}%</span>
+
+            </p>
+            <p>
+                <span>Android</span>
+                <span class="pull-right">{{release.android}}%</span>
+
+            </p>
+            <p>
+                <span>Mobile Web</span>
+                <span class="pull-right">{{release.mobileweb}}%</span>
+            </p>
+            <p>
+                <span>iOS</span>
+                <span class="pull-right">{{release.ios}}%</span>
+            </p>
+            <p>
+                <span>API</span>
+                <span class="pull-right">{{release.api}}%</span>
+            </p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12 col-sm-offset-1 dashboard-row">
-            <div class="col-sm-offset-2 col-sm-4">
-                <div class="test-stats-panel white-bg cursor-pointer" ui-sref="main.app.basic.platform.id">
-                    <div class="test-stats-header">
-                        <p class="h4">IOS</p>
-                        <p class="h5">V1.5</p>
-                        <div class="line"></div>
-                    </div>
-                    <span>PASSED TEST RUNS</span>
-                    <p>
-                        <span class="h1">100</span>
-                        <span>%</span>
-                    </p>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-6">
-                                <div class="success-number h4">
-                                    <span>10</span>
-                                    <span>
-                                        <i class="fa fa-check-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="fail-number h4">
-                                    <span>10</span>
-                                    <span>
-                                        <i class="fa fa-times-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <p>(10 Out of 10)</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="test-stats-panel white-bg cursor-pointer" ui-sref="main.app.basic.platform.id">
-                    <div class="test-stats-header">
-                        <p class="h4">API</p>
-                        <p class="h5">V1.5</p>
-                        <div class="line"></div>
-                    </div>
-                    <span>PASSED TEST RUNS</span>
-                    <p>
-                        <span class="h1">90</span>
-                        <span>%</span>
-                    </p>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-6">
-                                <div class="success-number h4">
-                                    <span>9</span>
-                                    <span>
-                                        <i class="fa fa-check-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="fail-number h4">
-                                    <span>10</span>
-                                    <span>
-                                        <i class="fa fa-times-circle"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <p>(9 Out of 10)</p>
-                </div>
-            </div>
-        </div>
+    <div class="col-sm-12 chart-container">
+        <canvas id="line" class="chart chart-line white-bg" height="100" chart-data="data" chart-labels="labels" chart-series="series"
+            chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick" chart-colors="dashboard_colors">
+        </canvas>
     </div>
 </div>

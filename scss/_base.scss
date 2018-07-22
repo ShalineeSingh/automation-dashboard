@@ -17,18 +17,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Raleway", sans-serif;
-  font-size: 15px;
-}
-
-.h1 {
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-
-.h4,
-.h3 {
-  margin-top: 0;
+  font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
 }
 
 html {
@@ -36,9 +25,14 @@ html {
   -webkit-text-size-adjust: 100%
 }
 
+a {
+  color: #5A738E;
+  outline: 0;
+}
+
 body {
   margin: 0;
-  background-color: $secondary1; // color: $primary;
+  background-color: #F7F7F7; // background-color: $background; // color: $primary;
   overflow-x: hidden;
 }
 
@@ -63,18 +57,23 @@ body {
   color: $green;
 }
 
+.muted-col {
+  padding: 0;
+}
+
 .top-bar-container {
-  width: 100%;
   top: 0;
   padding: 8px;
+  width: 83.3%;
   overflow: hidden;
   display: inline-block;
   position: fixed;
-  width: 100%;
   z-index: 4;
-  background-color: $primary;
-  color: #fff;
-  box-shadow: 2px 2px 2px #ccc;
+  background-color: #EDEDED;
+  border-bottom: 1px solid #ccc;
+  &.sidebar-close {
+    width: calc(100% - 55px);
+  }
   .right-menu {
     .menu-items {
       padding: 10px;
@@ -84,6 +83,80 @@ body {
         border-radius: 0px 0px 4px 4px;
       }
     }
+  }
+  .toggle-menu,
+  .filter-menu {
+    padding: 0 15px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 20px;
+    color: #5A738E;
+  }
+}
+
+.sidebar-closed-body {
+  width: calc(100% - 55px);
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.left-nav-container {
+  min-height: 100vh;
+  background: $primary;
+  color: $font-color;
+  padding: 0;
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  .menu-container {
+    list-style: none;
+    padding-left: 0;
+    li {
+      &.active {
+        text-shadow: rgba(0, 0, 0, .25) 0 -1px 0;
+        background: linear-gradient(#334556, #2C4257), #2A3F54;
+        box-shadow: rgba(0, 0, 0, .25) 0 1px 0, inset rgba(255, 255, 255, .16) 0 1px 0;
+        border-right: 5px solid #1ABB9C;
+      }
+      &:hover {
+        background-color: rgba(255, 255, 255, .06);
+      }
+      a {
+        color: $font-color;
+        color: #E7E7E7;
+        font-weight: 500;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        margin-bottom: 6px;
+        padding: 13px 15px 12px;
+        text-decoration: none;
+      }
+    }
+  }
+  &.closed {
+    @media (min-width: 992px) {
+      width: 55px;
+      -webkit-transition: all linear 0.2s;
+      transition: all linear 0.2s;
+    }
+    .menu-container {
+      li {
+        font-size: 24px;
+        padding: 20px 10px;
+      }
+      a {
+        margin-bottom: 0px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.heading-container {
+  font-size: 24px;
+  padding: 20px 10px;
+  .heading {
+    padding-left: 10px;
   }
 }
 
