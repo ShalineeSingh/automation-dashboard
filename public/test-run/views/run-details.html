@@ -1,10 +1,10 @@
 <div class="test-run-wrapper">
     <div class="breadcrumb-container">
         <ul class="breadcrumb">
-            <li>
-                <a ui-sref="main.app.basic.dashboard.detail">Dashboard</a>
+            <li class="cursor-pointer">
+                <a ui-sref="main.app.basic.dashboard.performance">Dashboard</a>
             </li>
-            <li>
+            <li class="cursor-pointer">
                 <a ui-sref="main.app.basic.platform.id">Test Runs</a>
             </li>
             <li class="active">
@@ -16,49 +16,51 @@
     <!-- summary section -->
     <div ng-include="'/public/test-run/views/_run-summary.html'"></div>
     <!-- table -->
-    <div class="col-md-12 test-run-table-wrapper run-details-table" ng-class="{'white-bg' : run_details.page_loader}">
-        <div class="table-responsive">
-            <div class="page-loader" ng-if="run_details.page_loader"></div>
-            <table class="table table-bordered table-hover white-bg" ng-if="!run_details.page_loader">
-                <tr>
-                    <th>S.No</th>
-                    <th class="test-name-col">Test Name</th>
-                    <th class="status-col">Status</th>
-                    <th class="duration-col">Duration</th>
-                    <th>Error Message</th>
-                    <th>Details</th>
-                    <!-- <th>History</th> -->
-                </tr>
-                <tr class="white-bg" ng-repeat="data in run_details.data.testCaseResultDetails track by $index">
-                    <td>{{data.id}}</td>
-                    <td>{{data.testCaseName}}</td>
-                    <td>
-                        <span ng-if="data.testStatus === 'PASS'" class="success-number">
-                            <i class="fa fa-check-circle"></i>
-                        </span>
-                        <span ng-if="data.testStatus === 'FAIL'" class="fail-number">
-                            <i class="fa fa-times-circle"></i>
-                        </span>
-                        <span>{{run_details.status_map[data.testStatus]}}</span>
+    <div class="row">
+        <div class="col-md-12 test-run-table-wrapper run-details-table" ng-class="{'white-bg' : run_details.page_loader}">
+            <div class="table-responsive">
+                <div class="page-loader" ng-if="run_details.page_loader"></div>
+                <table class="table table-hover white-bg" ng-if="!run_details.page_loader">
+                    <tr>
+                        <th>S.No</th>
+                        <th class="test-name-col">Test Name</th>
+                        <th class="status-col">Status</th>
+                        <th class="duration-col">Duration</th>
+                        <th>Error Message</th>
+                        <th>Details</th>
+                        <!-- <th>History</th> -->
+                    </tr>
+                    <tr class="white-bg" ng-repeat="data in run_details.data.testCaseResultDetails track by $index">
+                        <td>{{data.id}}</td>
+                        <td>{{data.testCaseName}}</td>
+                        <td>
+                            <span ng-if="data.testStatus === 'PASS'" class="success-number">
+                                <i class="fa fa-check-circle"></i>
+                            </span>
+                            <span ng-if="data.testStatus === 'FAIL'" class="fail-number">
+                                <i class="fa fa-times-circle"></i>
+                            </span>
+                            <span>{{run_details.status_map[data.testStatus]}}</span>
 
-                    </td>
-                    <td>
-                        {{elapsedTime(data.start_time, data.end_time)}}
-                    </td>
-                    <td>{{data.errorMessage}}</td>
-                    <td>
-                        <button type="button" class="btn btn-primary" ng-click="openTestDetails(data)">Details</button>
-                    </td>
-                    <!-- <td>
+                        </td>
+                        <td>
+                            {{elapsedTime(data.start_time, data.end_time)}}
+                        </td>
+                        <td>{{data.errorMessage}}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" ng-click="openTestDetails(data)">Details</button>
+                        </td>
+                        <!-- <td>
                         <button type="button" class="btn btn-primary" ng-click="openRunHistoryDetails(data)">Hisory</button>
                     </td> -->
-                </tr>
-                <tr ng-if="run_details.data.testCaseResultDetails.length ===0">
-                    <td colspan="6" class="text-center" style="padding:100px">
-                        <p class="h1">No Runs Completed</p>
-                    </td>
-                </tr>
-            </table>
+                    </tr>
+                    <tr ng-if="run_details.data.testCaseResultDetails.length ===0">
+                        <td colspan="6" class="text-center" style="padding:100px">
+                            <p class="h1">No Runs Completed</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>

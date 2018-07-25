@@ -1,0 +1,121 @@
+{
+  "timeStamp": "25-07-2018 11:31:59",
+  "responseObject": {
+    "page": 0,
+    "size": 10,
+    "totalElements": 45,
+    "data": [{
+        "id": 393,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "start_time": "2018-07-17T12:08:31.776Z"
+      },
+      {
+        "id": 402,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "start_time": "2018-07-17T13:07:39.422Z"
+      },
+      {
+        "id": 413,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "start_time": "2018-07-17T17:38:25.391Z"
+      },
+      {
+        "id": 423,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 3,
+        "failed_tests": 0,
+        "start_time": "2018-07-17T21:29:28.380Z",
+        "end_time": "2018-07-17T21:31:17.599Z"
+      },
+      {
+        "id": 428,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "start_time": "2018-07-18T06:55:03.532Z"
+      },
+      {
+        "id": 430,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "start_time": "2018-07-18T07:11:47.327Z"
+      },
+      {
+        "id": 432,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "start_time": "2018-07-18T07:14:01.703Z"
+      },
+      {
+        "id": 434,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "start_time": "2018-07-18T07:15:51.629Z"
+      },
+      {
+        "id": 436,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "start_time": "2018-07-18T07:18:29.071Z"
+      },
+      {
+        "id": 438,
+        "platform": "WEB",
+        "suiteName": "Tiket Sanity Test",
+        "release": "Rel 1",
+        "env": "PRODUCTION",
+        "total_tests": 3,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "start_time": "2018-07-18T07:20:21.290Z"
+      }
+    ]
+  },
+  "apiResponseStatus": "SUCCESS"
+}

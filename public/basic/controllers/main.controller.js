@@ -1,6 +1,6 @@
 (function () {
   angular.module('app.basic')
-    .controller('mainCtrl', ['$scope', '$rootScope', '$filter', function ($scope, $rootScope, $filter) {
+    .controller('mainCtrl', ['$scope', '$rootScope', '$state', '$filter', function ($scope, $rootScope, $state, $filter) {
       $scope.sidebar = false;
       $rootScope.maps = {
         'platform_map': {
@@ -25,6 +25,7 @@
           'CHROME': 'Chrome'
         }
       };
+
       $rootScope.elapsedTime = function (since_date, to_date) {
         var since = new Date(since_date);
         var to;
@@ -61,6 +62,8 @@
       $scope.toggleSideBar = function () {
         $scope.sidebar = !$scope.sidebar;
       };
-
+      $scope.toggleFilter = function () {
+        $rootScope.filter_overlay = !$rootScope.filter_overlay;
+      };
     }]);
 })();

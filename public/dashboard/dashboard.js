@@ -13,8 +13,17 @@
             }
           },
         })
-        .state('main.app.basic.dashboard.detail', {
-          url: 'dashboard',
+        .state('main.app.basic.dashboard.performance', {
+          url: 'performance',
+          views: {
+            'dashboardContent': {
+              templateUrl: '/public/dashboard/views/dashboard.html',
+              // controller: 'landingController'
+            }
+          }
+        })
+        .state('main.app.basic.dashboard.hotfix', {
+          url: 'hotfix',
           views: {
             'dashboardContent': {
               templateUrl: '/public/dashboard/views/dashboard.html',

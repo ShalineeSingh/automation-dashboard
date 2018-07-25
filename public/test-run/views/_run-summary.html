@@ -1,150 +1,152 @@
-<div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
-    <div class="test-stats-panel white-bg">
-        <div class="page-loader small" ng-if="run_details.page_loader"></div>
-        <table class="stats-table" ng-if="!run_details.page_loader">
-            <tr>
-                <td>Run ID:</td>
-                <td>{{run_details.data.testRunDetails.id}}</td>
-            </tr>
-            <tr>
-                <td>Platform:</td>
-                <td> {{run_details.platform_map[run_details.data.testRunDetails.platform]}}</td>
-            </tr>
-            <tr>
-                <td>Release:</td>
-                <td> {{run_details.data.testRunDetails.release}}</td>
-            </tr>
-            <tr>
-                <td>Environment:</td>
-                <td>{{run_details.env_map[run_details.data.testRunDetails.env]}}</td>
-            </tr>
-        </table>
+<div class="col-sm-12">
+    <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
+        <div class="test-stats-panel white-bg">
+            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <table class="stats-table" ng-if="!run_details.page_loader">
+                <tr>
+                    <td>Run ID:</td>
+                    <td>{{run_details.data.testRunDetails.id}}</td>
+                </tr>
+                <tr>
+                    <td>Platform:</td>
+                    <td> {{run_details.platform_map[run_details.data.testRunDetails.platform]}}</td>
+                </tr>
+                <tr>
+                    <td>Release:</td>
+                    <td> {{run_details.data.testRunDetails.release}}</td>
+                </tr>
+                <tr>
+                    <td>Environment:</td>
+                    <td>{{run_details.env_map[run_details.data.testRunDetails.env]}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
-</div>
-<div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
-    <div class="test-stats-panel white-bg">
-        <div class="page-loader small" ng-if="run_details.page_loader"></div>
-        <div ng-if="!run_details.page_loader">
-            <span>PASSED TEST RUNS</span>
-            <p>
-                <span class="h1">{{(run_details.data.testRunDetails.passed_tests/run_details.data.testRunDetails.total_tests)*100 | number:2}}</span>
-                <span>%</span>
-            </p>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-sm-6">
-                        <div class="success-number h4">
-                            <span>
-                                <i class="fa fa-check-circle"></i>
-                            </span>
-                            <span>{{run_details.data.testRunDetails.passed_tests}}</span>
-                            <span class="h5" style="vertical-align:bottom">Passed</span>
+    <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
+        <div class="test-stats-panel white-bg">
+            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <div ng-if="!run_details.page_loader">
+                <span>PASSED TEST RUNS</span>
+                <p>
+                    <span class="h1">{{(run_details.data.testRunDetails.passed_tests/run_details.data.testRunDetails.total_tests)*100 | number:2}}</span>
+                    <span>%</span>
+                </p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="col-sm-6">
+                            <div class="success-number h4">
+                                <span>
+                                    <i class="fa fa-check-circle"></i>
+                                </span>
+                                <span>{{run_details.data.testRunDetails.passed_tests}}</span>
+                                <span class="h5" style="vertical-align:bottom">Passed</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="fail-number h4">
-                            <span>
-                                <i class="fa fa-times-circle"></i>
-                            </span>
-                            <span>{{run_details.data.testRunDetails.failed_tests}}</span>
-                            <span class="h5" style="vertical-align:bottom">Failed</span>
+                        <div class="col-sm-6">
+                            <div class="fail-number h4">
+                                <span>
+                                    <i class="fa fa-times-circle"></i>
+                                </span>
+                                <span>{{run_details.data.testRunDetails.failed_tests}}</span>
+                                <span class="h5" style="vertical-align:bottom">Failed</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="line"></div>
+                <p>({{run_details.data.testRunDetails.passed_tests}} Out of {{run_details.data.testRunDetails.total_tests}})</p>
             </div>
-            <div class="line"></div>
-            <p>({{run_details.data.testRunDetails.passed_tests}} Out of {{run_details.data.testRunDetails.total_tests}})</p>
         </div>
     </div>
-</div>
-<div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
-    <div class="test-stats-panel white-bg">
-        <div class="page-loader small" ng-if="run_details.page_loader"></div>
-        <div ng-if="!run_details.page_loader">
-            <table class="stats-table">
+    <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
+        <div class="test-stats-panel white-bg">
+            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <div ng-if="!run_details.page_loader">
+                <table class="stats-table">
+                    <tr>
+                        <td>Start Time:</td>
+                        <td>{{run_details.data.testRunDetails.start_time | date:'MMM d, y h:mm:s a'}}</td>
+                    </tr>
+                    <tr>
+                        <td>End Time:</td>
+                        <td ng-if="run_details.data.testRunDetails.end_time">{{run_details.data.testRunDetails.end_time | date:'MMM d, y h:mm:s a'}}</td>
+                        <td ng-if="!run_details.data.testRunDetails.end_time">-</td>
+                    </tr>
+                </table>
+                <p></p>
+                <div class="line"></div>
+                <p>Elapsed Time</p>
+                <p class="success-number h3">{{getTimeFromSecs(run_details.data.testRunDetails.elapsedTime)}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3" ng-if="run_details.platform ==='WEB'">
+        <div class="test-stats-panel white-bg">
+            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <table class="stats-table" ng-if="!run_details.page_loader">
                 <tr>
-                    <td>Start Time:</td>
-                    <td>{{run_details.data.testRunDetails.start_time | date:'MMM d, y h:mm:s a'}}</td>
+                    <td>Browser:</td>
+                    <td>{{run_details.browser_map[run_details.data.testRunDetails.browser]}}</td>
                 </tr>
                 <tr>
-                    <td>End Time:</td>
-                    <td ng-if="run_details.data.testRunDetails.end_time">{{run_details.data.testRunDetails.end_time | date:'MMM d, y h:mm:s a'}}</td>
-                    <td ng-if="!run_details.data.testRunDetails.end_time">-</td>
+                    <td>Headless:</td>
+                    <td>{{run_details.data.testRunDetails.headless ? 'Yes' : 'No'}}</td>
+                </tr>
+                <tr>
+                    <td>OS Name:</td>
+                    <td>{{run_details.data.testRunDetails.os_name}}</td>
                 </tr>
             </table>
-            <p></p>
-            <div class="line"></div>
-            <p>Elapsed Time</p>
-            <p class="success-number h3">{{getTimeFromSecs(run_details.data.testRunDetails.elapsedTime)}}</p>
         </div>
     </div>
-</div>
-<div class="col-sm-3" ng-if="run_details.platform ==='WEB'">
-    <div class="test-stats-panel white-bg">
-        <div class="page-loader small" ng-if="run_details.page_loader"></div>
-        <table class="stats-table" ng-if="!run_details.page_loader">
-            <tr>
-                <td>Browser:</td>
-                <td>{{run_details.browser_map[run_details.data.testRunDetails.browser]}}</td>
-            </tr>
-            <tr>
-                <td>Headless:</td>
-                <td>{{run_details.data.testRunDetails.headless ? 'Yes' : 'No'}}</td>
-            </tr>
-            <tr>
-                <td>OS Name:</td>
-                <td>{{run_details.data.testRunDetails.os_name}}</td>
-            </tr>
-        </table>
+    <div class="col-sm-3" ng-if="run_details.platform ==='ANDROID' || run_details.platform ==='IOS'">
+        <div class="test-stats-panel white-bg">
+            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <table class="stats-table" ng-if="!run_details.page_loader">
+                <tr>
+                    <td>Device Id:</td>
+                    <td>{{run_details.data.testRunDetails.deviceID}}</td>
+                </tr>
+                <tr>
+                    <td>Build Id:</td>
+                    <td>{{run_details.data.testRunDetails.buildID}}</td>
+                </tr>
+                <tr>
+                    <td>Device Name:</td>
+                    <td>{{run_details.data.testRunDetails.deviceName}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
-</div>
-<div class="col-sm-3" ng-if="run_details.platform ==='ANDROID' || run_details.platform ==='IOS'">
-    <div class="test-stats-panel white-bg">
-        <div class="page-loader small" ng-if="run_details.page_loader"></div>
-        <table class="stats-table" ng-if="!run_details.page_loader">
-            <tr>
-                <td>Device Id:</td>
-                <td>{{run_details.data.testRunDetails.deviceID}}</td>
-            </tr>
-            <tr>
-                <td>Build Id:</td>
-                <td>{{run_details.data.testRunDetails.buildID}}</td>
-            </tr>
-            <tr>
-                <td>Device Name:</td>
-                <td>{{run_details.data.testRunDetails.deviceName}}</td>
-            </tr>
-        </table>
-    </div>
-</div>
-<div class="col-sm-3" ng-if="run_details.platform ==='MOBILEWEB'">
-    <div class="test-stats-panel white-bg">
-        <div class="page-loader small" ng-if="run_details.page_loader"></div>
-        <table class="stats-table" ng-if="!run_details.page_loader">
-            <tr>
-                <td>Browser:</td>
-                <td>{{run_details.data.testRunDetails.deviceID}}</td>
-            </tr>
-            <tr>
-                <td>Headless:</td>
-                <td>{{run_details.data.testRunDetails.buildID}}</td>
-            </tr>
-            <tr>
-                <td>OS Name:</td>
-                <td>{{run_details.data.testRunDetails.deviceName}}</td>
-            </tr>
-            <tr>
-                <td>Device Id:</td>
-                <td>{{run_details.data.testRunDetails.deviceID}}</td>
-            </tr>
-            <tr>
-                <td>Build Id:</td>
-                <td>{{run_details.data.testRunDetails.buildID}}</td>
-            </tr>
-            <tr>
-                <td>Device Name:</td>
-                <td>{{run_details.data.testRunDetails.deviceName}}</td>
-            </tr>
-        </table>
+    <div class="col-sm-3" ng-if="run_details.platform ==='MOBILEWEB'">
+        <div class="test-stats-panel white-bg">
+            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <table class="stats-table" ng-if="!run_details.page_loader">
+                <tr>
+                    <td>Browser:</td>
+                    <td>{{run_details.data.testRunDetails.deviceID}}</td>
+                </tr>
+                <tr>
+                    <td>Headless:</td>
+                    <td>{{run_details.data.testRunDetails.buildID}}</td>
+                </tr>
+                <tr>
+                    <td>OS Name:</td>
+                    <td>{{run_details.data.testRunDetails.deviceName}}</td>
+                </tr>
+                <tr>
+                    <td>Device Id:</td>
+                    <td>{{run_details.data.testRunDetails.deviceID}}</td>
+                </tr>
+                <tr>
+                    <td>Build Id:</td>
+                    <td>{{run_details.data.testRunDetails.buildID}}</td>
+                </tr>
+                <tr>
+                    <td>Device Name:</td>
+                    <td>{{run_details.data.testRunDetails.deviceName}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>

@@ -2,19 +2,19 @@
 <nav ng-show="sidebar">
     <div class="heading-container">
         <i class="fa fa-dashboard"></i>
-        <span class="h3 cursor-pointer heading" ui-sref="main.app.basic.dashboard.detail">Dashboard</span>
+        <span class="h3 cursor-pointer heading" ui-sref="main.app.basic.dashboard.performance">Dashboard</span>
     </div>
     <ul class="menu-container">
-        <li class="active">
-            <a href="#">
+        <li ui-sref="main.app.basic.dashboard.performance" ui-sref-active="{'active':'main.app.basic.dashboard.performance'}">
+            <a>
                 <i class="fa fa-line-chart fa-fw"></i>  Performance</a>
         </li>
-        <li>
-            <a href="#">
+        <li ui-sref="main.app.basic.dashboard.hotfix" ui-sref-active="{'active':'main.app.basic.dashboard.hotfix'}">
+            <a>
                 <i class="fa fa-bar-chart fa-fw"></i>  Hotfix</a>
         </li>
-        <li>
-            <a ui-sref="main.app.basic.platform.id" ui-sref-active="{'active':'main.app.basic.platform.**'}">
+        <li ui-sref="main.app.basic.platform.id" ui-sref-active="{'active':'main.app.basic.platform.**'}">
+            <a>
                 <i class="fa fa-eye fa-fw"></i>  Test Runs</a>
         </li>
     </ul>
@@ -26,18 +26,18 @@
                 <i class="fa fa-dashboard"></i>
             </a>
         </li>
-        <li class="active">
+        <li ui-sref="main.app.basic.dashboard.performance" ui-sref-active="{'active':'main.app.basic.dashboard.performance'}">
             <a href="#">
                 <i class="fa fa-line-chart fa-fw"></i>
             </a>
         </li>
-        <li>
-            <a href="#">
+        <li ui-sref="main.app.basic.dashboard.hotfix" ui-sref-active="{'active':'main.app.basic.dashboard.hotfix'}">
+            <a>
                 <i class="fa fa-bar-chart fa-fw"></i>
             </a>
         </li>
-        <li>
-            <a ui-sref="main.app.basic.platform.id" ui-sref-active="{'active':'main.app.basic.platform.**'}">
+        <li ui-sref="main.app.basic.platform.id" ui-sref-active="{'active':'main.app.basic.platform.**'}">
+            <a>
                 <i class="fa fa-eye fa-fw"></i>
             </a>
         </li>

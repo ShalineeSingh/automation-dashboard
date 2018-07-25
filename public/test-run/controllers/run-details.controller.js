@@ -10,6 +10,7 @@
         'status_map': $rootScope.maps.status_map,
         'platform_map': $rootScope.maps.platform_map
       };
+      $rootScope.show_filter = false;
       var getRunDetails = function () {
         $scope.run_details.page_loader = true;
         runDetailsService.get({
@@ -66,6 +67,6 @@
         }
       };
       getRunDetails();
-      setInterval(getRunDetails, 20 * 1000);
+      // setInterval(getRunDetails, 20 * 1000);
     }]);
 })();

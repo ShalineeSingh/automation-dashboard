@@ -1,0 +1,51 @@
+{
+  "timeStamp": "25-07-2018 11:36:43",
+  "responseObject": {
+    "testRunDetails": {
+      "id": 423,
+      "platform": "WEB",
+      "suiteName": "Tiket Sanity Test",
+      "release": "Rel 1",
+      "env": "PRODUCTION",
+      "total_tests": 3,
+      "passed_tests": 3,
+      "failed_tests": 0,
+      "start_time": "2018-07-17T21:29:28.380Z",
+      "end_time": "2018-07-17T21:31:17.599Z",
+      "elapsedTime": 109,
+      "web_pref_id": 424,
+      "browser": "CHROME",
+      "headless": false,
+      "os_name": "Sierra"
+    },
+    "testCaseResultDetails": [{
+      "id": 425,
+      "runID": 423,
+      "testGroupName": "Sanity Suite",
+      "testCaseName": "LinkVerification",
+      "testStatus": "PASS",
+      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 02:59:45.175\\nStep: tix Link open and verify,\t Description: tix Link opened and verified Successfully\t @Time :2018-07-18 02:59:48.698\\nStep: partner Link open and verify,\t Description: partner Link opened and verified Successfully\t @Time :2018-07-18 02:59:56.603\\nStep: promo Link open and verify,\t Description: promo Link opened and verified Successfully\t @Time :2018-07-18 03:00:01.856\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:11.419\\nStep: careers Link open and verify,\t Description: careers Link opened and verified Successfully\t @Time :2018-07-18 03:00:13.461\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:15.946\\nStep: blog Link open and verify,\t Description: blog Link opened and verified Successfully\t @Time :2018-07-18 03:00:16.268\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:18.858\\nStep: mobileapp Link open and verify,\t Description: mobileapp Link opened and verified Successfully\t @Time :2018-07-18 03:00:19.453\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:23.144\\nStep: registerurhotel Link open and verify,\t Description: registerurhotel Link opened and verified Successfully\t @Time :2018-07-18 03:00:23.584\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:26.148\\nStep: cicilan Link open and verify,\t Description: cicilan Link opened and verified Successfully\t @Time :2018-07-18 03:00:26.835\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:29.463\\nStep: protection Link open and verify,\t Description: protection Link opened and verified Successfully\t @Time :2018-07-18 03:00:29.704\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:32.332\\nStep: faq Link open and verify,\t Description: faq Link opened and verified Successfully\t @Time :2018-07-18 03:00:35.826\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:38.412\\nStep: privacyandpolicy Link open and verify,\t Description: privacyandpolicy Link opened and verified Successfully\t @Time :2018-07-18 03:00:38.618\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:40.983\\nStep: termsandconditions Link open and verify,\t Description: termsandconditions Link opened and verified Successfully\t @Time :2018-07-18 03:00:41.288",
+      "start_time": "2018-07-17T21:29:32.410Z",
+      "end_time": "2018-07-17T21:30:41.303Z"
+    }, {
+      "id": 426,
+      "runID": 423,
+      "testGroupName": "Sanity Suite",
+      "testCaseName": "Affiliate_Partner_Login_Logout",
+      "testStatus": "PASS",
+      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
+      "start_time": "2018-07-17T21:30:42.156Z",
+      "end_time": "2018-07-17T21:31:00.136Z"
+    }, {
+      "id": 427,
+      "runID": 423,
+      "testGroupName": "Sanity Suite",
+      "testCaseName": "PromoVerification",
+      "testStatus": "PASS",
+      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 02:59:45.417\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 02:59:45.425\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/promotion_list/\t @Time :2018-07-18 02:59:47.231\\nStep: Count Number of promotion available,\t Description: Promotions available: 14\t @Time :2018-07-18 02:59:49.278\\nStep: Get Promocode ,\t Description: Promocode Received: TERBANGHEMAT\t @Time :2018-07-18 02:59:53.525\\nStep: Get Promocode ,\t Description: Promocode Received: NGINEPHEMAT\t @Time :2018-07-18 02:59:57.145\\nStep: Get Promocode ,\t Description: Promocode Received: SRIWIJAYA100\t @Time :2018-07-18 03:00:01.044\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:09.165\\nStep: Get Promocode ,\t Description: Promocode Received: FLY150\t @Time :2018-07-18 03:00:14.099\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:21.574\\nStep: Get Promocode ,\t Description: Promocode Received: BRI100\t @Time :2018-07-18 03:00:27.509\\nStep: Get Promocode ,\t Description: Promocode Received: BCA600\t @Time :2018-07-18 03:00:33.096\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:39.842\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:47.367\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:55.407\\nStep: Get Promocode ,\t Description: Promocode Received: BJB20\t @Time :2018-07-18 03:00:57.461\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:01:07.828\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:01:16.818",
+      "start_time": "2018-07-17T21:29:32.410Z",
+      "end_time": "2018-07-17T21:31:17.561Z"
+    }]
+  },
+  "apiResponseStatus": "SUCCESS"
+}

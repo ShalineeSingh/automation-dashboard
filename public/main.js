@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('automation', ['ui.router', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'chart.js', 'angular.filter', 'automation.app'])
+  angular.module('automation', ['ui.router', 'ngSanitize', 'ngResource', 'ngAnimate', 'ui.bootstrap', 'chart.js', 'angular.filter', 'automation.app'])
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
       function ($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider
@@ -12,7 +12,7 @@
             controller: 'mainCtrl'
           });
         // if none of the states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/main/app/dashboard');
+        $urlRouterProvider.otherwise('/main/app/performance');
         // html5Mode removes #! from url and make the url pretty(normal)
         $locationProvider.html5Mode(true);
 

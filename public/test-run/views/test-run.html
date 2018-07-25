@@ -1,51 +1,57 @@
+<!-- Filters -->
+<div class="filter-wrapper white-bg" ng-show="filter_overlay">
+    <div ng-include="'/public/test-run/views/test-run-filter.html'"></div>
+</div>
 <div class="row test-run-wrapper">
     <div class="breadcrumb-container">
         <ul class="breadcrumb">
-            <li>
-                <a ui-sref="main.app.basic.dashboard.detail">Dashboard</a>
+            <li class="cursor-pointer">
+                <a ui-sref="main.app.basic.dashboard.performance">Dashboard</a>
             </li>
             <li class="active">
                 Test Runs
             </li>
         </ul>
     </div>
-    <!-- Filters -->
-    <!-- <div class="col-md-2 filter-wrapper">
-        <div ng-include="'/public/test-run/views/test-run-filter.html'"></div>
-    </div> -->
+
     <!-- table -->
-    <div class="col-sm-11">
-        <div class="col-md-11 col-md-offset-1 test-run-table-wrapper" ng-class="{'white-bg' : test_run.page_loader}">
-            <div class="table-responsive">
-                <div class="page-loader" ng-if="test_run.page_loader"></div>
-                <table class="table table-bordered table-hover white-bg" ng-if="!test_run.page_loader">
-                    <tr>
-                        <th>Run ID</th>
-                        <th>SuiteName</th>
-                        <th>Platform</th>
-                        <th>Release</th>
-                        <th>Environment</th>
-                        <th>Started</th>
-                        <th> Completion %</th>
-                    </tr>
-                    <tr ng-repeat="data in test_run.list | orderBy:'-id'" class="cursor-pointer white-bg" ng-click="openRunDetails(data.platform,data.id)">
-                        <td>{{data.id}}</td>
-                        <td>{{data.suiteName}}</td>
-                        <td>{{test_run.platform_map[data.platform]}}</td>
-                        <td>{{data.release}}</td>
-                        <td>{{test_run.env_map[data.env]}}</td>
-                        <td>{{elapsedTime(data.start_time)}}</td>
-                        <td>
-                            <uib-progress>
-                                <uib-bar ng-repeat="bar in data.stacked.value track by $index" value="bar" type="{{ data.stacked.type[$index]}}" tooltip-placement="'top'"
-                                    uib-tooltip="On the top">
-                                    <span ng-hide="bar < 5">{{bar}}%</span>
-                                </uib-bar>
-                            </uib-progress>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+    <div class="col-md-12 test-run-table-wrapper" ng-class="{'white-bg' : test_run.page_loader}">
+        <div class="table-responsive">
+            <div class="page-loader" ng-if="test_run.page_loader"></div>
+            <table class="table table-hover white-bg" ng-if="!test_run.page_loader">
+                <tr>
+                    <th>Run ID</th>
+                    <th>SuiteName</th>
+                    <th>Platform</th>
+                    <th>Release</th>
+                    <th>Environment</th>
+                    <th>Started</th>
+                    <th> Completion %</th>
+                </tr>
+                <tr ng-repeat="data in test_run.list | orderBy:'-id'" class="cursor-pointer white-bg" ng-click="openRunDetails(data.platform,data.id)">
+                    <td>{{data.id}}</td>
+                    <td>{{data.suiteName}}</td>
+                    <td>{{test_run.platform_map[data.platform]}}</td>
+                    <td>{{data.release}}</td>
+                    <td>{{test_run.env_map[data.env]}}</td>
+                    <td>{{elapsedTime(data.start_time)}}</td>
+                    <td>
+                        <uib-progress>
+                            <uib-bar ng-repeat="bar in data.stacked.value track by $index" value="bar" type="{{ data.stacked.type[$index]}}" tooltip-placement="'top'"
+                                uib-tooltip="On the top">
+                                <span ng-hide="bar < 5">{{bar}}%</span>
+                            </uib-bar>
+                        </uib-progress>
+                    </td>
+                </tr>
+            </table>
         </div>
+    </div>
+</div>
+<!-- pagination -->
+<div class="row pagination-container">
+    <div class="col-sm-12 text-center">
+        <ul uib-pagination total-items="test_run.page.total_items" ng-model="test_run.page.current_page" max-size="test_run.page.max_size"
+            items-per-page="test_run.page.page_size" class="pagination" boundary-link-numbers="true" ng-change="getTestRuns()"></ul>
     </div>
 </div>

@@ -166,15 +166,15 @@ body {
 }
 
 .btn-primary {
-  background-color: $primary;
-  border: 1px solid $primary;
+  background-color: $secondary;
+  border: 1px solid $secondary;
   &:hover,
   &:active,
   &:focus,
   &:visited {
-    background-color: $primary;
+    background-color: $secondary;
     color: #ffffff;
-    border-color: $primary;
+    border-color: $secondary;
     box-shadow: none;
   }
 }
@@ -209,8 +209,29 @@ body {
 .breadcrumb-container {
   .breadcrumb {
     position: relative;
-    left: 40px;
-    margin-bottom: 10px;
+    font-size: 12px;
+    left: 25px;
+    margin-bottom: 0;
+  }
+}
+
+.pagination-container {
+  .pagination {
+    margin: 0;
+  }
+  .pagination>li>a,
+  .pagination>li>span {
+    color: $primary;
+  }
+  .pagination>.active>a,
+  .pagination>.active>a:focus,
+  .pagination>.active>a:hover,
+  .pagination>.active>span,
+  .pagination>.active>span:focus,
+  .pagination>.active>span:hover {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: #fff;
   }
 }
 

@@ -1,40 +1,78 @@
-<div class="filter-container">
-    <form class="form-horizontal">
+<div class="filter-container col-sm-12">
+    <form>
         <div class="form-group">
             <label class="control-label" for="suite-name">Suite Name</label>
             <input name="suite-name" type="text" class="form-control">
         </div>
-        <p>Platform</p>
-        <div class="checkbox">
-            <label class="control-label">
-                <input type="checkbox"> Web
-            </label>
+        <div class="line"></div>
+        <label class="control-label">Platform</label>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Web
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Android
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> API
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Mobile Web
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> iOS
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="checkbox">
-            <label class="control-label">
-                <input type="checkbox"> Mobile Web
-            </label>
+        <div class="line"></div>
+        <label class="control-label">Environment</label>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Production
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Hotfix
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Dev
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Testing 1
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Testing 2
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="checkbox">
-
-            <label class="control-label">
-                <input type="checkbox"> Android
-            </label>
-        </div>
-        <div class="checkbox">
-
-            <label class="control-label">
-                <input type="checkbox"> iOS
-            </label>
-        </div>
-        <div class="checkbox">
-            <label class="control-label">
-                <input type="checkbox"> API
-            </label>
-        </div>
-        <p>Realease</p>
+        <div class="line"></div>
+        <label class="control-label">Realease</label>
         <div class="form-group">
-            <label for="sel1">Select list:</label>
             <select class="form-control" id="sel1">
                 <option>1</option>
                 <option>2</option>
@@ -42,63 +80,57 @@
                 <option>4</option>
             </select>
         </div>
-        <p>Environment</p>
-        <div class="checkbox">
-            <label class="control-label">
-                <input type="checkbox"> Production
-            </label>
-        </div>
-        <div class="checkbox">
+        <div class="line"></div>
+        <label class="control-label">Status</label>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Completed
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> In-progress
+                    </label>
+                </div>
 
-            <label class="control-label">
-                <input type="checkbox"> Testing 1
-            </label>
+            </div>
         </div>
-        <div class="checkbox">
-
-            <label class="control-label">
-                <input type="checkbox"> Testing 2
-            </label>
+        <div class="line"></div>
+        <div class="row">
+            <div class="col-xs-12">
+                <label class="control-label">Dates</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Last 24 hours</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Yesterday</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Last 1 week</label>
+                </div>
+            </div>
         </div>
-        <div class="checkbox">
-
-            <label class="control-label">
-                <input type="checkbox"> Hotfix
-            </label>
-        </div>
-        <div class="checkbox">
-
-            <label class="control-label">
-                <input type="checkbox"> Dev
-            </label>
-        </div>
-        <p>Status</p>
-        <div class="checkbox">
-            <label class="control-label">
-                <input type="checkbox"> In-progress
-            </label>
-        </div>
-        <div class="checkbox">
-            <label class="control-label">
-                <input type="checkbox"> Completed
-            </label>
-        </div>
-        <p>Dates</p>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optradio">Last 24 hours</label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optradio">Yesterday</label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optradio">Last 1 week</label>
-        </div>
-        <div class="radio">
+        <!-- <div class="radio">
             <label>
                 <input type="radio" name="optradio">Custom Range</label>
+        </div> -->
+        <div class="line"></div>
+        <div class="row">
+            <div class="col-xs-12 filter-btn-container">
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-default">Reset</button>
+                </div>
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-primary">Apply</button>
+                </div>
+            </div>
         </div>
     </form>
 </div>

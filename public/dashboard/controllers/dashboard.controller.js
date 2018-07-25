@@ -39,8 +39,7 @@
           'ios': 89
         }]
       };
-      // $scope.dashboard_colors = ['#1ABB9C', '#2A3F54'];
-      // $scope.dashboard_colors = ["#96CA59", "#3F97EB", "#72c380", "#6f7a8a", "#f7cb38", "#5a8022", "#2c7282"];
+      $rootScope.show_filter = false;
 
       $scope.dashboard_colors = ["#26B99A", "#34495E", "#5a8022", "#3498DB", "#9B59B6", "#8abb6f", "#759c6a", "#bfd3b7"];
       $scope.labels = ["Release 1", "Release 2", "Release 3", "Release 4", "Release 5"];
@@ -59,6 +58,39 @@
         yAxisID: 'y-axis-1'
       }];
       $scope.options = {
+        'responsive': true,
+        'maintainAspectRatio': true,
+        'layout': {
+          'padding': {
+            'left': 5,
+            'right': 5,
+            'top': 5,
+            'bottom': 5
+          }
+        },
+        'tooltips': {
+          // 'mode': 'nearest',
+          'axis': 'x',
+          'xPadding': 10,
+          'yPadding': 10,
+          'backgroundColor': '#fff',
+          'borderColor': '#ddd',
+          'borderWidth': 1,
+          'titleFontColor': '#9e9e9e',
+          'titleFontSize': 12,
+          'titleFontStyle': 'normal',
+          'titleMarginBottom': 12,
+          'bodyFontColor': '#222',
+          'bodyFontSize': 12,
+          bodySpacing: 4
+        },
+        'legend': {
+          'display': true,
+          'position': 'top',
+          'labels': {
+            'usePointStyle': true,
+          }
+        },
         scales: {
           yAxes: [{
             id: 'y-axis-1',
