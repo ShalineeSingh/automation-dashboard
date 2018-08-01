@@ -8,15 +8,32 @@
         'env_map': $rootScope.maps.env_map,
         'browser_map': $rootScope.maps.browser_map,
         'status_map': $rootScope.maps.status_map,
-        'platform_map': $rootScope.maps.platform_map
+        'platform_map': $rootScope.maps.platform_map,
+        'page': {
+          'current_page': 1,
+          'max_size': 10,
+          'page_size': 10,
+          'sizes': [10, 20, 50]
+        },
+        'sort': {
+          'sort_value': 'id',
+          'sort_type': 'asc'
+        },
+        'sortable_column': {
+          'id': true
+        }
       };
       $rootScope.show_filter = false;
-      var getRunDetails = function () {
+      $scope.getRunDetails = function () {
         $scope.run_details.page_loader = true;
-        runDetailsService.get({
+        var params = {
+          'sort': $scope.run_details.sort.sort_value + ',' + ($scope.run_details.sort.sort_type ? 'desc' : 'asc'),
+          'page': $scope.run_details.page.current_page - 1,
+          'size': $scope.run_details.page.page_size,
           'platform': $scope.run_details.platform,
           'run_id': $scope.run_details.run_id
-        }).$promise.then(function (response) {
+        };
+        runDetailsService.get(params).$promise.then(function (response) {
           $scope.run_details.data = response.responseObject;
         }).catch(function (error) {
           console.log(error);
@@ -66,7 +83,46 @@
           return '-';
         }
       };
-      getRunDetails();
+      $scope.openImage = function () {
+        $scope.error_details.history_data = test_data;
+        var modalInstance = $uibModal.open({
+          templateUrl: '/public/test-run/views/image-modal.html',
+          scope: $scope,
+          size: 'xl',
+        });
+      };
+
+
+      /*------------ pagination functions -------------*/
+      $scope.gotoPage = function () {
+        if ($scope.run_details.page.goto_page_number) {
+          if (($scope.run_details.page.goto_page_number > $scope.run_details.page.max_page) || $scope.run_details.page.goto_page_number < 0) {
+            $scope.run_details.page.goto_page_number = 1;
+          }
+          $scope.run_details.page.current_page = $scope.run_details.page.goto_page_number;
+          $scope.getRunDetails();
+        }
+      };
+      $scope.changePageSize = function () {
+        $scope.run_details.page.current_page = 1;
+        $scope.getRunDetails();
+        delete $scope.run_details.page.goto_page_number;
+      };
+      /*----------  Sorting   ----------*/
+      $scope.sortRunDetails = function (sort_value) {
+        $scope.run_details.sort.sort_value = sort_value;
+        $scope.run_details.sortable_column[sort_value] = !$scope.run_details.sortable_column[sort_value];
+        $scope.run_details.sort.sort_type = $scope.run_details.sortable_column[sort_value];
+        var column_array = Object.keys($scope.run_details.sortable_column);
+        column_array.forEach(function (col) {
+          if (col !== sort_value) {
+            delete $scope.run_details.sortable_column[col];
+          }
+        });
+        $scope.getRunDetails();
+      };
+
+      $scope.getRunDetails();
       // setInterval(getRunDetails, 20 * 1000);
     }]);
 })();

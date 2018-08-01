@@ -61,6 +61,11 @@ body {
   padding: 0;
 }
 
+.checkbox,
+.radio {
+  margin-top: 0;
+}
+
 .top-bar-container {
   top: 0;
   padding: 8px;
@@ -251,4 +256,22 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.pagination-container {
+  .page-size-container {
+    // display: inline-flex;
+    .show-label {
+      top: 5px;
+      padding-right: 15px;
+      position: relative;
+    }
+    .dropdown-menu {
+      min-width: auto;
+    }
+  }
+}
+
+.ui-select-bootstrap .ui-select-choices-row.active>span {
+  background: $secondary;
 }

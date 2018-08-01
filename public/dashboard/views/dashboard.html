@@ -5,25 +5,25 @@
                 <p class="h5">Release {{release.version}}</p>
                 <div class="line"></div>
             </div>
-            <p>
+            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'WEB')">
                 <span>Web</span>
                 <span class="pull-right">{{release.web}}%</span>
 
             </p>
-            <p>
+            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'ANDROID')">
                 <span>Android</span>
                 <span class="pull-right">{{release.android}}%</span>
 
             </p>
-            <p>
+            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'MOBILEWEB')">
                 <span>Mobile Web</span>
                 <span class="pull-right">{{release.mobileweb}}%</span>
             </p>
-            <p>
+            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'IOS')">
                 <span>iOS</span>
                 <span class="pull-right">{{release.ios}}%</span>
             </p>
-            <p>
+            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'API')">
                 <span>API</span>
                 <span class="pull-right">{{release.api}}%</span>
             </p>

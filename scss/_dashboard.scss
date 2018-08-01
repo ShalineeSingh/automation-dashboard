@@ -6,17 +6,29 @@
   @media (min-width: 992px) {
     width: 20%;
   }
+  margin-bottom: 10px;
   &:before {
     content: "";
     position: absolute;
     left: 0;
-    height: 160px;
+    height: 145px;
     border-left: 2px solid #ADB2B5;
     margin-top: 10px;
   }
   &:first-child {
     &::before {
       border-left: 0;
+    }
+  }
+  .test-stats-row {
+    margin-bottom: 3px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .test-stats-header {
+    .h5 {
+      margin-top: 0;
     }
   }
 }

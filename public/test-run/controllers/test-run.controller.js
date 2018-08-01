@@ -1,29 +1,51 @@
 (function () {
   angular.module('basic.platform')
-    .controller('testRunCtrl', ['$scope', '$rootScope', '$state', 'testRunService', function ($scope, $rootScope, $state, testRunService) {
+    .controller('testRunCtrl', ['$scope', '$rootScope', '$state', 'testRunService', 'releaseListService', function ($scope, $rootScope, $state, testRunService, releaseListService) {
       $scope.test_run = {
         'platform_map': $rootScope.maps.platform_map,
         'env_map': $rootScope.maps.env_map,
         'page': {
-          'current_page': 0,
+          'current_page': 1,
           'max_size': 10,
-          'page_size': 10
+          'page_size': 10,
+          'sizes': [10, 20, 50]
         },
+        'sort': {
+          'sort_value': 'id',
+          'sort_type': 'asc'
+        },
+        'sortable_column': {
+          'id': true
+        },
+        'environment_list': Object.keys($rootScope.maps.env_map)
       };
       $rootScope.filter_overlay = false;
       $rootScope.show_filter = true;
 
-      var getTestRuns = function () {
+      $scope.getTestRuns = function () {
         $scope.test_run.page_loader = true;
-        testRunService.get().$promise.then(function (response) {
-          $scope.test_run.list = response.responseObject.data;
-          $scope.test_run.page.total_items = response.responseObject.totalElements;
+        var params = {
+          'sort': $scope.test_run.sort.sort_value + ',' + ($scope.test_run.sort.sort_type ? 'desc' : 'asc'),
+          'page': $scope.test_run.page.current_page - 1,
+          'size': $scope.test_run.page.page_size,
+        };
+        testRunService.get(params).$promise.then(function (response) {
+          $scope.test_run.list = response.responseObject;
+          $scope.test_run.page.total_items = response.total_elements;
           $scope.test_run.page.max_page = Math.ceil($scope.test_run.page.total_items / $scope.test_run.page.page_size);
           generateProgressBar();
         }).catch(function (error) {
           console.log(error);
         }).finally(function () {
           $scope.test_run.page_loader = false;
+        });
+      };
+
+      $scope.getReleaseList = function () {
+        releaseListService.get().$promise.then(function (response) {
+          $scope.test_run.release_list = response.responseObject;
+        }).catch(function (error) {
+          console.log(error);
         });
       };
       var generateProgressBar = function () {
@@ -44,17 +66,36 @@
       };
 
       /*------------ pagination functions -------------*/
-      // $scope.gotoPage = function () {
-      //   if ($scope.survey_list.page.goto_page_number) {
-      //     if (($scope.survey_list.page.goto_page_number > $scope.survey_list.page.max_page) || $scope.survey_list.page.goto_page_number < 0) {
-      //       $scope.survey_list.page.goto_page_number = 1;
-      //     }
-      //     $scope.survey_list.page.current_page = $scope.survey_list.page.goto_page_number;
-      //     $scope.survey_list.getSurveyLists();
-      //   }
-      // };
+      $scope.gotoPage = function () {
+        if ($scope.test_run.page.goto_page_number) {
+          if (($scope.test_run.page.goto_page_number > $scope.test_run.page.max_page) || $scope.test_run.page.goto_page_number < 0) {
+            $scope.test_run.page.goto_page_number = 1;
+          }
+          $scope.test_run.page.current_page = $scope.test_run.page.goto_page_number;
+          $scope.getTestRuns();
+        }
+      };
+      $scope.changePageSize = function () {
+        $scope.test_run.page.current_page = 1;
+        $scope.getTestRuns();
+        delete $scope.test_run.page.goto_page_number;
+      };
+      /*----------  Sorting   ----------*/
+      $scope.sortTestRuns = function (sort_value) {
+        $scope.test_run.sort.sort_value = sort_value;
+        $scope.test_run.sortable_column[sort_value] = !$scope.test_run.sortable_column[sort_value];
+        $scope.test_run.sort.sort_type = $scope.test_run.sortable_column[sort_value];
+        var column_array = Object.keys($scope.test_run.sortable_column);
+        column_array.forEach(function (col) {
+          if (col !== sort_value) {
+            delete $scope.test_run.sortable_column[col];
+          }
+        });
+        $scope.getTestRuns();
+      };
 
-      getTestRuns();
+      $scope.getTestRuns();
+      $scope.getReleaseList();
       // setInterval(getTestRuns, 20 * 1000);
     }]);
 })();

@@ -1,6 +1,6 @@
 (function () {
   angular.module('app.basic')
-    .controller('dashboardCtrl', ['$scope', '$rootScope', '$filter', function ($scope, $rootScope, $filter) {
+    .controller('dashboardCtrl', ['$scope', '$rootScope', '$state', '$filter', function ($scope, $rootScope, $state, $filter) {
       $scope.dashboard = {
         'release_data': [{
           'version': '1.5',
@@ -105,6 +105,12 @@
             //  tension: 0,
           }
         }
+      };
+      $scope.goToState = function (release, platform) {
+        $state.go('main.app.basic.platform.id', {
+          'release': release,
+          'platform': platform
+        });
       };
     }]);
 })();

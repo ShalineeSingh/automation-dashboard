@@ -29,6 +29,12 @@
   width: auto;
   max-height: 90vh;
   overflow-y: scroll;
+  .nav-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+  }
   .test-steps-list {
     li {
       margin-bottom: 10px;
@@ -37,5 +43,6 @@
   }
   .screenshot-image {
     min-height: 75vh;
+    overflow: scroll;
   }
 }

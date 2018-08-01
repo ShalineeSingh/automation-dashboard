@@ -14,7 +14,7 @@
           },
         })
         .state('main.app.basic.platform.id', {
-          url: '/details',
+          url: '/details?release&platform',
           views: {
             'platformContent': {
               templateUrl: '/public/test-run/views/test-run.html',

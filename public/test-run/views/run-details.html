@@ -17,16 +17,59 @@
     <div ng-include="'/public/test-run/views/_run-summary.html'"></div>
     <!-- table -->
     <div class="row">
-        <div class="col-md-12 test-run-table-wrapper run-details-table" ng-class="{'white-bg' : run_details.page_loader}">
+        <div class="col-md-12 test-run-table-wrapper run-details-table">
+            <div class="col-sm-12 white-bg loader-container" ng-if="run_details.page_loader">
+                <div class="page-loader"></div>
+            </div>
             <div class="table-responsive">
-                <div class="page-loader" ng-if="run_details.page_loader"></div>
+                <!-- <div class="page-loader" ng-if="run_details.page_loader"></div> -->
                 <table class="table table-hover white-bg" ng-if="!run_details.page_loader">
                     <tr>
-                        <th>S.No</th>
-                        <th class="test-name-col">Test Name</th>
-                        <th class="status-col">Status</th>
-                        <th class="duration-col">Duration</th>
-                        <th>Error Message</th>
+                        <th class="run-id-col" ng-click="sortRunDetails('id')" ng-class="{'ascending': run_details.sortable_column.id !== undefined && run_details.sortable_column.id
+                        && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.id !== undefined &&!run_details.sortable_column.id
+                        && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                            <span>Test ID</span>
+                            <span class="header-icons">
+                                <i class="fa fa-sort-up"></i>
+                                <i class="fa fa-sort-down"></i>
+                            </span>
+                        </th>
+                        <th class="test-name-col" ng-click="sortRunDetails('test_case_name')" ng-class="{'ascending': run_details.sortable_column.test_case_name !== undefined && run_details.sortable_column.test_case_name
+                    && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.test_case_name !== undefined &&!run_details.sortable_column.test_case_name
+                    && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                            <span>Test Name</span>
+                            <span class="header-icons">
+                                <i class="fa fa-sort-up"></i>
+                                <i class="fa fa-sort-down"></i>
+                            </span>
+                        </th>
+                        <th class="status-col" ng-click="sortRunDetails('status')" ng-class="{'ascending': run_details.sortable_column.status !== undefined && run_details.sortable_column.status
+                    && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.status !== undefined &&!run_details.sortable_column.status
+                    && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                            <span>Status</span>
+                            <span class="header-icons">
+                                <i class="fa fa-sort-up"></i>
+                                <i class="fa fa-sort-down"></i>
+                            </span>
+                        </th>
+                        <th class="duration-col" ng-click="sortRunDetails('run_id')" ng-class="{'ascending': run_details.sortable_column.run_id !== undefined && run_details.sortable_column.run_id
+                    && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.run_id !== undefined &&!run_details.sortable_column.run_id
+                    && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                            <span>Duration</span>
+                            <span class="header-icons">
+                                <i class="fa fa-sort-up"></i>
+                                <i class="fa fa-sort-down"></i>
+                            </span>
+                        </th>
+                        <th ng-click="sortRunDetails('error_message')" ng-class="{'ascending': run_details.sortable_column.error_message !== undefined && run_details.sortable_column.error_message
+                    && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.error_message !== undefined &&!run_details.sortable_column.error_message
+                    && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                            <span>Error Message</span>
+                            <span class="header-icons">
+                                <i class="fa fa-sort-up"></i>
+                                <i class="fa fa-sort-down"></i>
+                            </span>
+                        </th>
                         <th>Details</th>
                         <!-- <th>History</th> -->
                     </tr>
@@ -61,6 +104,24 @@
                     </tr>
                 </table>
             </div>
+        </div>
+    </div>
+</div>
+<!-- pagination -->
+<div class="pagination-container" ng-if="!run_details.page_loader">
+    <div class="col-sm-12">
+        <div class="col-sm-10 text-center">
+            <ul uib-pagination total-items="run_details.page.total_items" ng-model="run_details.page.current_page" max-size="run_details.page.max_size"
+                items-per-page="run_details.page.page_size" class="pagination" boundary-link-numbers="true" ng-change="getRunDetails()"></ul>
+        </div>
+        <div class="col-sm-1 page-size-container pull-right">
+            <!-- <span class="show-label">Show</span> -->
+            <ui-select ng-model="run_details.page.page_size" search-enabled="false" ng-change="changePageSize()">
+                <ui-select-match placeholder="Size">{{$select.selected}}</ui-select-match>
+                <ui-select-choices repeat="size in run_details.page.sizes">
+                    <div class="ui-select-choices-text">{{size}}</div>
+                </ui-select-choices>
+            </ui-select>
         </div>
     </div>
 </div>

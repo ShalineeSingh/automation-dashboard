@@ -29,6 +29,7 @@
     "path": "^0.12.7",
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
+    "ui-select": "^0.19.8",
     "utf8": "^2.1.2"
   },
   "devDependencies": {

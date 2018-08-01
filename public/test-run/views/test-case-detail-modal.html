@@ -22,8 +22,9 @@
             </ol>
         </div>
         <div class="modal-body" ng-if="error_details.active_tab === 'screenshot'">
-            <div class="screenshot-image">
+            <div class="screenshot-image cursor-pointer">
                 <img ng-src="{{error_details.test_data.screenshot}}">
+                <!-- <img ng-click="openImage()" src="http://res.cloudinary.com/dqnsruihk/image/upload/v1532592350/web/rmwjtwnqgxwdnrpko0sr.png"> -->
             </div>
         </div>
         <div class="modal-body" ng-if="error_details.active_tab === 'test_data'">
