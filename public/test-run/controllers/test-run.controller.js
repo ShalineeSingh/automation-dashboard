@@ -17,7 +17,14 @@
         'sortable_column': {
           'id': true
         },
-        'environment_list': Object.keys($rootScope.maps.env_map)
+        'environment_list': Object.keys($rootScope.maps.env_map),
+        'platform_list': Object.keys($rootScope.maps.platform_map),
+        'filter': {
+          'platform': $state.params.platform,
+          'release': {
+            'releaseName': $state.params.release
+          }
+        }
       };
       $rootScope.filter_overlay = false;
       $rootScope.show_filter = true;
@@ -28,6 +35,10 @@
           'sort': $scope.test_run.sort.sort_value + ',' + ($scope.test_run.sort.sort_type ? 'desc' : 'asc'),
           'page': $scope.test_run.page.current_page - 1,
           'size': $scope.test_run.page.page_size,
+          'platform': $scope.test_run.filter.platform,
+          'release': $scope.test_run.filter.release ? $scope.test_run.filter.release.releaseName : '',
+          'suiteName': $scope.test_run.filter.suite_name,
+          'env': $scope.test_run.filter.environment
         };
         testRunService.get(params).$promise.then(function (response) {
           $scope.test_run.list = response.responseObject;
@@ -94,6 +105,16 @@
         $scope.getTestRuns();
       };
 
+      $scope.resetFilters = function () {
+        $rootScope.filter_overlay = false;
+        delete $scope.test_run.filter;
+        $scope.getTestRuns();
+      };
+      $scope.applyFilters = function () {
+        $scope.test_run.page.current_page = 1;
+        $scope.getTestRuns();
+        $rootScope.filter_overlay = false;
+      };
       $scope.getTestRuns();
       $scope.getReleaseList();
       // setInterval(getTestRuns, 20 * 1000);

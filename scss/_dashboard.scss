@@ -8,6 +8,12 @@
   }
   margin-bottom: 10px;
   min-height: 150px;
+  .dashboard-date {
+    font-size: 12px;
+  }
+  .dashboard-stats-table {
+    width: 100%;
+  }
   &:before {
     content: "";
     position: absolute;

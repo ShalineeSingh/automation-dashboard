@@ -52,14 +52,8 @@
                                 <i class="fa fa-sort-down"></i>
                             </span>
                         </th>
-                        <th class="duration-col" ng-click="sortRunDetails('run_id')" ng-class="{'ascending': run_details.sortable_column.run_id !== undefined && run_details.sortable_column.run_id
-                    && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.run_id !== undefined &&!run_details.sortable_column.run_id
-                    && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                        <th class="duration-col">
                             <span>Duration</span>
-                            <span class="header-icons">
-                                <i class="fa fa-sort-up"></i>
-                                <i class="fa fa-sort-down"></i>
-                            </span>
                         </th>
                         <th ng-click="sortRunDetails('error_message')" ng-class="{'ascending': run_details.sortable_column.error_message !== undefined && run_details.sortable_column.error_message
                     && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.error_message !== undefined &&!run_details.sortable_column.error_message

@@ -2,13 +2,41 @@
     <div class="col-sm-12">
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" ng-repeat="release in dashboard.release_data">
             <div class="test-stats-header">
-                <p class="h5">Release {{release.release}}</p>
+                <span class="h5">Release {{release.release}}</span>
+                <p class="text-muted dashboard-date">{{release.start_time | date:'d/M/yy h:mm a'}} - {{release.end_time | date:'d/M/yy h:mm a'}}</p>
                 <div class="line"></div>
             </div>
-            <p class="test-stats-row cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
-                <span>{{stats.platformType}}</span>
-                <span class="pull-right">{{stats.passedPercentage}}%</span>
+            <table class="dashboard-stats-table">
+                <tr class="text-muted dashboard-date">
+                    <td>Platform</td>
+                    <td class="text-center">Total</td>
+                    <td class="text-center">Passed</td>
+                </tr>
+                <tr class="test-stats-row cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
+                    <td>
+                        {{dashboard.platform_map[stats.platformType]}}
+                    </td>
+                    <td class="text-center">
+                        {{stats.total_tests}}
+                    </td>
+                    <td class="text-center">
+                        {{stats.passedPercentage}}%
+                    </td>
+                </tr>
+            </table>
+            <!-- <p class="text-muted dashboard-date">
+                <span>Platform</span>
+                <span class="total-tests">Total</span>
+                <span class="pull-right">Passed</span>
             </p>
+            <p class="test-stats-row cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
+                <span>{{dashboard.platform_map[stats.platformType]}}</span>
+                <i>
+                    <span class="text-muted total-tests">({{stats.total_tests}})</span>
+                </i>
+                <span class="pull-right">{{stats.passedPercentage}}%</span>
+
+            </p> -->
         </div>
     </div>
     <div class="col-sm-12 chart-container">

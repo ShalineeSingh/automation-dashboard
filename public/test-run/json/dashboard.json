@@ -2,8 +2,8 @@
   "timeStamp": "01-08-201802: 10: 33",
   "responseObject": [{
       "release": "Rel K1",
-      "start_time": "2018-07-18T22: 51: 57.827Z",
-      "end_time": "2018-07-26T10: 06: 59.666Z",
+      "start_time": "2018-07-18T22:51:57.827Z",
+      "end_time": "2018-07-26T10:06:59.666Z",
       "releaseStats": [{
           "platformType": "API",
           "total_tests": 5,
@@ -22,8 +22,8 @@
     },
     {
       "release": "Rel1",
-      "start_time": "2018-07-17T09: 44: 39.355Z",
-      "end_time": "2018-07-26T07: 52: 24.098Z",
+      "start_time": "2018-07-17T09:44:39.355Z",
+      "end_time": "2018-07-26T07:52:24.098Z",
       "releaseStats": [{
         "platformType": "WEB",
         "total_tests": 15,

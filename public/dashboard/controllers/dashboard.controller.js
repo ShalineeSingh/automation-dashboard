@@ -1,6 +1,6 @@
 (function () {
   angular.module('app.basic')
-    .controller('dashboardCtrl', ['$scope', '$rootScope', '$state', 'dashboardService', function ($scope, $rootScope, $state, dashboardService) {
+    .controller('dashboardCtrl', ['$scope', '$rootScope', '$state', '$filter', 'dashboardService', function ($scope, $rootScope, $state, $filter, dashboardService) {
       var graph_values = [
         [null, null, null, null, null],
         [null, null, null, null, null],
@@ -12,6 +12,7 @@
       $rootScope.show_filter = false;
       $scope.dashboard = {
         'chart_colors': ["#26B99A", "#34495E", "#5a8022", "#3498DB", "#9B59B6", "#8abb6f", "#759c6a", "#bfd3b7"],
+        'chart_labels': [],
         'chart_options': {
           'responsive': true,
           'maintainAspectRatio': true,
@@ -68,6 +69,7 @@
           'MOBILEWEB': 3,
           'IOS': 4
         },
+        'platform_map': $rootScope.maps.platform_map,
         'chart_series': ['API', 'Web', 'Android', 'MobileWeb', 'iOS']
       };
 
@@ -115,6 +117,7 @@
       var getGraphValues = function (release_array) {
         release_array.forEach(function (release, index) {
           var release_index = index;
+          $scope.dashboard.chart_labels.push(release.release);
           release.releaseStats.forEach(function (platform) {
             if (platform.platformType === 'API')
               graph_values[$scope.dashboard.platform_sequence.API][release_index] = platform.passedPercentage;

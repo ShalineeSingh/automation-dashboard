@@ -9,11 +9,14 @@
   transition: all linear 0.2s;
   .filter-container {
     max-height: calc(100vh - 45px);
+    min-height: calc(100vh - 45px);
     top: 10px;
     position: relative;
     font-size: 13px;
     overflow-y: scroll;
     .filter-btn-container {
+      position: absolute;
+      bottom: 15px;
       padding-bottom: 15px;
     }
   }
