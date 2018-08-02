@@ -2,36 +2,18 @@
     <div class="col-sm-12">
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" ng-repeat="release in dashboard.release_data">
             <div class="test-stats-header">
-                <p class="h5">Release {{release.version}}</p>
+                <p class="h5">Release {{release.release}}</p>
                 <div class="line"></div>
             </div>
-            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'WEB')">
-                <span>Web</span>
-                <span class="pull-right">{{release.web}}%</span>
-
-            </p>
-            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'ANDROID')">
-                <span>Android</span>
-                <span class="pull-right">{{release.android}}%</span>
-
-            </p>
-            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'MOBILEWEB')">
-                <span>Mobile Web</span>
-                <span class="pull-right">{{release.mobileweb}}%</span>
-            </p>
-            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'IOS')">
-                <span>iOS</span>
-                <span class="pull-right">{{release.ios}}%</span>
-            </p>
-            <p class="test-stats-row cursor-pointer" ng-click="goToState(release.version, 'API')">
-                <span>API</span>
-                <span class="pull-right">{{release.api}}%</span>
+            <p class="test-stats-row cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
+                <span>{{stats.platformType}}</span>
+                <span class="pull-right">{{stats.passedPercentage}}%</span>
             </p>
         </div>
     </div>
     <div class="col-sm-12 chart-container">
-        <canvas id="line" class="chart chart-line white-bg" height="100" chart-data="data" chart-labels="labels" chart-series="series"
-            chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick" chart-colors="dashboard_colors">
+        <canvas id="line" class="chart chart-line white-bg" height="100" chart-data="dashboard.chart_data" chart-labels="dashboard.chart_labels"
+            chart-series="dashboard.chart_series" chart-options="dashboard.chart_options" chart-colors="dashboard.chart_colors">
         </canvas>
     </div>
 </div>
