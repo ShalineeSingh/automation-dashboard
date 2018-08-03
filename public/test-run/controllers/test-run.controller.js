@@ -107,7 +107,8 @@
 
       $scope.resetFilters = function () {
         $rootScope.filter_overlay = false;
-        delete $scope.test_run.filter;
+        $scope.test_run.filter = {};
+        $state.transitionTo('main.app.basic.platform.id');
         $scope.getTestRuns();
       };
       $scope.applyFilters = function () {

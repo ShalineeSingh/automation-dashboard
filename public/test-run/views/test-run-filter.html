@@ -1,5 +1,5 @@
 <div class="filter-container col-sm-12">
-    <form>
+    <form ng-submit="applyFilters()">
         <div class="form-group">
             <label class="control-label" for="suite-name">Suite Name</label>
             <input name="suite-name" type="text" class="form-control" ng-model="test_run.filter.suite_name">
@@ -82,7 +82,7 @@
                     <button type="button" ng-click="resetFilters()" class="btn btn-default">Reset</button>
                 </div>
                 <div class="col-xs-6">
-                    <button ng-click="applyFilters()" type="button" class="btn btn-primary">Apply</button>
+                    <button type="submit" class="btn btn-primary">Apply</button>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 <div class="col-sm-12">
     <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
         <div class="test-stats-panel white-bg">
-            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
             <table class="stats-table" ng-if="!run_details.page_loader">
                 <tr>
                     <td>Run ID:</td>
@@ -24,7 +24,7 @@
     </div>
     <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
         <div class="test-stats-panel white-bg">
-            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
             <div ng-if="!run_details.page_loader">
                 <span>PASSED TEST RUNS</span>
                 <p>
@@ -60,7 +60,7 @@
     </div>
     <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
         <div class="test-stats-panel white-bg">
-            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
             <div ng-if="!run_details.page_loader">
                 <table class="stats-table">
                     <tr>
@@ -82,7 +82,7 @@
     </div>
     <div class="col-sm-3" ng-if="run_details.platform ==='WEB'">
         <div class="test-stats-panel white-bg">
-            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
             <table class="stats-table" ng-if="!run_details.page_loader">
                 <tr>
                     <td>Browser:</td>

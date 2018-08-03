@@ -16,11 +16,10 @@
           'sizes': [10, 20, 50]
         },
         'sort': {
-          'sort_value': 'id',
-          'sort_type': 'asc'
+          'sort_value': 'status',
         },
         'sortable_column': {
-          'id': true
+          'status': true
         }
       };
       $rootScope.show_filter = false;
@@ -35,6 +34,8 @@
         };
         runDetailsService.get(params).$promise.then(function (response) {
           $scope.run_details.data = response.responseObject;
+          $scope.run_details.page.total_items = response.total_elements;
+          $scope.run_details.page.max_page = Math.ceil($scope.run_details.page.total_items / $scope.run_details.page.page_size);
         }).catch(function (error) {
           console.log(error);
         }).finally(function () {

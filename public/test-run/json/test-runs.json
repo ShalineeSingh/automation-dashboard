@@ -17,7 +17,7 @@
     {
       "id": 402,
       "platform": "WEB",
-      "suiteName": "Tiket Sanity Test",
+      "suiteName": "Tiket Smoke Test",
       "release": "Rel 1",
       "env": "PRODUCTION",
       "total_tests": 3,
