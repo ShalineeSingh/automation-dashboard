@@ -137,6 +137,9 @@ body {
         text-decoration: none;
       }
     }
+    .badge {
+      background-color: $secondary;
+    }
   }
   &.closed {
     @media (min-width: 992px) {
