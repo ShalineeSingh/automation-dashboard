@@ -1,17 +1,17 @@
 (function () {
   'use strict';
   angular.module('automation.app')
-    // .factory('testRunService', ['$resource', function ($resource) {
-    //   return $resource('http://35a2c213.ngrok.io/testrun/list');
+    // .factory('testRunService', ['$resource', 'CONF',function ($resource, CONF) {
+    //   return $resource(CONF.URL + '/testrun/list');
     // }])
-    // .factory('runDetailsService', ['$resource', function ($resource) {
-    //   return $resource('http://35a2c213.ngrok.io/testrun/:platform/:run_id');
+    // .factory('runDetailsService', ['$resource', 'CONF',function ($resource, CONF) {
+    //   return $resource(CONF.URL + '/testrun/:platform/:run_id');
     // }])
-    // .factory('releaseListService', ['$resource', function ($resource) {
-    //   return $resource('http://35a2c213.ngrok.io/testrun/releases');
+    // .factory('releaseListService', ['$resource','CONF', function ($resource, CONF) {
+    //   return $resource(CONF.URL + '/testrun/releases');
     // }])
-    // .factory('dashboardService', ['$resource', function ($resource) {
-    //   return $resource('http://35a2c213.ngrok.io/dashboard/history');
+    // .factory('dashboardService', ['$resource','CONF', function ($resource, CONF) {
+    //   return $resource(CONF.URL + '/dashboard/history');
     // }]);
     .factory('testRunService', ['$resource', function ($resource) {
       return $resource('/public/test-run/json/test-runs.json');
