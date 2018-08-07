@@ -243,6 +243,17 @@ body {
   }
 }
 
+.loader-container {
+  min-height: 60vh;
+}
+
+.no-data-container {
+  min-height: 60vh;
+  .text-wrapper {
+    padding-top: 30vh;
+  }
+}
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -262,6 +273,7 @@ body {
 }
 
 .pagination-container {
+  margin-top: 25px;
   .page-size-container {
     // display: inline-flex;
     .show-label {

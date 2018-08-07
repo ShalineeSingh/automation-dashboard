@@ -2,7 +2,7 @@
     <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
         <div class="test-stats-panel white-bg">
             <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
-            <table class="stats-table" ng-if="!run_details.page_loader">
+            <table class="stats-table" ng-if="!run_details.page_loader && run_details.data.testRunDetails">
                 <tr>
                     <td>Run ID:</td>
                     <td>{{run_details.data.testRunDetails.id}}</td>
@@ -20,12 +20,15 @@
                     <td>{{run_details.env_map[run_details.data.testRunDetails.env]}}</td>
                 </tr>
             </table>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
         </div>
     </div>
     <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
         <div class="test-stats-panel white-bg">
             <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
-            <div ng-if="!run_details.page_loader">
+            <div ng-if="!run_details.page_loader && run_details.data.testRunDetails">
                 <span>PASSED TEST RUNS</span>
                 <p>
                     <span class="h1">{{(run_details.data.testRunDetails.passed_tests/run_details.data.testRunDetails.total_tests)*100 | number:2}}</span>
@@ -56,12 +59,15 @@
                 <div class="line"></div>
                 <p>({{run_details.data.testRunDetails.passed_tests}} Out of {{run_details.data.testRunDetails.total_tests}})</p>
             </div>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
         </div>
     </div>
     <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
         <div class="test-stats-panel white-bg">
             <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
-            <div ng-if="!run_details.page_loader">
+            <div ng-if="!run_details.page_loader && run_details.data.testRunDetails">
                 <table class="stats-table">
                     <tr>
                         <td>Start Time:</td>
@@ -78,12 +84,15 @@
                 <p>Elapsed Time</p>
                 <p class="success-number h3">{{getTimeFromSecs(run_details.data.testRunDetails.elapsedTime)}}</p>
             </div>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
         </div>
     </div>
     <div class="col-sm-3" ng-if="run_details.platform ==='WEB'">
         <div class="test-stats-panel white-bg">
             <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
-            <table class="stats-table" ng-if="!run_details.page_loader">
+            <table class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
                 <tr>
                     <td>Browser:</td>
                     <td>{{run_details.browser_map[run_details.data.testRunDetails.browser]}}</td>
@@ -97,12 +106,15 @@
                     <td>{{run_details.data.testRunDetails.os_name}}</td>
                 </tr>
             </table>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
         </div>
     </div>
     <div class="col-sm-3" ng-if="run_details.platform ==='ANDROID' || run_details.platform ==='IOS'">
         <div class="test-stats-panel white-bg">
             <div class="page-loader small" ng-if="run_details.page_loader"></div>
-            <table class="stats-table" ng-if="!run_details.page_loader">
+            <table class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
                 <tr>
                     <td>Device Id:</td>
                     <td>{{run_details.data.testRunDetails.deviceID}}</td>
@@ -121,7 +133,7 @@
     <div class="col-sm-3" ng-if="run_details.platform ==='MOBILEWEB'">
         <div class="test-stats-panel white-bg">
             <div class="page-loader small" ng-if="run_details.page_loader"></div>
-            <table class="stats-table" ng-if="!run_details.page_loader">
+            <table class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
                 <tr>
                     <td>Browser:</td>
                     <td>{{run_details.data.testRunDetails.deviceID}}</td>
@@ -147,6 +159,9 @@
                     <td>{{run_details.data.testRunDetails.deviceName}}</td>
                 </tr>
             </table>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
         </div>
     </div>
 </div>

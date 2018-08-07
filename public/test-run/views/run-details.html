@@ -17,13 +17,13 @@
     <div ng-include="'/public/test-run/views/_run-summary.html'"></div>
     <!-- table -->
     <div class="row">
-        <div class="col-md-12 test-run-table-wrapper run-details-table">
-            <div class="col-sm-12 white-bg loader-container" ng-if="run_details.page_loader">
-                <div class="page-loader"></div>
-            </div>
+        <div class="col-sm-12 white-bg loader-container" ng-if="run_details.page_loader">
+            <div class="page-loader"></div>
+        </div>
+        <div class="col-md-12 test-run-table-wrapper run-details-table" ng-if="!run_details.page_loader && run_details.data.testCaseResultDetails">
             <div class="table-responsive">
                 <!-- <div class="page-loader" ng-if="run_details.page_loader"></div> -->
-                <table class="table table-hover white-bg" ng-if="!run_details.page_loader">
+                <table class="table table-hover white-bg">
                     <tr>
                         <th class="run-id-col" ng-click="sortRunDetails('id')" ng-class="{'ascending': run_details.sortable_column.id !== undefined && run_details.sortable_column.id
                         && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.id !== undefined &&!run_details.sortable_column.id
@@ -85,7 +85,7 @@
                         </td>
                         <td>{{data.errorMessage}}</td>
                         <td>
-                            <button type="button" class="btn btn-primary" ng-click="openTestDetails(data)">Details</button>
+                            <button type="button" class="btn btn-sm btn-primary" ng-click="openTestDetails(data)">Details</button>
                         </td>
                         <!-- <td>
                         <button type="button" class="btn btn-primary" ng-click="openRunHistoryDetails(data)">Hisory</button>
@@ -102,20 +102,27 @@
     </div>
 </div>
 <!-- pagination -->
-<div class="pagination-container" ng-if="!run_details.page_loader">
-    <div class="col-sm-12">
-        <div class="col-sm-10 text-center">
-            <ul uib-pagination total-items="run_details.page.total_items" ng-model="run_details.page.current_page" max-size="run_details.page.max_size"
-                items-per-page="run_details.page.page_size" class="pagination" boundary-link-numbers="true" ng-change="getRunDetails()"></ul>
+<div class="row">
+    <div class="col-sm-12 pagination-container" ng-if="!run_details.page_loader && run_details.data.testCaseResultDetails">
+        <div class="col-sm-12">
+            <div class="col-sm-10 text-center">
+                <ul uib-pagination total-items="run_details.page.total_items" ng-model="run_details.page.current_page" max-size="run_details.page.max_size"
+                    items-per-page="run_details.page.page_size" class="pagination" boundary-link-numbers="true" ng-change="getRunDetails()"></ul>
+            </div>
+            <div class="col-sm-1 page-size-container pull-right">
+                <!-- <span class="show-label">Show</span> -->
+                <ui-select ng-model="run_details.page.page_size" search-enabled="false" ng-change="changePageSize()">
+                    <ui-select-match placeholder="Size">{{$select.selected}}</ui-select-match>
+                    <ui-select-choices repeat="size in run_details.page.sizes">
+                        <div class="ui-select-choices-text">{{size}}</div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
         </div>
-        <div class="col-sm-1 page-size-container pull-right">
-            <!-- <span class="show-label">Show</span> -->
-            <ui-select ng-model="run_details.page.page_size" search-enabled="false" ng-change="changePageSize()">
-                <ui-select-match placeholder="Size">{{$select.selected}}</ui-select-match>
-                <ui-select-choices repeat="size in run_details.page.sizes">
-                    <div class="ui-select-choices-text">{{size}}</div>
-                </ui-select-choices>
-            </ui-select>
-        </div>
+    </div>
+</div>
+<div class="col-xs-12" ng-if="!run_details.page_loader && !run_details.data.testCaseResultDetails">
+    <div class="no-data-container white-bg">
+        <p class="text-center h3 text-wrapper">No data found</p>
     </div>
 </div>
