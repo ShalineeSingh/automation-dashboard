@@ -3,7 +3,58 @@
         <div class="page-loader"></div>
     </div>
     <div class="col-sm-12" ng-if="!dashboard.page_loader">
-        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" ng-repeat="release in dashboard.release_data">
+        <div class="col-md-2 col-sm-4 col-xs-12 tile_stats_count white-bg" ng-repeat="release in dashboard.release_data">
+            <div class="row stats-count-container">
+                <div class="col-xs-6 date-container">
+                    {{release.start_time | date:'MMM d, y'}}
+                </div>
+                <div class="col-xs-6 release-data-container">
+                    <b>
+                        <span>{{release.release}}</span>
+                    </b>
+                    <p class="text-muted small-font-12"> {{release.end_time | date:'MMM d, y'}}</p>
+                </div>
+            </div>
+            <div class="row stats-count-container">
+                <table class="dashboard-stats-table">
+                    <tr class="text-muted dashboard-date">
+                        <td class="small-font-12">Platform</td>
+                        <td class="text-center small-font-12">Total</td>
+                        <td class="text-center small-font-12">Passed</td>
+                    </tr>
+                    <tr class="test-stats-row cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
+                        <td>
+                            <span class="dot" ng-class="stats.platformType"></span>
+                            {{dashboard.platform_map[stats.platformType]}}
+                        </td>
+                        <td class="text-center">
+                            {{stats.total_tests}}
+                        </td>
+                        <td class="text-center">
+                            <span>{{stats.passedPercentage}}
+                                <span class="small-font-10 text-muted">%</span>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- <div class="row stats-count-container">
+                <div class="col-xs-6 muted-col" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
+                    <i>
+                        <span class="small-font-12 text-muted">Total:</span>
+                    </i>
+                    <span class="data-point"> {{stats.total_tests}}</span>
+                    <p>
+                        <i>
+                            <span class="small-font-12 text-muted">Passed:</span>
+                        </i>
+                        <span class="data-point"> {{stats.passedPercentage}}%</span>
+                    </p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count" ng-repeat="release in dashboard.release_data">
             <div class="test-stats-header">
                 <span class="h5">Release {{release.release}}</span>
                 <p class="text-muted dashboard-date">{{release.start_time | date:'MMM d, y'}} - {{release.end_time | date:'MMM d, y'}}</p>
@@ -27,21 +78,8 @@
                     </td>
                 </tr>
             </table>
-            <!-- <p class="text-muted dashboard-date">
-                <span>Platform</span>
-                <span class="total-tests">Total</span>
-                <span class="pull-right">Passed</span>
-            </p>
-            <p class="test-stats-row cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
-                <span>{{dashboard.platform_map[stats.platformType]}}</span>
-                <i>
-                    <span class="text-muted total-tests">({{stats.total_tests}})</span>
-                </i>
-                <span class="pull-right">{{stats.passedPercentage}}%</span>
-
-            </p> -->
         </div>
-    </div>
+    </div> -->
     <div class="col-sm-12 chart-container" ng-if="!dashboard.page_loader && dashboard.release_data">
         <canvas id="line" class="chart chart-line white-bg" height="100" chart-data="dashboard.chart_data" chart-labels="dashboard.chart_labels"
             chart-series="dashboard.chart_series" chart-options="dashboard.chart_options" chart-colors="dashboard.chart_colors">

@@ -3,39 +3,93 @@
 }
 
 .tile_stats_count {
+  margin: 0 10px 10px 0;
   @media (min-width: 992px) {
-    width: 20%;
+    width: calc((100% / 5) - 10px);
+    box-shadow: 1px 2px 2px #DDD;
   }
-  margin-bottom: 10px;
-  min-height: 150px;
-  .dashboard-date {
-    font-size: 12px;
-  }
-  .dashboard-stats-table {
-    width: 100%;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 145px;
-    border-left: 2px solid #ADB2B5;
-    margin-top: 10px;
+  .stats-count-container {
+    padding: 10px 10px 0 10px;
+    margin-bottom: 10px;
+    .date-container {
+      font-size: 19px;
+      padding: 15px;
+      background-color: #f7f7f7;
+      box-shadow: 1px 2px 2px #DDD;
+      border-radius: 4px;
+    }
+    .data-point {
+      font-size: 18px;
+    }
+    .dot {
+      height: 9px;
+      width: 9px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      &.API {
+        background-color: $api-color;
+      }
+      &.WEB {
+        background-color: $web-color;
+      }
+      &.MOBILEWEB {
+        background-color: $mobile-web-color;
+      }
+      &.IOS {
+        background-color: $ios-color;
+      }
+      &.ANDRIOD {
+        background-color: $android-color;
+      }
+    }
   }
   &:first-child {
-    &::before {
-      border-left: 0;
-    }
-  }
-  .test-stats-row {
-    margin-bottom: 3px;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .test-stats-header {
-    .h5 {
-      margin-top: 0;
+    .stats-count-container {
+      .date-container {
+        background-color: $secondary;
+        color: #FFF;
+        box-shadow: 1px 2px 2px #DDD;
+        border-radius: 4px;
+      }
     }
   }
 }
+
+// .tile_stats_count {
+//   @media (min-width: 992px) {
+//     width: 20%;
+//   }
+//   margin-bottom: 10px;
+//   min-height: 150px;
+//   .dashboard-date {
+//     font-size: 12px;
+//   }
+//   .dashboard-stats-table {
+//     width: 100%;
+//   }
+//   &:before {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     height: 145px;
+//     border-left: 2px solid #ADB2B5;
+//     margin-top: 10px;
+//   }
+//   &:first-child {
+//     &::before {
+//       border-left: 0;
+//     }
+//   }
+//   .test-stats-row {
+//     margin-bottom: 3px;
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
+//   .test-stats-header {
+//     .h5 {
+//       margin-top: 0;
+//     }
+//   }
+// }
