@@ -10,6 +10,24 @@
           "passed_tests": 4,
           "failed_tests": 1,
           "passedPercentage": 80
+        }, {
+          "platformType": "API",
+          "total_tests": 5,
+          "passed_tests": 4,
+          "failed_tests": 1,
+          "passedPercentage": 80
+        }, {
+          "platformType": "API",
+          "total_tests": 5,
+          "passed_tests": 4,
+          "failed_tests": 1,
+          "passedPercentage": 80
+        }, {
+          "platformType": "API",
+          "total_tests": 5,
+          "passed_tests": 4,
+          "failed_tests": 1,
+          "passedPercentage": 80
         },
         {
           "platformType": "WEB",
