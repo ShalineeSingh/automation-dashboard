@@ -14,7 +14,7 @@
           },
         })
         .state('main.app.basic.dashboard.performance', {
-          url: 'performance',
+          url: 'dashboard',
           views: {
             'dashboardContent': {
               templateUrl: '/public/dashboard/views/dashboard.html',

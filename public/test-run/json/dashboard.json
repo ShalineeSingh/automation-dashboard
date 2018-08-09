@@ -9,28 +9,28 @@
           "total_tests": 5,
           "passed_tests": 4,
           "failed_tests": 1,
-          "passedPercentage": 80
+          "passedPercentage": 70
         }, {
-          "platformType": "API",
+          "platformType": "MOBILEWEB",
           "total_tests": 5,
           "passed_tests": 4,
           "failed_tests": 1,
           "passedPercentage": 80
         }, {
-          "platformType": "API",
+          "platformType": "ANDROID",
           "total_tests": 5,
           "passed_tests": 4,
           "failed_tests": 1,
-          "passedPercentage": 80
+          "passedPercentage": 40
         }, {
-          "platformType": "API",
+          "platformType": "WEB",
           "total_tests": 5,
           "passed_tests": 4,
           "failed_tests": 1,
-          "passedPercentage": 80
+          "passedPercentage": 50
         },
         {
-          "platformType": "WEB",
+          "platformType": "IOS",
           "total_tests": 13,
           "passed_tests": 7,
           "failed_tests": 6,
@@ -39,6 +39,40 @@
       ]
     },
     {
+      "release": "Rel1",
+      "start_time": "2018-07-17T09:44:39.355Z",
+      "end_time": "2018-07-26T07:52:24.098Z",
+      "releaseStats": [{
+        "platformType": "WEB",
+        "total_tests": 15,
+        "passed_tests": 9,
+        "failed_tests": 6,
+        "passedPercentage": 60
+      }]
+    },
+    {
+      "release": "Rel1",
+      "start_time": "2018-07-17T09:44:39.355Z",
+      "end_time": "2018-07-26T07:52:24.098Z",
+      "releaseStats": [{
+        "platformType": "WEB",
+        "total_tests": 15,
+        "passed_tests": 9,
+        "failed_tests": 6,
+        "passedPercentage": 60
+      }]
+    }, {
+      "release": "Rel1",
+      "start_time": "2018-07-17T09:44:39.355Z",
+      "end_time": "2018-07-26T07:52:24.098Z",
+      "releaseStats": [{
+        "platformType": "WEB",
+        "total_tests": 15,
+        "passed_tests": 9,
+        "failed_tests": 6,
+        "passedPercentage": 60
+      }]
+    }, {
       "release": "Rel1",
       "start_time": "2018-07-17T09:44:39.355Z",
       "end_time": "2018-07-26T07:52:24.098Z",

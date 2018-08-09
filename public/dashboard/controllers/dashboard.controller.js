@@ -1,6 +1,6 @@
 (function () {
   angular.module('app.basic')
-    .controller('dashboardCtrl', ['$scope', '$rootScope', '$state', '$filter', 'dashboardService', function ($scope, $rootScope, $state, $filter, dashboardService) {
+    .controller('dashboardCtrl', ['$scope', '$rootScope', '$state', '$filter', '$compile', 'dashboardService', function ($scope, $rootScope, $state, $filter, $compile, dashboardService) {
       var graph_values = [
         [null, null, null, null, null],
         [null, null, null, null, null],
@@ -11,11 +11,73 @@
 
       $rootScope.show_filter = false;
       $scope.dashboard = {
-        'chart_colors': ["#26B99A", "#34495E", "#5a8022", "#3498DB", "#9B59B6", "#8abb6f", "#759c6a", "#bfd3b7"],
+        'chart_colors': [{
+            backgroundColor: '#26B99A',
+            borderColor: '#26B99A',
+          },
+          {
+            backgroundColor: '#34495E',
+            borderColor: '#34495E',
+          },
+          {
+            backgroundColor: '#5a8022',
+            borderColor: '#5a8022',
+          },
+          {
+            backgroundColor: '#3498DB',
+            borderColor: '#3498DB',
+          }, {
+            backgroundColor: '#9B59B6',
+            borderColor: '#9B59B6',
+          }
+        ],
+
+        // ["#26B99A", "#34495E", "#5a8022", "#3498DB", "#9B59B6", "#8abb6f", "#759c6a", "#bfd3b7"],
         'chart_labels': [],
         'chart_options': {
+          'spanGaps': true,
           'responsive': true,
           'maintainAspectRatio': true,
+          'scales': {
+            'xAxes': [{
+              'type': 'category',
+              'ticks': {
+                'padding': 15
+              },
+              'gridLines': {
+                'drawOnChartArea': false,
+                'drawTicks': false
+              },
+              'scaleLabel': {
+                'labelString': 'Release',
+                'display': true,
+                'fontColor': '#999',
+                'fontSize': 12
+              }
+            }],
+            'yAxes': [{
+              'id': 'y-axis-1',
+              'type': 'linear',
+              'display': true,
+              'position': 'left',
+              'scaleLabel': {
+                'labelString': 'Passed Percentage',
+                'display': true,
+                'fontColor': '#999',
+                'fontSize': 12
+              },
+              'gridLines': {
+                // 'color': '#ffffff',
+                'display': true,
+                // 'drawBorder': false
+              },
+              ticks: {
+                min: 0,
+                max: 100
+              }
+            }]
+          },
+
           'layout': {
             'padding': {
               'left': 5,
@@ -25,7 +87,7 @@
             }
           },
           'tooltips': {
-            // 'mode': 'nearest',
+            'mode': 'nearest',
             'axis': 'x',
             'xPadding': 10,
             'yPadding': 10,
@@ -38,7 +100,10 @@
             'titleMarginBottom': 12,
             'bodyFontColor': '#222',
             'bodyFontSize': 12,
-            bodySpacing: 4
+            'bodySpacing': 4
+          },
+          'hover': {
+            'mode': 'point' // to highlight only one data point when hovered upon
           },
           'legend': {
             'display': true,
@@ -47,14 +112,14 @@
               'usePointStyle': true,
             }
           },
-          scales: {
-            yAxes: [{
-              id: 'y-axis-1',
-              type: 'linear',
-              display: true,
-              position: 'left'
-            }]
-          },
+          // scales: {
+          //   yAxes: [{
+          //     id: 'y-axis-1',
+          //     type: 'linear',
+          //     display: true,
+          //     position: 'left'
+          //   }]
+          // },
           elements: {
             line: {
               // fill: false,
@@ -114,6 +179,8 @@
       //     final_chart_values.push(platform[Object.keys(platform)[0]]);
       //   });
       // };
+      // To toggle(show/hide) dataset via custom HTML legends
+
       var getGraphValues = function (release_array) {
         release_array.forEach(function (release, index) {
           var release_index = index;

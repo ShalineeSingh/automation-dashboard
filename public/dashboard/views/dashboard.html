@@ -5,7 +5,7 @@
     <div class="col-sm-12" ng-if="!dashboard.page_loader">
         <div class="col-md-2 col-sm-4 col-xs-12 white-bg tile_stats_count" ng-repeat="release in dashboard.release_data">
             <div class="test-stats-header">
-                <span class="h5">Release {{release.release}}</span>
+                <span class="h5">{{release.release}}</span>
                 <p class="text-muted dashboard-date">{{release.start_time | date:'MMM d, y'}} - {{release.end_time | date:'MMM d, y'}}</p>
                 <div class="line"></div>
             </div>
@@ -43,7 +43,12 @@
         </div>
     </div>
     <div class="col-sm-12 chart-container" ng-if="!dashboard.page_loader && dashboard.release_data">
-        <canvas id="line" class="chart chart-line white-bg" height="100" chart-data="dashboard.chart_data" chart-labels="dashboard.chart_labels"
+        <div class="heading-5 white-bg col-xs-12" style="padding-top:10px;">
+            <span class="h5">Release Stats</span>
+            <br>
+            <soan class="h6 text-muted">Last 5 releases</soan>
+        </div>
+        <canvas id="line" class="chart chart-bar white-bg" height="75" chart-data="dashboard.chart_data" chart-labels="dashboard.chart_labels"
             chart-series="dashboard.chart_series" chart-options="dashboard.chart_options" chart-colors="dashboard.chart_colors">
         </canvas>
     </div>
