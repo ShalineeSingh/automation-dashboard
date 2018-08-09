@@ -94,6 +94,9 @@
   }
   .stats-table {
     width: 100%;
-    text-align: left;
+    text-align: center;
+    td {
+      padding-bottom: 10px;
+    }
   }
 }

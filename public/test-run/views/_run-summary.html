@@ -4,20 +4,28 @@
             <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
             <table class="stats-table" ng-if="!run_details.page_loader && run_details.data.testRunDetails">
                 <tr>
-                    <td>Run ID:</td>
-                    <td>{{run_details.data.testRunDetails.id}}</td>
+                    <td>
+                        <span class="h4 success-number">{{run_details.data.testRunDetails.id}}</span>
+                        <br>
+                        <span class="h6 text-muted">Run ID</span>
+                    </td>
+                    <td>
+                        <span class="h4">{{run_details.platform_map[run_details.data.testRunDetails.platform]}}</span>
+                        <br>
+                        <span class="h6 text-muted">Platform</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Platform:</td>
-                    <td> {{run_details.platform_map[run_details.data.testRunDetails.platform]}}</td>
-                </tr>
-                <tr>
-                    <td>Release:</td>
-                    <td> {{run_details.data.testRunDetails.release}}</td>
-                </tr>
-                <tr>
-                    <td>Environment:</td>
-                    <td>{{run_details.env_map[run_details.data.testRunDetails.env]}}</td>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.release}}</span>
+                        <br>
+                        <span class="h6 text-muted">Release</span>
+                    </td>
+                    <td>
+                        <span class="h4">{{run_details.env_map[run_details.data.testRunDetails.env]}}</span>
+                        <br>
+                        <span class="h6 text-muted">Environment</span>
+                    </td>
                 </tr>
             </table>
             <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
@@ -70,19 +78,28 @@
             <div ng-if="!run_details.page_loader && run_details.data.testRunDetails">
                 <table class="stats-table">
                     <tr>
-                        <td>Start Time:</td>
-                        <td>{{run_details.data.testRunDetails.start_time | date:'MMM d, y h:mm:s a'}}</td>
+                        <td>
+                            <span class="h4">{{run_details.data.testRunDetails.start_time | date:'MMM d, y h:mm:s a'}}</span>
+                            <br>
+                            <span class="h6 text-muted">Start Time</span>
+                        </td>
                     </tr>
                     <tr>
-                        <td>End Time:</td>
-                        <td ng-if="run_details.data.testRunDetails.end_time">{{run_details.data.testRunDetails.end_time | date:'MMM d, y h:mm:s a'}}</td>
-                        <td ng-if="!run_details.data.testRunDetails.end_time">-</td>
+                        <td>
+                            <span class="h4" ng-if="run_details.data.testRunDetails.end_time">{{run_details.data.testRunDetails.end_time | date:'MMM d, y h:mm:s a'}}</span>
+                            <span ng-if="!run_details.data.testRunDetails.end_time">-</span>
+                            <br>
+                            <span class="h6 text-muted">End Time</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="h4 success-number">{{getTimeFromSecs(run_details.data.testRunDetails.elapsedTime)}}</span>
+                            <br>
+                            <span class="h6 text-muted">Elapsed Time</span>
+                        </td>
                     </tr>
                 </table>
-                <p></p>
-                <div class="line"></div>
-                <p>Elapsed Time</p>
-                <p class="success-number h3">{{getTimeFromSecs(run_details.data.testRunDetails.elapsedTime)}}</p>
             </div>
             <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
                 No data found
@@ -94,16 +111,23 @@
             <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
             <table class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
                 <tr>
-                    <td>Browser:</td>
-                    <td>{{run_details.browser_map[run_details.data.testRunDetails.browser]}}</td>
+                    <td>
+                        <span class="h4 success-number">{{run_details.browser_map[run_details.data.testRunDetails.browser]}}</span>
+                        <br>
+                        <span class="h6 text-muted">Browser</span>
+                    </td>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.headless ? 'Yes' : 'No'}}</span>
+                        <br>
+                        <span class="h6 text-muted">Headless</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Headless:</td>
-                    <td>{{run_details.data.testRunDetails.headless ? 'Yes' : 'No'}}</td>
-                </tr>
-                <tr>
-                    <td>OS Name:</td>
-                    <td>{{run_details.data.testRunDetails.os_name}}</td>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.os_name}}</span>
+                        <br>
+                        <span class="h6 text-muted">OS Name</span>
+                    </td>
                 </tr>
             </table>
             <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
@@ -116,48 +140,72 @@
             <div class="page-loader small" ng-if="run_details.page_loader"></div>
             <table class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
                 <tr>
-                    <td>Device Id:</td>
-                    <td>{{run_details.data.testRunDetails.deviceID}}</td>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.deviceID}}</span>
+                        <br>
+                        <span class="h6 text-muted">Device Id</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Build Id:</td>
-                    <td>{{run_details.data.testRunDetails.buildID}}</td>
+                    <td>
+                        <span class="h4 success-number">{{run_details.data.testRunDetails.buildID}}</span>
+                        <br>
+                        <span class="h6 text-muted">Build Id</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Device Name:</td>
-                    <td>{{run_details.data.testRunDetails.deviceName}}</td>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.deviceName}}</span>
+                        <br>
+                        <span class="h6 text-muted">Device Name</span>
+                    </td>
                 </tr>
             </table>
         </div>
     </div>
     <div class="col-sm-3" ng-if="run_details.platform ==='MOBILEWEB'">
         <div class="test-stats-panel white-bg">
-            <div class="page-loader small" ng-if="run_details.page_loader"></div>
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
             <table class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
                 <tr>
-                    <td>Browser:</td>
-                    <td>{{run_details.data.testRunDetails.deviceID}}</td>
+                    <td>
+                        <span class="h4 success-number">{{run_details.browser_map[run_details.data.testRunDetails.browser]}}</span>
+                        <br>
+                        <span class="h6 text-muted">Browser</span>
+                    </td>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.headless ? 'Yes' : 'No'}}</span>
+                        <br>
+                        <span class="h6 text-muted">Headless</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Headless:</td>
-                    <td>{{run_details.data.testRunDetails.buildID}}</td>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.os_name}}</span>
+                        <br>
+                        <span class="h6 text-muted">OS Name</span>
+                    </td>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.deviceName}}</span>
+                        <br>
+                        <span class="h6 text-muted">Device Name</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td>OS Name:</td>
-                    <td>{{run_details.data.testRunDetails.deviceName}}</td>
+                    <td colspan="2">
+                        <span class="h4">{{run_details.data.testRunDetails.deviceID}}</span>
+                        <br>
+                        <span class="h6 text-muted">Device Id</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Device Id:</td>
-                    <td>{{run_details.data.testRunDetails.deviceID}}</td>
+                    <td colspan="2">
+                        <span class="h4">{{run_details.data.testRunDetails.buildID}}</span>
+                        <br>
+                        <span class="h6 text-muted">Build Id</span>
+                    </td>
                 </tr>
-                <tr>
-                    <td>Build Id:</td>
-                    <td>{{run_details.data.testRunDetails.buildID}}</td>
-                </tr>
-                <tr>
-                    <td>Device Name:</td>
-                    <td>{{run_details.data.testRunDetails.deviceName}}</td>
-                </tr>
+
             </table>
             <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
                 No data found
