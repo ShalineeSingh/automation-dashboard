@@ -44,6 +44,12 @@ body {
   background-color: #ffffff;
 }
 
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .line {
   border-top: 1px solid #dddddd;
   margin-bottom: 10px;

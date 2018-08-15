@@ -22,7 +22,7 @@
         <div class="table-responsive">
             <table class="table table-hover white-bg">
                 <tbody>
-                    <tr ng-if="text_run.list">
+                    <tr ng-if="test_run.list">
                         <th class="run-id-col" ng-click="sortTestRuns('id')" ng-class="{'ascending': test_run.sortable_column.id !== undefined && test_run.sortable_column.id
                     && test_run.list.length > 0,'descending':test_run.sortable_column.id !== undefined &&!test_run.sortable_column.id
                     && test_run.list.length > 0,'cursor-pointer' : test_run.list.length > 0}">
@@ -78,20 +78,28 @@
                             </span>
                         </th>
                         <th>
+                            <span> Total tests</span>
+                        </th>
+                        <th>
                             <span> Completion %</span>
                         </th>
                     </tr>
                     <tr ng-repeat="data in test_run.list" class="cursor-pointer white-bg" ng-click="openRunDetails(data.platform,data.id)">
-                        <td>{{data.id}}</td>
+                        <td>{{data.id}}
+                            <span ng-if="data.completionPercent <100">
+                                <i class="fa fa-circle in-progress"> </i>
+                            </span>
+                        </td>
                         <td>{{data.suiteName}}</td>
                         <td>{{test_run.platform_map[data.platform]}}</td>
                         <td>{{data.release}}</td>
                         <td>{{test_run.env_map[data.env]}}</td>
                         <td>{{elapsedTime(data.start_time)}}</td>
+                        <td>{{data.total_tests}}</td>
                         <td>
-                            <!-- tooltip-placement="'top'" uib-tooltip="On the top" -->
                             <uib-progress ng-if="data.completionPercent >0">
-                                <uib-bar ng-repeat="bar in data.stacked.value track by $index" value="bar" type="{{ data.stacked.type[$index]}}">
+                                <uib-bar ng-repeat="bar in data.stacked.value track by $index" value="bar" type="{{ data.stacked.type[$index]}}" tooltip-placement="'top'"
+                                    uib-tooltip="{{bar}} %">
                                     <span ng-hide="bar < 5">{{bar}}%</span>
                                 </uib-bar>
                             </uib-progress>

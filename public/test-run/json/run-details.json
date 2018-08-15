@@ -1,141 +1,69 @@
 {
-  "timeStamp": "25-07-2018 11:36:43",
+  "timeStamp": "10-08-2018 07:50:41",
   "responseObject": {
     "testRunDetails": {
-      "id": 423,
-      "platform": "WEB",
-      "suiteName": "Tiket Sanity Test",
-      "release": "Rel 1",
-      "env": "PRODUCTION",
-      "total_tests": 3,
-      "passed_tests": 3,
-      "failed_tests": 0,
-      "start_time": "2018-07-17T21:29:28.380Z",
-      "end_time": "2018-07-17T21:31:17.599Z",
-      "elapsedTime": 109,
-      "web_pref_id": 424,
+      "id": 78,
+      "platform": "MOBILEWEB",
+      "suiteName": "Tiket Sanity Test djsbf sdjbf",
+      "release": "NewDemo",
+      "env": "TESTING1",
+      "total_tests": 12,
+      "passed_tests": 1,
+      "failed_tests": 3,
+      "start_time": "2018-08-06T11:55:53.718Z",
+      "elapsedTime": 547,
+      "mobile_web_pref_id": 79,
       "browser": "CHROME",
       "headless": false,
-      "os_name": "Sierra"
+      "os_name": "Mac OS X",
+      "deviceID": "ksjfdsfdjshfgjsdgfjgdsfhsdjfgsjdfgsjdgfsj, dsfbsjdhgjsbgjhbdgj"
     },
     "testCaseResultDetails": [{
-      "id": 425,
-      "runID": 423,
+      "id": 82,
+      "runID": 78,
       "testGroupName": "Sanity Suite",
-      "testCaseName": "LinkVerification",
+      "testCaseName": "Guest_User_Book_Car_ATM",
       "testStatus": "FAIL",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 02:59:45.175\\nStep: tix Link open and verify,\t Description: tix Link opened and verified Successfully\t @Time :2018-07-18 02:59:48.698\\nStep: partner Link open and verify,\t Description: partner Link opened and verified Successfully\t @Time :2018-07-18 02:59:56.603\\nStep: promo Link open and verify,\t Description: promo Link opened and verified Successfully\t @Time :2018-07-18 03:00:01.856\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:11.419\\nStep: careers Link open and verify,\t Description: careers Link opened and verified Successfully\t @Time :2018-07-18 03:00:13.461\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:15.946\\nStep: blog Link open and verify,\t Description: blog Link opened and verified Successfully\t @Time :2018-07-18 03:00:16.268\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:18.858\\nStep: mobileapp Link open and verify,\t Description: mobileapp Link opened and verified Successfully\t @Time :2018-07-18 03:00:19.453\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:23.144\\nStep: registerurhotel Link open and verify,\t Description: registerurhotel Link opened and verified Successfully\t @Time :2018-07-18 03:00:23.584\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:26.148\\nStep: cicilan Link open and verify,\t Description: cicilan Link opened and verified Successfully\t @Time :2018-07-18 03:00:26.835\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:29.463\\nStep: protection Link open and verify,\t Description: protection Link opened and verified Successfully\t @Time :2018-07-18 03:00:29.704\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:32.332\\nStep: faq Link open and verify,\t Description: faq Link opened and verified Successfully\t @Time :2018-07-18 03:00:35.826\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:38.412\\nStep: privacyandpolicy Link open and verify,\t Description: privacyandpolicy Link opened and verified Successfully\t @Time :2018-07-18 03:00:38.618\\nStep: Click on link to Verify,\t Description: Clicked on link successfully\t @Time :2018-07-18 03:00:40.983\\nStep: termsandconditions Link open and verify,\t Description: termsandconditions Link opened and verified Successfully\t @Time :2018-07-18 03:00:41.288",
-      "start_time": "2018-07-17T21:29:32.410Z",
-      "end_time": "2018-07-17T21:30:41.303Z"
+      "testSteps": "Activity: Click Location,\t Description: Location Clicked...\t @Time :2018-08-06 17:28:15.205\\nActivity: Enter Location,\t Description: Jakarta entered as Location\t @Time :2018-08-06 17:28:16.641\\nActivity: Select location,\t Description: Jakarta Location Selected\t @Time :2018-08-06 17:28:17.765\\nActivity: Select car from list,\t Description: Car Selected from the list\t @Time :2018-08-06 17:28:24.692\\n<br>Exception in CarPage bookCar()method:: java.lang.Exception: Unable to find page element with Tagname 'orderNowButton'",
+      "errorMessage": "java.lang.Exception: Unable to find page element with Tagname 'orderNowButton'",
+      "start_time": "2018-08-06T11:58:05.963Z",
+      "end_time": "2018-08-06T11:58:45.077Z",
+      "screenshot": "https://res.cloudinary.com/dqnsruihk/image/upload/v1533556762/web/bq07b8ltodxxkhmsxuis.png"
     }, {
-      "id": 426,
-      "runID": 423,
+      "id": 84,
+      "runID": 78,
       "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
+      "testCaseName": "Existing_User_Flight_Booking_Mandiri_Transfer_Payment",
+      "testStatus": "FAIL",
+      "testSteps": "Activity: Click on Login Button,\t Description: Login Button Clicked Successfully\t @Time :2018-08-06 17:29:53.999\\nActivity: Enter Login ID,\t Description: auliasinurarmeti@yopmail.com as email ID entered Successfully\t @Time :2018-08-06 17:29:56.418\\nActivity: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-08-06 17:29:56.677\\nActivity: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-08-06 17:29:59.345\\nActivity: Get Profile Name: ,\t Description: \"Test\" received from Tiket.com \t @Time :2018-08-06 17:30:00.417\\nWNothing to delete in cartjava.lang.NumberFormatException: null\\nActivity: Click Flight Icon,\t Description:  Flight Icon Clicked\t @Time :2018-08-06 17:30:05.715\\n<br>Exception in FlightPage SearchFlight() method :: java.lang.Exception: Unable to find page element with Tagname 'searchFlightButton'",
+      "errorMessage": "java.lang.Exception: Unable to find page element with Tagname 'searchFlightButton'",
+      "start_time": "2018-08-06T11:59:45.256Z",
+      "end_time": "2018-08-06T12:00:35.054Z",
+      "screenshot": "https://res.cloudinary.com/dqnsruihk/image/upload/v1533556874/web/dljuues19u8qaddbxsla.png"
     }, {
-      "id": 427,
-      "runID": 423,
+      "id": 87,
+      "runID": 78,
       "testGroupName": "Sanity Suite",
-      "testCaseName": "PromoVerification",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 02:59:45.417\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 02:59:45.425\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/promotion_list/\t @Time :2018-07-18 02:59:47.231\\nStep: Count Number of promotion available,\t Description: Promotions available: 14\t @Time :2018-07-18 02:59:49.278\\nStep: Get Promocode ,\t Description: Promocode Received: TERBANGHEMAT\t @Time :2018-07-18 02:59:53.525\\nStep: Get Promocode ,\t Description: Promocode Received: NGINEPHEMAT\t @Time :2018-07-18 02:59:57.145\\nStep: Get Promocode ,\t Description: Promocode Received: SRIWIJAYA100\t @Time :2018-07-18 03:00:01.044\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:09.165\\nStep: Get Promocode ,\t Description: Promocode Received: FLY150\t @Time :2018-07-18 03:00:14.099\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:21.574\\nStep: Get Promocode ,\t Description: Promocode Received: BRI100\t @Time :2018-07-18 03:00:27.509\\nStep: Get Promocode ,\t Description: Promocode Received: BCA600\t @Time :2018-07-18 03:00:33.096\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:39.842\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:47.367\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:00:55.407\\nStep: Get Promocode ,\t Description: Promocode Received: BJB20\t @Time :2018-07-18 03:00:57.461\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:01:07.828\\nStep: Get Promocode ,\t Description: Verified by Banner \t @Time :2018-07-18 03:01:16.818",
-      "start_time": "2018-07-17T21:29:32.410Z",
-      "end_time": "2018-07-17T21:31:17.561Z"
+      "testCaseName": "Existing_User_Book_Car_BNI_Virtual_Payment",
+      "testStatus": "FAIL",
+      "testSteps": "Activity: Click on Login Button,\t Description: Login Button Clicked Successfully\t @Time :2018-08-06 17:33:11.201\\nActivity: Enter Login ID,\t Description: auliasinurarmeti@yopmail.com as email ID entered Successfully\t @Time :2018-08-06 17:33:13.030\\nActivity: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-08-06 17:33:13.483\\nActivity: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-08-06 17:33:16.224\\nActivity: Get Profile Name: ,\t Description: \"Test\" received from Tiket.com \t @Time :2018-08-06 17:33:17.348\\nWNothing to delete in cartjava.lang.NumberFormatException: null\\nActivity: Click Location,\t Description: Location Clicked...\t @Time :2018-08-06 17:33:35.010\\nActivity: Enter Location,\t Description: Jakarta entered as Location\t @Time :2018-08-06 17:33:36.236\\nActivity: Select location,\t Description: Jakarta Location Selected\t @Time :2018-08-06 17:33:42.400\\nActivity: Select car from list,\t Description: Car Selected from the list\t @Time :2018-08-06 17:34:02.000\\nActivity: Order car,\t Description: Car Ordered\t @Time :2018-08-06 17:34:08.230\\nActivity: Select Title,\t Description: Title Selected Successfully\t @Time :2018-08-06 17:34:08.674\\nActivity: Enter Fullname,\t Description: Andre Panggabean entered as Customer Name\t @Time :2018-08-06 17:34:09.963\\nActivity: Enter Phone Number,\t Description: 81811723834 entered as Customer Phone Number\t @Time :2018-08-06 17:34:11.155\\nActivity: Enter Pickup details,\t Description: Pickup details entered: Testing - 5th street Park Avenue Jakarta Indonesia\t @Time :2018-08-06 17:34:12.424\\nActivity: Click on book now,\t Description: Book Now clicked\t @Time :2018-08-06 17:34:17.841\\nActivity: Retrieve Order ID,\t Description: OrderID Retrieved :  47845275\t @Time :2018-08-06 17:34:27.032\\nActivity: Click on Virtual Account ,\t Description: Virtual Account Clicked\t @Time :2018-08-06 17:34:32.463\\nActivity: Click on Virtual Account:VA BNI ,\t Description: Virtual Account:VA BNI Clicked\t @Time :2018-08-06 17:34:39.833\\n<br>Exception in PaymentPage completeBooking()java.lang.Exception: Unable to find page element with Tagname 'completeBooking'\\n<br>Exception in PaymentPage selectVirtualAccountVA_BNI () method :: java.lang.Exception: java.lang.Exception: Unable to find page element with Tagname 'completeBooking'",
+      "errorMessage": "java.lang.Exception: java.lang.Exception: Unable to find page element with Tagname 'completeBooking'",
+      "start_time": "2018-08-06T12:03:01.656Z",
+      "end_time": "2018-08-06T12:05:01.146Z",
+      "screenshot": "https://res.cloudinary.com/dqnsruihk/image/upload/v1533557137/web/ftzvnq8tryoj6o17of6r.png"
     }, {
-      "id": 426,
-      "runID": 423,
+      "id": 83,
+      "runID": 78,
       "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
+      "testCaseName": "Guest_User_Book_EventAttraction_BCA_Transfer",
       "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
-    }, {
-      "id": 426,
-      "runID": 423,
-      "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
-    }, {
-      "id": 426,
-      "runID": 423,
-      "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
-    }, {
-      "id": 426,
-      "runID": 423,
-      "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
-    }, {
-      "id": 426,
-      "runID": 423,
-      "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
-    }, {
-      "id": 426,
-      "runID": 423,
-      "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
-    }, {
-      "id": 426,
-      "runID": 423,
-      "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
-    }, {
-      "id": 426,
-      "runID": 423,
-      "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
-    }, {
-      "id": 426,
-      "runID": 423,
-      "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
-    }, {
-      "id": 426,
-      "runID": 423,
-      "testGroupName": "Sanity Suite",
-      "testCaseName": "Affiliate_Partner_Login_Logout",
-      "testStatus": "PASS",
-      "testSteps": "Step: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/\t @Time :2018-07-18 03:00:54.859\\nStep: Print Current Title,\t Description: Current page title is : Tiket Pesawat & Hotel Murah - Tiket Kereta Api dan Promo | tiket.com\t @Time :2018-07-18 03:00:54.865\\nStep: Navigate to URL,\t Description: Navigated to URL: https://www.tiket.com/partner/login\t @Time :2018-07-18 03:00:56.832\\nStep: Print Current Title,\t Description: Current page title is : tiket.com | Hotel, Pesawat, Kereta Api, Sewa Mobil, Konser\t @Time :2018-07-18 03:00:56.836\\nStep: Enter Login ID,\t Description: fajarsiadarizluqs@yopmail.com as ID entered Successfully\t @Time :2018-07-18 03:00:57.183\\nStep: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-07-18 03:00:57.329\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:00:59.391\\nStep: Get Profile Name: ,\t Description: \"Testing\" received from Tiket.com \t @Time :2018-07-18 03:00:59.464\\nStep: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-07-18 03:01:00.066\\nStep: Verify Logout,\t Description: -> Logout Successfully verified\t @Time :2018-07-18 03:01:00.136",
-      "start_time": "2018-07-17T21:30:42.156Z",
-      "end_time": "2018-07-17T21:31:00.136Z"
+      "testSteps": "Activity: Click on Entertainment Icon,\t Description: Entertainment Icon Clicked \t @Time :2018-08-06 17:28:59.577\\nActivity: Enter Event name,\t Description: Wayang Orang Ngesti Pandawa Semarang <- Entered \t @Time :2018-08-06 17:29:00.500\\nActivity: Select Event ,\t Description: Wayang Orang Ngesti Pandawa Semarang selected. \t @Time :2018-08-06 17:29:05.651\\nActivity: Select Number of Tickets ,\t Description: 2 Tickets Selected. \t @Time :2018-08-06 17:29:05.969\\nActivity: Click On Book Now ,\t Description: Book Now Clicked\t @Time :2018-08-06 17:29:07.425\\nActivity: Retrieve Order ID,\t Description: OrderID Retrieved :  47845273\t @Time :2018-08-06 17:29:14.744\\nActivity: Click Transfer,\t Description: Transfer Clicked\t @Time :2018-08-06 17:29:14.954\\nActivity: Click on BCA transfer,\t Description: BCA Transfer Clicked\t @Time :2018-08-06 17:29:20.725\\nActivity: Click Complete Booking,\t Description: Complete Booking Clicked\t @Time :2018-08-06 17:29:23.004\\nActivity: Click \"Done\"Button ,\t Description: \"Done\" button clicked successfully\t @Time :2018-08-06 17:29:38.240",
+      "start_time": "2018-08-06T11:58:52.560Z",
+      "end_time": "2018-08-06T11:59:38.241Z"
     }]
   },
-  "apiResponseStatus": "SUCCESS"
+  "apiResponseStatus": "SUCCESS",
+  "page": 0,
+  "size": 10,
+  "total_elements": 4
 }

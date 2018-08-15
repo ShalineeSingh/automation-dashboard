@@ -55,6 +55,9 @@
               message = message + ' ago';
             }
           }
+          if (diff.minutes < 1 && diff.seconds && to_date) {
+            message = '<1 min';
+          }
           return message;
         } else {
           return '-';

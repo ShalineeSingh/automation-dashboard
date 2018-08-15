@@ -1,87 +1,78 @@
 {
-  "timeStamp": "01-08-201802: 10: 33",
+  "timeStamp": "10-08-2018 07:49:59",
   "responseObject": [{
-      "release": "Rel K1",
-      "start_time": "2018-07-18T22:51:57.827Z",
-      "end_time": "2018-07-26T10:06:59.666Z",
+      "release": "ReleaseName",
+      "start_time": "2018-08-09T12:16:03.806Z",
+      "end_time": "2018-08-09T12:16:41.304Z",
+      "releaseStats": [{
+        "platformType": "WEB",
+        "total_tests": 1,
+        "passed_tests": 1,
+        "failed_tests": 0,
+        "passedPercentage": 100
+      }]
+    },
+    {
+      "release": "testing_ios",
+      "start_time": "2018-08-06T12:32:52.785Z",
+      "end_time": "2018-08-06T13:34:51.545Z",
+      "releaseStats": [{
+        "platformType": "IOS",
+        "total_tests": 2,
+        "passed_tests": 0,
+        "failed_tests": 1,
+        "passedPercentage": 0
+      }]
+    },
+    {
+      "release": "NewDemo",
+      "start_time": "2018-08-06T11:41:38.376Z",
+      "end_time": "2018-08-09T13:00:51.597Z",
       "releaseStats": [{
           "platformType": "API",
-          "total_tests": 5,
-          "passed_tests": 4,
-          "failed_tests": 1,
-          "passedPercentage": 70
-        }, {
-          "platformType": "MOBILEWEB",
-          "total_tests": 5,
-          "passed_tests": 4,
-          "failed_tests": 1,
-          "passedPercentage": 80
-        }, {
-          "platformType": "ANDROID",
-          "total_tests": 5,
-          "passed_tests": 4,
-          "failed_tests": 1,
-          "passedPercentage": 40
-        }, {
-          "platformType": "WEB",
-          "total_tests": 5,
-          "passed_tests": 4,
-          "failed_tests": 1,
-          "passedPercentage": 50
+          "total_tests": 2,
+          "passed_tests": 0,
+          "failed_tests": 2,
+          "passedPercentage": 0
         },
         {
-          "platformType": "IOS",
-          "total_tests": 13,
-          "passed_tests": 7,
-          "failed_tests": 6,
-          "passedPercentage": 53
+          "platformType": "ANDROID",
+          "total_tests": 3,
+          "passed_tests": 1,
+          "failed_tests": 0,
+          "passedPercentage": 100
+        },
+        {
+          "platformType": "MOBILEWEB",
+          "total_tests": 6,
+          "passed_tests": 2,
+          "failed_tests": 4,
+          "passedPercentage": 33
         }
       ]
     },
     {
-      "release": "Rel1",
-      "start_time": "2018-07-17T09:44:39.355Z",
-      "end_time": "2018-07-26T07:52:24.098Z",
+      "release": "FlightPro",
+      "start_time": "2018-08-03T12:52:40.658Z",
+      "end_time": "2018-08-03T12:54:53.377Z",
       "releaseStats": [{
         "platformType": "WEB",
-        "total_tests": 15,
-        "passed_tests": 9,
-        "failed_tests": 6,
-        "passedPercentage": 60
+        "total_tests": 3,
+        "passed_tests": 3,
+        "failed_tests": 0,
+        "passedPercentage": 100
       }]
     },
     {
-      "release": "Rel1",
-      "start_time": "2018-07-17T09:44:39.355Z",
-      "end_time": "2018-07-26T07:52:24.098Z",
+      "release": "FlightProject",
+      "start_time": "2018-08-03T12:51:40.195Z",
+      "end_time": "2018-08-03T12:52:18.419Z",
       "releaseStats": [{
         "platformType": "WEB",
-        "total_tests": 15,
-        "passed_tests": 9,
-        "failed_tests": 6,
-        "passedPercentage": 60
-      }]
-    }, {
-      "release": "Rel1",
-      "start_time": "2018-07-17T09:44:39.355Z",
-      "end_time": "2018-07-26T07:52:24.098Z",
-      "releaseStats": [{
-        "platformType": "WEB",
-        "total_tests": 15,
-        "passed_tests": 9,
-        "failed_tests": 6,
-        "passedPercentage": 60
-      }]
-    }, {
-      "release": "Rel1",
-      "start_time": "2018-07-17T09:44:39.355Z",
-      "end_time": "2018-07-26T07:52:24.098Z",
-      "releaseStats": [{
-        "platformType": "WEB",
-        "total_tests": 15,
-        "passed_tests": 9,
-        "failed_tests": 6,
-        "passedPercentage": 60
+        "total_tests": 3,
+        "passed_tests": 3,
+        "failed_tests": 0,
+        "passedPercentage": 100
       }]
     }
   ],

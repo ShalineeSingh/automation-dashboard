@@ -17,7 +17,12 @@
                 </tr>
                 <tr class="test-stats-row cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
                     <td>
-                        {{dashboard.platform_map[stats.platformType]}}
+                        <span>
+                            {{dashboard.platform_map[stats.platformType]}}
+                        </span>
+                        <span ng-if="stats.passed_tests + stats.failed_tests !== stats.total_tests">
+                            <i class="fa fa-circle in-progress"> </i>
+                        </span>
                     </td>
                     <td class="text-center">
                         {{stats.total_tests}}
