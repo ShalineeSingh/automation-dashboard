@@ -5,9 +5,9 @@
         'platform_map': $rootScope.maps.platform_map,
         'env_map': $rootScope.maps.env_map,
         'page': {
-          'current_page': 1,
+          'current_page': $state.params.page || 0,
           'max_size': 10,
-          'page_size': 10,
+          'page_size': $state.params.size || 10,
           'sizes': [10, 20, 50]
         },
         'sort': {
@@ -28,12 +28,30 @@
       };
       $rootScope.filter_overlay = false;
       $rootScope.show_filter = true;
-
+      var init = function () {
+        $scope.getReleaseList();
+        if ($state.params.sort) {
+          var sort_type = $state.params.sort.split(',');
+          $scope.test_run.sort.sort_value = sort_type[0];
+          if (sort_type[1] === 'asc') {
+            delete $scope.test_run.sort.sort_type;
+          } else {
+            $scope.test_run.sort.sort_type = sort_type[1];
+          }
+        }
+        if ($state.params.suiteName) {
+          $scope.test_run.filter.suite_name = $state.params.suiteName;
+        }
+        if ($state.params.env) {
+          $scope.test_run.filter.environment = $state.params.env;
+        }
+        $scope.getTestRuns();
+      };
       $scope.getTestRuns = function () {
         $scope.test_run.page_loader = true;
         var params = {
           'sort': $scope.test_run.sort.sort_value + ',' + ($scope.test_run.sort.sort_type ? 'desc' : 'asc'),
-          'page': $scope.test_run.page.current_page - 1,
+          'page': $scope.test_run.page.current_page,
           'size': $scope.test_run.page.page_size,
           'platform': $scope.test_run.filter.platform,
           'release': $scope.test_run.filter.release ? $scope.test_run.filter.release.releaseName : '',
@@ -45,6 +63,19 @@
           $scope.test_run.page.total_items = response.total_elements;
           $scope.test_run.page.max_page = Math.ceil($scope.test_run.page.total_items / $scope.test_run.page.page_size);
           generateProgressBar();
+          console.log('dsfs');
+          $state.transitionTo('main.app.basic.platform.id', {
+            'sort': $scope.test_run.sort.sort_value + ',' + ($scope.test_run.sort.sort_type ? 'desc' : 'asc'),
+            'page': $scope.test_run.page.current_page,
+            'size': $scope.test_run.page.page_size,
+            'platform': $scope.test_run.filter.platform,
+            'release': $scope.test_run.filter.release ? $scope.test_run.filter.release.releaseName : '',
+            'suiteName': $scope.test_run.filter.suite_name,
+            'env': $scope.test_run.filter.environment
+          }, {
+            'notify': false,
+            'location': 'replace'
+          });
         }).catch(function (error) {
           console.log(error);
         }).finally(function () {
@@ -72,7 +103,14 @@
       $scope.openRunDetails = function (platform, run_id) {
         $state.go('main.app.basic.platform.run', {
           'platform_id': platform,
-          'run_id': run_id
+          'run_id': run_id,
+          'sort': $scope.test_run.sort.sort_value + ',' + ($scope.test_run.sort.sort_type ? 'desc' : 'asc'),
+          'page': $scope.test_run.page.current_page,
+          'size': $scope.test_run.page.page_size,
+          'platform': $scope.test_run.filter.platform,
+          'release': $scope.test_run.filter.release ? $scope.test_run.filter.release.releaseName : '',
+          'suiteName': $scope.test_run.filter.suite_name,
+          'env': $scope.test_run.filter.environment
         });
       };
 
@@ -116,8 +154,7 @@
         $scope.getTestRuns();
         $rootScope.filter_overlay = false;
       };
-      $scope.getTestRuns();
-      $scope.getReleaseList();
+      init();
       // setInterval(getTestRuns, 20 * 1000);
     }]);
 })();

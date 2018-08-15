@@ -2,6 +2,7 @@
   'use-strict';
   angular.module('basic.platform', [])
     .config(['$stateProvider', function ($stateProvider) {
+      var params = 'page&sort&size&release&platform&suiteName&env';
       $stateProvider
         .state('main.app.basic.platform', {
           'url': '/platform',
@@ -14,7 +15,7 @@
           },
         })
         .state('main.app.basic.platform.id', {
-          url: '/details?release&platform',
+          url: '/details?page&sort&size&release&platform&suiteName&env',
           views: {
             'platformContent': {
               templateUrl: '/public/test-run/views/test-run.html',
@@ -23,7 +24,7 @@
           }
         })
         .state('main.app.basic.platform.run', {
-          url: '/:platform_id/:run_id',
+          url: '/:platform_id/:run_id?page&sort&size&release&platform&suiteName&env',
           views: {
             'platformContent': {
               templateUrl: '/public/test-run/views/run-details.html',

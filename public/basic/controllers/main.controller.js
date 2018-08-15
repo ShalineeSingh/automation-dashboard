@@ -26,7 +26,6 @@
         }
       };
       $scope.state = $state;
-      console.log($scope.state.current.name);
       $rootScope.elapsedTime = function (since_date, to_date) {
         var since = new Date(since_date);
         var to;
