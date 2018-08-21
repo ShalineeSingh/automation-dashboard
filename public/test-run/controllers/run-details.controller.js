@@ -44,7 +44,7 @@
       };
 
       $scope.openTestDetails = function (test_data) {
-        $scope.error_details.active_tab = test_data.testStatus === 'PASS' ? 'test_steps' : 'screenshot';
+        $scope.error_details.active_tab = (test_data.testStatus === 'FAIL' && $scope.run_details.platform !== 'API') ? 'screenshot' : 'test_steps';
         if (test_data.testSteps) {
           test_data.test_steps_array = test_data.testSteps.split("\\n");
         }

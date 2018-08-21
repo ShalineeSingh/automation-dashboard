@@ -4,7 +4,8 @@
             <li ng-click="changeTab('test_steps')" ng-class="{'active' : error_details.active_tab === 'test_steps'}">
                 <a href="javascript:void(0)">Test Steps</a>
             </li>
-            <li ng-if="error_details.test_data.testStatus === 'FAIL'" ng-click="changeTab('screenshot')" ng-class="{'active' : error_details.active_tab === 'screenshot'}">
+            <li ng-if="error_details.test_data.testStatus === 'FAIL' && run_details.platform !== 'API'" ng-click="changeTab('screenshot')"
+                ng-class="{'active' : error_details.active_tab === 'screenshot'}">
                 <a href="javascript:void(0)">Screenshot</a>
             </li>
             <li ng-click="changeTab('test_data')" ng-class="{'active' : error_details.active_tab === 'test_data'}">

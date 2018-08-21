@@ -52,7 +52,7 @@
                 'labelString': 'Release',
                 'display': true,
                 'fontColor': '#999',
-                'fontSize': 12
+                'fontSize': 12,
               }
             }],
             'yAxes': [{
@@ -64,7 +64,8 @@
                 'labelString': 'Passed Percentage',
                 'display': true,
                 'fontColor': '#999',
-                'fontSize': 12
+                'fontSize': 12,
+                'padding': 15
               },
               'gridLines': {
                 // 'color': '#ffffff',
@@ -77,18 +78,17 @@
               }
             }]
           },
-
           'layout': {
             'padding': {
-              'left': 5,
+              'left': 10,
               'right': 5,
               'top': 5,
               'bottom': 5
             }
           },
           'tooltips': {
-            'mode': 'nearest',
-            'axis': 'x',
+            // 'mode': 'point',
+            // 'axis': 'x',
             'xPadding': 10,
             'yPadding': 10,
             'backgroundColor': '#fff',
@@ -100,16 +100,23 @@
             'titleMarginBottom': 12,
             'bodyFontColor': '#222',
             'bodyFontSize': 12,
-            'bodySpacing': 4
+            'bodySpacing': 4,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                const tooltip = data.datasets[tooltipItem.datasetIndex];
+                const value = tooltip.data[tooltipItem.index];
+                return value ? tooltip.label + ': ' + value : tooltip.label + ': -';
+              }
+            }
           },
-          'hover': {
-            'mode': 'point' // to highlight only one data point when hovered upon
-          },
+          // 'hover': {
+          //   'mode': 'point' // to highlight only one data point when hovered upon
+          // },
           'legend': {
             'display': true,
             'position': 'top',
             'labels': {
-              'usePointStyle': true,
+              // 'usePointStyle': true,
             }
           },
           // scales: {

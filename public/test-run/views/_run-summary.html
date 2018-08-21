@@ -147,7 +147,7 @@
             <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
             <div class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
                 <div class="col-xs-12 muted-col text-ellipsis">
-                    <span class="h4">{{run_details.data.testRunDetails.deviceID}}</span>
+                    <span class="h4" title="{{run_details.data.testRunDetails.deviceID}}">{{run_details.data.testRunDetails.deviceID}}</span>
                     <br>
                     <span class="h6 text-muted">Device Id</span>
                 </div>
@@ -157,7 +157,7 @@
                     <span class="h6 text-muted">Build Id</span>
                 </div>
                 <div class="col-xs-12 muted-col text-ellipsis">
-                    <span class="h4" title="{{run_details.data.testRunDetails.deviceID}}">{{run_details.data.testRunDetails.deviceName}}</span>
+                    <span class="h4">{{run_details.data.testRunDetails.deviceName}}</span>
                     <br>
                     <span class="h6 text-muted">Device Name</span>
                 </div>

@@ -47,15 +47,17 @@
             </p> -->
         </div>
     </div>
-    <div class="col-sm-12 chart-container" ng-if="!dashboard.page_loader && dashboard.release_data">
+    <div class="col-sm-12 chart-container ng-hide" ng-if="!dashboard.page_loader && dashboard.release_data">
         <div class="heading-5 white-bg col-xs-12" style="padding-top:10px;">
             <span class="h5">Release Stats</span>
             <br>
             <soan class="h6 text-muted">Last 5 releases</soan>
         </div>
-        <canvas id="line" class="chart chart-bar white-bg" height="75" chart-data="dashboard.chart_data" chart-labels="dashboard.chart_labels"
-            chart-series="dashboard.chart_series" chart-options="dashboard.chart_options" chart-colors="dashboard.chart_colors">
-        </canvas>
+        <div class="col-xs-12 white-bg" style="padding-bottom:20px;">
+            <canvas id="line" class="chart chart-bar white-bg" height="75" chart-data="dashboard.chart_data" chart-labels="dashboard.chart_labels"
+                chart-series="dashboard.chart_series" chart-options="dashboard.chart_options" chart-colors="dashboard.chart_colors">
+            </canvas>
+        </div>
     </div>
     <div ng-if="!dashboard.page_loader && !dashboard.release_data">
         <div class="no-data-container white-bg">
