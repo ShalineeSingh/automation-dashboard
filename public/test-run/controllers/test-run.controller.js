@@ -145,12 +145,14 @@
 
       $scope.resetFilters = function () {
         $rootScope.filter_overlay = false;
+        $scope.test_run.page.current_page = 0;
         $scope.test_run.filter = {};
         $state.transitionTo('main.app.basic.platform.id');
         $scope.getTestRuns();
       };
+
       $scope.applyFilters = function () {
-        $scope.test_run.page.current_page = 1;
+        $scope.test_run.page.current_page = 0;
         $scope.getTestRuns();
         $rootScope.filter_overlay = false;
       };
