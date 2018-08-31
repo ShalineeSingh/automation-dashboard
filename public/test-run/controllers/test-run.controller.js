@@ -1,13 +1,14 @@
 (function () {
+  'use strict';
   angular.module('basic.platform')
-    .controller('testRunCtrl', ['$scope', '$rootScope', '$state', 'testRunService', 'releaseListService', function ($scope, $rootScope, $state, testRunService, releaseListService) {
+    .controller('testRunCtrl', ['$scope', '$rootScope', '$state', '$stateParams', 'testRunService', 'releaseListService', function ($scope, $rootScope, $state, $stateParams, testRunService, releaseListService) {
       $scope.test_run = {
         'platform_map': $rootScope.maps.platform_map,
         'env_map': $rootScope.maps.env_map,
         'page': {
-          'current_page': $state.params.page || 0,
+          'current_page': parseInt($stateParams.page) || 1,
           'max_size': 10,
-          'page_size': $state.params.size || 10,
+          'page_size': parseInt($stateParams.size) || 10,
           'sizes': [10, 20, 50]
         },
         'sort': {
@@ -20,18 +21,20 @@
         'environment_list': Object.keys($rootScope.maps.env_map),
         'platform_list': Object.keys($rootScope.maps.platform_map),
         'filter': {
-          'platform': $state.params.platform,
+          'platform': $stateParams.platform,
           'release': {
-            'releaseName': $state.params.release
+            'releaseName': $stateParams.release
           }
         }
       };
+
       $rootScope.filter_overlay = false;
       $rootScope.show_filter = true;
+
       var init = function () {
         $scope.getReleaseList();
-        if ($state.params.sort) {
-          var sort_type = $state.params.sort.split(',');
+        if ($stateParams.sort) {
+          var sort_type = $stateParams.sort.split(',');
           $scope.test_run.sort.sort_value = sort_type[0];
           if (sort_type[1] === 'asc') {
             delete $scope.test_run.sort.sort_type;
@@ -39,19 +42,20 @@
             $scope.test_run.sort.sort_type = sort_type[1];
           }
         }
-        if ($state.params.suiteName) {
-          $scope.test_run.filter.suite_name = $state.params.suiteName;
+        if ($stateParams.suiteName) {
+          $scope.test_run.filter.suite_name = $stateParams.suiteName;
         }
-        if ($state.params.env) {
-          $scope.test_run.filter.environment = $state.params.env;
+        if ($stateParams.env) {
+          $scope.test_run.filter.environment = $stateParams.env;
         }
         $scope.getTestRuns();
       };
+      /**--------get test runs------------ */
       $scope.getTestRuns = function () {
         $scope.test_run.page_loader = true;
         var params = {
           'sort': $scope.test_run.sort.sort_value + ',' + ($scope.test_run.sort.sort_type ? 'desc' : 'asc'),
-          'page': $scope.test_run.page.current_page,
+          'page': $scope.test_run.page.current_page - 1,
           'size': $scope.test_run.page.page_size,
           'platform': $scope.test_run.filter.platform,
           'release': $scope.test_run.filter.release ? $scope.test_run.filter.release.releaseName : '',
@@ -59,11 +63,6 @@
           'env': $scope.test_run.filter.environment
         };
         testRunService.get(params).$promise.then(function (response) {
-          $scope.test_run.list = response.responseObject;
-          $scope.test_run.page.total_items = response.total_elements;
-          $scope.test_run.page.max_page = Math.ceil($scope.test_run.page.total_items / $scope.test_run.page.page_size);
-          generateProgressBar();
-          console.log('dsfs');
           $state.transitionTo('main.app.basic.platform.id', {
             'sort': $scope.test_run.sort.sort_value + ',' + ($scope.test_run.sort.sort_type ? 'desc' : 'asc'),
             'page': $scope.test_run.page.current_page,
@@ -76,6 +75,11 @@
             'notify': false,
             'location': 'replace'
           });
+          $scope.test_run.list = response.responseObject;
+          $scope.test_run.page.total_items = response.total_elements;
+          $scope.test_run.page.max_page = Math.ceil($scope.test_run.page.total_items / $scope.test_run.page.page_size);
+          generateProgressBar();
+
         }).catch(function (error) {
           console.log(error);
         }).finally(function () {
@@ -114,16 +118,6 @@
         });
       };
 
-      /*------------ pagination functions -------------*/
-      $scope.gotoPage = function () {
-        if ($scope.test_run.page.goto_page_number) {
-          if (($scope.test_run.page.goto_page_number > $scope.test_run.page.max_page) || $scope.test_run.page.goto_page_number < 0) {
-            $scope.test_run.page.goto_page_number = 1;
-          }
-          $scope.test_run.page.current_page = $scope.test_run.page.goto_page_number;
-          $scope.getTestRuns();
-        }
-      };
       $scope.changePageSize = function () {
         $scope.test_run.page.current_page = 1;
         $scope.getTestRuns();
@@ -145,18 +139,19 @@
 
       $scope.resetFilters = function () {
         $rootScope.filter_overlay = false;
-        $scope.test_run.page.current_page = 0;
+        $scope.test_run.page.current_page = 1;
         $scope.test_run.filter = {};
         $state.transitionTo('main.app.basic.platform.id');
         $scope.getTestRuns();
       };
 
       $scope.applyFilters = function () {
-        $scope.test_run.page.current_page = 0;
+        $scope.test_run.page.current_page = 1;
         $scope.getTestRuns();
         $rootScope.filter_overlay = false;
       };
+
       init();
-      // setInterval(getTestRuns, 20 * 1000);
+      setInterval(init, 20 * 1000);
     }]);
 })();

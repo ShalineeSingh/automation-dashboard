@@ -1,4 +1,5 @@
 (function () {
+  'use strict';
   angular.module('basic.platform')
     .controller('runDetailsCtrl', ['$scope', '$rootScope', '$state', 'runDetailsService', '$uibModal', '$filter', '$timeout', function ($scope, $rootScope, $state, runDetailsService, $uibModal, $filter, $timeout) {
       $scope.error_details = {};
@@ -71,6 +72,7 @@
       };
 
       $scope.getTimeFromSecs = function (elapsed) {
+        var message;
         if (elapsed >= 0) {
           var diff = {};
           diff.days = Math.floor(elapsed / 86400);
@@ -124,6 +126,6 @@
       };
 
       $scope.getRunDetails();
-      // setInterval(getRunDetails, 20 * 1000);
+      setInterval($scope.getRunDetails, 20 * 1000);
     }]);
 })();

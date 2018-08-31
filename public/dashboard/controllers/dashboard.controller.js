@@ -1,4 +1,5 @@
 (function () {
+  'use strict';
   angular.module('app.basic')
     .controller('dashboardCtrl', ['$scope', '$rootScope', '$state', '$filter', '$compile', 'dashboardService', function ($scope, $rootScope, $state, $filter, $compile, dashboardService) {
       var graph_values = [
@@ -32,7 +33,6 @@
           }
         ],
 
-        // ["#26B99A", "#34495E", "#5a8022", "#3498DB", "#9B59B6", "#8abb6f", "#759c6a", "#bfd3b7"],
         'chart_labels': [],
         'chart_options': {
           'spanGaps': true,
@@ -87,8 +87,6 @@
             }
           },
           'tooltips': {
-            // 'mode': 'point',
-            // 'axis': 'x',
             'xPadding': 10,
             'yPadding': 10,
             'backgroundColor': '#fff',
@@ -109,29 +107,13 @@
               }
             }
           },
-          // 'hover': {
-          //   'mode': 'point' // to highlight only one data point when hovered upon
-          // },
           'legend': {
             'display': true,
             'position': 'top',
-            'labels': {
-              // 'usePointStyle': true,
-            }
+            'labels': {}
           },
-          // scales: {
-          //   yAxes: [{
-          //     id: 'y-axis-1',
-          //     type: 'linear',
-          //     display: true,
-          //     position: 'left'
-          //   }]
-          // },
           elements: {
-            line: {
-              // fill: false,
-              //  tension: 0,
-            }
+            line: {}
           }
         },
         'platform_sequence': {
@@ -144,49 +126,6 @@
         'platform_map': $rootScope.maps.platform_map,
         'chart_series': ['API', 'Web', 'Android', 'MobileWeb', 'iOS']
       };
-
-      // var formatValuesForGraph = function (platform_type, platform_data_values) {
-      //   platform_data_values.forEach(function (obj, index) {
-      //     if (obj.hasOwnProperty(platform_type)) {
-      //       console.log(index);
-      //       return index;
-      //     }
-      //   });
-      // };
-
-      // var getGraphValues = function (release_array) {
-      //   var labels = [];
-      //   var series = [];
-      //   var obj_map_array = [];
-      //   var release_data_obj = {};
-      //   var platform_data_values = [];
-      //   var final_chart_values = [];
-      //   release_array.forEach(function (element) {
-      //     labels.push(element.release);
-      //     element.releaseStats.forEach(function (platform) {
-      //       var temp_platform_index;
-      //       platform_data_values.forEach(function (obj, index) {
-      //         if (obj.hasOwnProperty(platform.platformType)) {
-      //           temp_platform_index = index;
-      //         }
-      //       });
-      //       if (temp_platform_index) {
-      //         platform_data_values[temp_platform_index][platform.platformType].push(platform.passedPercentage);
-      //       } else {
-      //         obj_map_array = [];
-      //         obj_map_array.push(platform.passedPercentage);
-      //         platform_data_values.push({
-      //           [platform.platformType]: obj_map_array
-      //         });
-      //       }
-      //     });
-      //   });
-      //   // console.log(platform_data_values);
-      //   platform_data_values.forEach(function (platform, index) {
-      //     final_chart_values.push(platform[Object.keys(platform)[0]]);
-      //   });
-      // };
-      // To toggle(show/hide) dataset via custom HTML legends
 
       var getGraphValues = function (release_array) {
         release_array.forEach(function (release, index) {
@@ -212,7 +151,6 @@
         $scope.dashboard.page_loader = true;
         dashboardService.get().$promise.then(function (response) {
           $scope.dashboard.release_data = response.responseObject;
-          console.log($scope.dashboard.release_data);
           getGraphValues($scope.dashboard.release_data);
         }).catch(function (error) {
           console.log(error);
@@ -228,5 +166,7 @@
         });
       };
       getDashboardData();
+      setInterval(getDashboardData, 20 * 1000);
+
     }]);
 })();

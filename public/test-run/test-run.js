@@ -1,8 +1,7 @@
 (function () {
-  'use-strict';
+  'use strict';
   angular.module('basic.platform', [])
     .config(['$stateProvider', function ($stateProvider) {
-      var params = 'page&sort&size&release&platform&suiteName&env';
       $stateProvider
         .state('main.app.basic.platform', {
           'url': '/platform',
@@ -16,6 +15,8 @@
         })
         .state('main.app.basic.platform.id', {
           url: '/details?page&sort&size&release&platform&suiteName&env',
+          'cache': false,
+          dynamic: true,
           views: {
             'platformContent': {
               templateUrl: '/public/test-run/views/test-run.html',
