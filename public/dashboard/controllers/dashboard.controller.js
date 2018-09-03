@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   angular.module('app.basic')
-    .controller('dashboardCtrl', ['$scope', '$rootScope', '$state', '$filter', '$compile', 'dashboardService', function ($scope, $rootScope, $state, $filter, $compile, dashboardService) {
+    .controller('dashboardCtrl', ['$scope', '$rootScope', '$state', '$interval', '$filter', '$compile', 'dashboardService', function ($scope, $rootScope, $state, $interval, $filter, $compile, dashboardService) {
       var graph_values = [
         [null, null, null, null, null],
         [null, null, null, null, null],
@@ -167,7 +167,7 @@
       };
       getDashboardData();
 
-      var refresh = setInterval(getDashboardData, 20 * 1000);
+      var refresh = $interval(getDashboardData, 20 * 1000);
 
       $scope.$on('$destroy', function (e) {
         $interval.cancel(refresh);

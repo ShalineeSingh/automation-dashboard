@@ -8,10 +8,11 @@
                 ng-class="{'active' : error_details.active_tab === 'screenshot'}">
                 <a href="javascript:void(0)">Screenshot</a>
             </li>
-            <li ng-click="changeTab('test_data')" ng-class="{'active' : error_details.active_tab === 'test_data'}">
+            <!-- <li ng-click="changeTab('test_data')" ng-class="{'active' : error_details.active_tab === 'test_data'}">
                 <a href="javascript:void(0)">Test Data</a>
-            </li>
-            <li ng-click="changeTab('console_logs')" ng-class="{'active' : error_details.active_tab === 'console_logs'}">
+            </li> -->
+            <li ng-if="run_details.platform === 'WEB' ||  run_details.platform === 'MOBILEWEB'" ng-click="changeTab('console_logs')"
+                ng-class="{'active' : error_details.active_tab === 'console_logs'}">
                 <a href="javascript:void(0)">Console Logs</a>
             </li>
         </ul>
