@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   angular.module('basic.platform')
-    .controller('runDetailsCtrl', ['$scope', '$rootScope', '$state', 'runDetailsService', '$uibModal', '$filter', '$timeout', function ($scope, $rootScope, $state, runDetailsService, $uibModal, $filter, $timeout) {
+    .controller('runDetailsCtrl', ['$scope', '$rootScope', '$state', '$interval', 'runDetailsService', '$uibModal', '$filter', '$timeout', function ($scope, $rootScope, $state, $interval, runDetailsService, $uibModal, $filter, $timeout) {
       $scope.error_details = {};
       $scope.run_details = {
         'platform': $state.params.platform_id,
@@ -126,6 +126,10 @@
       };
 
       $scope.getRunDetails();
-      setInterval($scope.getRunDetails, 20 * 1000);
+      var refresh = $interval($scope.getRunDetails, 20 * 1000);
+      $scope.$on('$destroy', function (e) {
+        $interval.cancel(refresh);
+      });
+
     }]);
 })();

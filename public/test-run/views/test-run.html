@@ -81,6 +81,9 @@
                             <span> Total tests</span>
                         </th>
                         <th>
+                            <span>Run Status</span>
+                        </th>
+                        <th>
                             <span> Completion %</span>
                         </th>
                     </tr>
@@ -96,6 +99,7 @@
                         <td>{{test_run.env_map[data.env]}}</td>
                         <td>{{elapsedTime(data.start_time)}}</td>
                         <td>{{data.total_tests}}</td>
+                        <td>{{data.runStatus}}</td>
                         <td>
                             <uib-progress ng-if="data.completionPercent >0">
                                 <uib-bar ng-repeat="bar in data.stacked.value track by $index" value="bar" type="{{ data.stacked.type[$index]}}" tooltip-placement="'top'"

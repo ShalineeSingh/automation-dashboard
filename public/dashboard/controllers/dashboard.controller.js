@@ -166,7 +166,12 @@
         });
       };
       getDashboardData();
-      setInterval(getDashboardData, 20 * 1000);
+
+      var refresh = setInterval(getDashboardData, 20 * 1000);
+
+      $scope.$on('$destroy', function (e) {
+        $interval.cancel(refresh);
+      });
 
     }]);
 })();

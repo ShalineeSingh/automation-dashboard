@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   angular.module('basic.platform')
-    .controller('testRunCtrl', ['$scope', '$rootScope', '$state', '$stateParams', 'testRunService', 'releaseListService', function ($scope, $rootScope, $state, $stateParams, testRunService, releaseListService) {
+    .controller('testRunCtrl', ['$scope', '$rootScope', '$state', '$stateParams', '$interval', 'testRunService', 'releaseListService', function ($scope, $rootScope, $state, $stateParams, $interval, testRunService, releaseListService) {
       $scope.test_run = {
         'platform_map': $rootScope.maps.platform_map,
         'env_map': $rootScope.maps.env_map,
@@ -152,6 +152,10 @@
       };
 
       init();
-      setInterval(init, 20 * 1000);
+
+      var refresh = $interval(init, 20 * 1000);
+      $scope.$on('$destroy', function (e) {
+        $interval.cancel(refresh);
+      });
     }]);
 })();
