@@ -88,10 +88,13 @@
                         </th>
                     </tr>
                     <tr ng-repeat="data in test_run.list" class="cursor-pointer white-bg" ng-click="openRunDetails(data.platform,data.id)">
-                        <td>{{data.id}}
-                            <span ng-if="data.completionPercent <100">
+                        <td>
+                            <span ng-if="data.runStatus === 'INPROGRESS'">
                                 <i class="fa fa-circle in-progress"> </i>
                             </span>
+                            <span ng-if="data.runStatus !== 'INPROGRESS'" class="empty-progress-space">
+                            </span>
+                            {{data.id}}
                         </td>
                         <td>{{data.suiteName}}</td>
                         <td>{{test_run.platform_map[data.platform]}}</td>

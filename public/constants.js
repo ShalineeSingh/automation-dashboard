@@ -7,5 +7,5 @@ var LOCAL = {
 
 
 var load_env = function () {
-  return LOCAL;
+  return PROD;
 };
