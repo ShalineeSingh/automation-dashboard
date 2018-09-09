@@ -12,6 +12,9 @@
     }])
     .factory('dashboardService', ['$resource', 'CONF', function ($resource, CONF) {
       return $resource(CONF.URL + '/dashboard/history');
+    }])
+    .factory('latestReleaseService', ['$resource', 'CONF', function ($resource, CONF) {
+      return $resource(CONF.URL + '/dashboard/releaseProgress/latest');
     }]);
   // .factory('testRunService', ['$resource', function ($resource) {
   //   return $resource('/public/test-run/json/test-runs.json');
@@ -24,5 +27,8 @@
   // }])
   // .factory('dashboardService', ['$resource', function ($resource) {
   //   return $resource('/public/test-run/json/dashboard.json');
+  // }])
+  // .factory('latestReleaseService', ['$resource', 'CONF', function ($resource, CONF) {
+  //   return $resource('/public/test-run/json/latest-release.json');
   // }]);
 })();

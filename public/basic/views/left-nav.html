@@ -5,6 +5,10 @@
         <span class="h3 cursor-pointer heading" ui-sref="main.app.basic.dashboard.performance">Dashboard</span>
     </div>
     <ul class="menu-container">
+        <li ui-sref="main.app.basic.latest.release" ui-sref-active="{'active':'main.app.basic.latest.release'}">
+            <a>
+                <i class="fa fa-flash fa-fw"></i>  Latest Release</a>
+        </li>
         <li ui-sref="main.app.basic.dashboard.performance" ui-sref-active="{'active':'main.app.basic.dashboard.performance'}">
             <a>
                 <i class="fa fa-line-chart fa-fw"></i>  Releases</a>
@@ -29,12 +33,17 @@
     <ul class="menu-container">
         <li>
             <a ui-sref="main.app.basic.dashboard.performance">
-                <i class="fa fa-dashboard"></i>
+                <i uib-tooltip="Dashboard" tooltip-class="tooltip-class" class="fa fa-dashboard"></i>
+            </a>
+        </li>
+        <li ui-sref="main.app.basic.latest.release" ui-sref-active="{'active':'main.app.basic.latest.release'}">
+            <a>
+                <i uib-tooltip="Latest Release" class="fa fa-flash fa-fw"></i>
             </a>
         </li>
         <li ui-sref="main.app.basic.dashboard.performance" ui-sref-active="{'active':'main.app.basic.dashboard.performance'}">
             <a>
-                <i class="fa fa-line-chart fa-fw"></i>
+                <i uib-tooltip="Releases" class="fa fa-line-chart fa-fw"></i>
             </a>
         </li>
         <!-- <li ui-sref="main.app.basic.dashboard.hotfix" ui-sref-active="{'active':'main.app.basic.dashboard.hotfix'}">
@@ -44,12 +53,12 @@
         </li> -->
         <li ui-sref="main.app.basic.platform.id" ui-sref-active="{'active':'main.app.basic.platform.**'}">
             <a>
-                <i class="fa fa-rocket fa-fw"></i>
+                <i uib-tooltip="Test Run" class="fa fa-rocket fa-fw"></i>
             </a>
         </li>
         <li>
             <a>
-                <i class="fa fa-fire fa-fw"></i>
+                <i uib-tooltip="Hotfix" class="fa fa-fire fa-fw"></i>
             </a>
         </li>
     </ul>
