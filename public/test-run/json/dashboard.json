@@ -6,6 +6,7 @@
     "end_time": "2018-08-10T18:25:18.151Z",
     "releaseStats": [{
       "platformType": "API",
+      "platformLabel": "WEB",
       "total_tests": 10,
       "passed_tests": 1,
       "failed_tests": 9,
@@ -16,36 +17,50 @@
     "start_time": "2018-08-10T09:34:29.307Z",
     "end_time": "2018-08-14T12:07:55.150Z",
     "releaseStats": [{
-      "platformType": "API",
-      "total_tests": 259,
-      "passed_tests": 5,
-      "failed_tests": 254,
-      "passedPercentage": 1
-    }, {
-      "platformType": "ANDROID",
-      "total_tests": 4,
-      "passed_tests": 2,
-      "failed_tests": 2,
-      "passedPercentage": 50
-    }, {
-      "platformType": "MOBILEWEB",
-      "total_tests": 45,
-      "passed_tests": 39,
-      "failed_tests": 6,
-      "passedPercentage": 86
-    }, {
-      "platformType": "WEB",
-      "total_tests": 232,
-      "passed_tests": 207,
-      "failed_tests": 25,
-      "passedPercentage": 89
-    }]
+        "platformType": "API",
+        "platformLabel": "WEB",
+        "total_tests": 259,
+        "passed_tests": 5,
+        "failed_tests": 254,
+        "passedPercentage": 1
+      }, {
+        "platformType": "ANDROID",
+        "platformLabel": "WEB",
+        "total_tests": 4,
+        "passed_tests": 2,
+        "failed_tests": 2,
+        "passedPercentage": 50
+      }, {
+        "platformType": "MOBILEWEB",
+        "platformLabel": "WEB",
+        "total_tests": 45,
+        "passed_tests": 39,
+        "failed_tests": 6,
+        "passedPercentage": 86
+      }, {
+        "platformType": "WEB",
+        "platformLabel": "WEB",
+        "total_tests": 232,
+        "passed_tests": 207,
+        "failed_tests": 25,
+        "passedPercentage": 89
+      },
+      {
+        "platformType": "WEB",
+        "platformLabel": "WEB",
+        "total_tests": 232,
+        "passed_tests": 207,
+        "failed_tests": 25,
+        "passedPercentage": 89
+      }
+    ]
   }, {
     "release": "ReleaseName",
     "start_time": "2018-08-09T12:16:03.806Z",
     "end_time": "2018-08-09T12:16:41.304Z",
     "releaseStats": [{
       "platformType": "WEB",
+      "platformLabel": "WEB",
       "total_tests": 1,
       "passed_tests": 1,
       "failed_tests": 0,
@@ -57,6 +72,7 @@
     "end_time": "2018-08-14T08:46:25.211Z",
     "releaseStats": [{
       "platformType": "IOS",
+      "platformLabel": "WEB",
       "total_tests": 43,
       "passed_tests": 20,
       "failed_tests": 23,
@@ -68,18 +84,21 @@
     "end_time": "2018-08-14T10:10:01.187Z",
     "releaseStats": [{
       "platformType": "API",
+      "platformLabel": "WEB",
       "total_tests": 2,
       "passed_tests": 0,
       "failed_tests": 2,
       "passedPercentage": 0
     }, {
       "platformType": "ANDROID",
+      "platformLabel": "WEB",
       "total_tests": 13,
       "passed_tests": 11,
       "failed_tests": 2,
       "passedPercentage": 84
     }, {
       "platformType": "MOBILEWEB",
+      "platformLabel": "WEB",
       "total_tests": 6,
       "passed_tests": 2,
       "failed_tests": 4,

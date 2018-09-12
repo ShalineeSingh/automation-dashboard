@@ -1,0 +1,89 @@
+<div class="test-run-wrapper" style="margin-top:20px;">
+    <div class="col-sm-12 white-bg loader-container" ng-if="latest_release.page_loader">
+        <div class="page-loader"></div>
+    </div>
+    <div class="latest-release-container" ng-if="!latest_release.page_loader">
+        <div class="col-xs-12 text-center h4 release-name-container">
+            <p>{{latest_release.release_name}}</p>
+            <p class="text-muted muted-margin font-12">{{latest_release.list.releaseSummary.start_time | date:'MMM d, y'}} - {{latest_release.list.releaseSummary.end_time
+                | date:'MMM d, y'}}</p>
+
+        </div>
+        <div class="platform-data-wrapper col-md-5 white-bg" ng-repeat="platform in latest_release.platform_list">
+            <div class="row test-stats-header">
+                <div class="col-xs-6">
+                    <p class="h5">{{platform}}</p>
+                </div>
+                <div class="col-xs-6 release-summary-progress">
+                    <uib-progress ng-if="latest_release.summary[$index].completionPercent >0">
+                        <uib-bar ng-repeat="bar in latest_release.summary[$index].stacked.value track by $index" value="bar" type="{{latest_release.summary[$parent.$index].stacked.type[$index]}}"
+                            tooltip-placement="'top'" uib-tooltip="{{bar}} %">
+                            <span ng-hide="bar < 5">{{bar}}%</span>
+                        </uib-bar>
+                    </uib-progress>
+                </div>
+                <!-- <div class="line"></div> -->
+            </div>
+            <div class="row" ng-repeat="stats in latest_release.list.platformWiseBreakup[platform] | limitTo :5">
+                <div class="col-xs-6">
+                    <!-- <p class="text-muted muted-margin font-12">Suite Name</p> -->
+                    <p class="clearfix muted-margin">
+                        <span class="pull-left muted-margin suite-name cursor-pointer success-number" ng-click="goToRunDetails(platform, stats.id)">
+                            <u>Run #{{$index + 1}} </u>
+                        </span>
+                        <span class="pull-right">
+                            <i ng-if="stats.runStatus === 'COMPLETED'" class="fa fa-check-circle success-number" uib-tooltip={{stats.runStatus}}></i>
+                            <i ng-if="stats.runStatus === 'INPROGRESS'" class="fa fa-spinner success-number" uib-tooltip={{stats.runStatus}}></i>
+                            <i ng-if="stats.runStatus === 'ABORTED'" class="fa fa-stop fail-number" uib-tooltip={{stats.runStatus}}></i>
+                        </span>
+                    </p>
+                    <!-- <p class="text-muted muted-margin font-12">{{stats.start_time | date:'MMM d, y'}} - {{stats.end_time | date:'MMM d, y'}}</p> -->
+                    <!-- <p class="text-muted font-12">{{stats.env}}</p> -->
+                </div>
+                <div class="col-xs-3">
+                    <canvas id="pie" class="chart chart-pie" chart-data="stats.stacked.value" chart-labels="labels" chart-options="options" chart-colors="chart_colors">
+                    </canvas>
+                </div>
+                <div class="col-xs-3">
+                    <div class="clearfix">
+                        <p class="pull-right muted-margin">
+                            <span class="text-muted muted-margin font-12">Total</span>
+                            <span class="muted-margin"> {{stats.total_tests}}</span>
+                        </p>
+                    </div>
+                    <div class="clearfix">
+                        <p class="pull-right muted-margin">
+                            <span class="text-muted muted-margin font-12">Passed</span>
+                            <span class="muted-margin"> {{stats.passed_tests}}</span>
+                        </p>
+                    </div>
+                    <div class="clearfix">
+                        <p class="pull-right muted-margin">
+                            <span class="text-muted muted-margin font-12">Failed</span>
+                            <span class="muted-margin"> {{stats.failed_tests}}</span>
+                        </p>
+                    </div>
+
+                    <!-- <p class="text-muted muted-margin font-12">Passed</p>
+                    <p class="muted-margin"> {{stats.passed_tests}}</p>
+
+                    <p class="text-muted muted-margin font-12">Failed</p>
+                    <p class="muted-margin"> {{stats.failed_tests}}</p> -->
+
+                </div>
+                <!-- <div class="col-xs-10 col-xs-offset-1">
+                    <uib-progress ng-if="stats.completionPercent >0">
+                        <uib-bar ng-repeat="bar in stats.stacked.value track by $index" value="bar" type="{{ stats.stacked.type[$index]}}" tooltip-placement="'top'"
+                            uib-tooltip="{{bar}} %">
+                            <span ng-hide="bar < 5">{{bar}}%</span>
+                        </uib-bar>
+                    </uib-progress>
+                </div> -->
+                <div class="line"></div>
+            </div>
+            <p class="pull-right success-number cursor-pointer" ng-click="goToTestRuns(platform)" ng-if="latest_release.list.platformWiseBreakup[platform].length > 5">
+                <u>View More Runs</u>
+            </p>
+        </div>
+    </div>
+</div>

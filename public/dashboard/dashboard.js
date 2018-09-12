@@ -18,7 +18,15 @@
           views: {
             'dashboardContent': {
               templateUrl: '/public/dashboard/views/dashboard.html',
-              // controller: 'landingController'
+            }
+          }
+        })
+        .state('main.app.basic.dashboard.release', {
+          url: 'release/:release_id',
+          views: {
+            'dashboardContent': {
+              templateUrl: '/public/dashboard/views/release-data.html',
+              controller: 'releaseDataCtrl'
             }
           }
         })
@@ -27,7 +35,6 @@
           views: {
             'dashboardContent': {
               templateUrl: '/public/dashboard/views/dashboard.html',
-              // controller: 'landingController'
             }
           }
         });

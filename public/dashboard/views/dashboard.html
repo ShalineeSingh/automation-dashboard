@@ -1,68 +1,39 @@
-<div class="test-run-wrapper" style="margin-top:20px;" ng-controller="dashboardCtrl">
+<div class="dashboard-container" ng-controller="dashboardCtrl">
     <div class="col-sm-12 white-bg loader-container" ng-if="dashboard.page_loader">
         <div class="page-loader"></div>
     </div>
-    <div class="col-sm-12" ng-if="!dashboard.page_loader">
+    <div class="col-sm-12 dashboard-cards-container" ng-if="!dashboard.page_loader">
         <div class="col-md-2 col-sm-4 col-xs-12 white-bg tile_stats_count" ng-repeat="release in dashboard.release_data">
-            <div class="test-stats-header">
+            <div class="test-stats-header text-center">
                 <span class="h5">{{release.release}}</span>
                 <p class="text-muted dashboard-date">{{release.start_time | date:'MMM d, y'}} - {{release.end_time | date:'MMM d, y'}}</p>
                 <div class="line"></div>
             </div>
-            <table class="dashboard-stats-table">
-                <tr class="text-muted dashboard-date">
-                    <td>Platform</td>
-                    <td class="text-center">Total</td>
-                    <td class="text-center">Passed</td>
-                </tr>
-                <tr class="test-stats-row cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
-                    <td>
-                        <span ng-if="stats.runStatus === 'INPROGRESS'">
-                            <i class="fa fa-circle in-progress"> </i>
-                        </span>
-                        <span ng-if="stats.runStatus !== 'INPROGRESS'" class="empty-progress-space">
-                        </span>
-                        <span>
-                            {{stats.platformLabel}}
-                        </span>
-
-                    </td>
-                    <td class="text-center">
-                        {{stats.total_tests}}
-                    </td>
-                    <td class="text-center">
-                        {{stats.passedPercentage}}%
-                    </td>
-                </tr>
-            </table>
-            <!-- <p class="text-muted dashboard-date">
-                <span>Platform</span>
-                <span class="total-tests">Total</span>
-                <span class="pull-right">Passed</span>
-            </p>
-            <p class="test-stats-row cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
-                <span>{{dashboard.platform_map[stats.platformType]}}</span>
-                <i>
-                    <span class="text-muted total-tests">({{stats.total_tests}})</span>
-                </i>
-                <span class="pull-right">{{stats.passedPercentage}}%</span>
-
-            </p> -->
-            <!-- <p class="success-number cursor-pointer" ng-click="goToLatestRelease(release.id)">
-                <u>View Details</u>
-            </p> -->
-        </div>
-    </div>
-    <div class="col-sm-12 chart-container ng-hide" ng-if="!dashboard.page_loader && dashboard.release_data">
-        <div class="heading-5 white-bg col-xs-12" style="padding-top:10px;">
-            <span class="h5">Release Stats</span>
-            <br>
-            <soan class="h6 text-muted">Last 5 releases</soan>
-        </div>
-        <div class="col-xs-12 white-bg" style="padding-bottom:20px;">
-            <canvas id="line" class="chart chart-bar white-bg" height="75" chart-data="dashboard.chart_data" chart-labels="dashboard.chart_labels"
-                chart-series="dashboard.chart_series" chart-options="dashboard.chart_options" chart-colors="dashboard.chart_colors">
-            </canvas>
+            <div class="stats-wrapper">
+                <div class="row stats-container cursor-pointer" ng-repeat="stats in release.releaseStats" ng-click="goToState(release.release, stats.platformType)">
+                    <div class="col-xs-5" style="padding-right:0;">
+                        <span class="h5"> {{stats.platformLabel}}</span>
+                        <br>
+                        <span class="font-12">Total: {{stats.total_tests}}</span>
+                        <br>
+                        <span class="font-12">Passed: {{stats.passed_tests}}</span>
+                        <br>
+                        <span class="font-12">Failed: {{stats.failed_tests}}</span>
+                        <br>
+                    </div>
+                    <div class="col-xs-7 muted-col">
+                        <canvas id="pie" class="chart chart-pie" chart-data="stats.stacked.value" chart-labels="labels" chart-options="options" chart-colors="chart_colors">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="row view-details-btn">
+                <div class="col-xs-12 text-center">
+                    <button type="button" class="btn btn-sm btn-primary" ng-click="goToLatestRelease(release.release)">
+                        View Details
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     <div ng-if="!dashboard.page_loader && !dashboard.release_data">
