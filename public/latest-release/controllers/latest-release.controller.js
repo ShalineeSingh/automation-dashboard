@@ -33,6 +33,7 @@
       $scope.latestReleaseData = function () {
         $scope.latest_release.page_loader = true;
         latestReleaseService.get().$promise.then(function (response) {
+          $scope.latest_release.release_name = response.responseObject.releaseName;
           $scope.latest_release.list = response.responseObject;
           $scope.latest_release.platform_list = Object.keys($scope.latest_release.list.platformWiseBreakup);
           $scope.latest_release.summary = response.responseObject.releaseSummary.releaseStats;
@@ -67,7 +68,18 @@
           });
         });
       };
-
+      $scope.goToTestRuns = function (platform) {
+        $state.go('main.app.basic.platform.id', {
+          'platform': platform,
+          'release': $scope.latest_release.release_name
+        });
+      };
+      $scope.goToRunDetails = function (platform, run_id) {
+        $state.go('main.app.basic.platform.run', {
+          'platform_id': platform,
+          'run_id': run_id
+        });
+      };
       init();
 
       // var refresh = $interval(init, 20 * 1000);

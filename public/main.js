@@ -13,7 +13,7 @@
             controller: 'mainCtrl'
           });
         // if none of the states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/main/app/dashboard');
+        $urlRouterProvider.otherwise('/main/app/latest-release');
         // html5Mode removes #! from url and make the url pretty(normal)
         $locationProvider.html5Mode(true);
 

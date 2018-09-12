@@ -165,6 +165,9 @@
           'platform': platform
         });
       };
+      $scope.goToLatestRelease = function (release_id) {
+
+      }
       getDashboardData();
 
       var refresh = $interval(getDashboardData, 20 * 1000);
