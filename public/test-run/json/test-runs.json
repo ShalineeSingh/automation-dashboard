@@ -1,0 +1,43 @@
+{
+  "timeStamp": "10-08-2018 02:44:31",
+  "responseObject": [{
+      "id": 762,
+      "platform": "WEB",
+      "suiteName": "Failed suite [Tiket Regression Test]",
+      "release": "Release Alpha",
+      "env": "HOTFIX",
+      "total_tests": 61,
+      "passed_tests": 16,
+      "failed_tests": 45,
+      "start_time": "2018-08-10T11:49:43.782Z",
+      "end_time": "2018-08-10T12:12:10.030Z"
+    },
+    {
+      "id": 222,
+      "platform": "WEB",
+      "suiteName": "Tiket Regression Test",
+      "release": "Release Alpha",
+      "env": "HOTFIX",
+      "total_tests": 307,
+      "passed_tests": 196,
+      "failed_tests": 61,
+      "start_time": "2018-08-10T09:37:30.235Z",
+      "end_time": "2018-08-10T10:43:28.408Z"
+    },
+    {
+      "id": 209,
+      "platform": "WEB",
+      "suiteName": "Tiket Regression Test",
+      "release": "Release Alpha",
+      "env": "TESTING1",
+      "total_tests": 257,
+      "passed_tests": 11,
+      "failed_tests": 0,
+      "start_time": "2018-08-10T09:34:29.307Z"
+    }
+  ],
+  "apiResponseStatus": "SUCCESS",
+  "page": 0,
+  "size": 10,
+  "total_elements": 3
+}

@@ -1,0 +1,69 @@
+<!-- Sidebar/menu -->
+<nav ng-show="sidebar">
+    <div class="heading-container">
+        <i class="fa fa-dashboard"></i>
+        <span class="h3 cursor-pointer heading" ui-sref="main.app.basic.dashboard.performance">Dashboard</span>
+    </div>
+    <ul class="menu-container">
+        <li ui-sref="main.app.basic.latest.release" ui-sref-active="{'active':'main.app.basic.latest.release'}">
+            <a>
+                <i class="fa fa-flash fa-fw"></i>  Latest Release</a>
+        </li>
+        <li ui-sref="main.app.basic.dashboard.performance" ui-sref-active="{'active':'main.app.basic.dashboard.performance'}">
+            <a>
+                <i class="fa fa-line-chart fa-fw"></i>  Releases</a>
+        </li>
+        <!-- <li ui-sref="main.app.basic.dashboard.hotfix" ui-sref-active="{'active':'main.app.basic.dashboard.hotfix'}">
+            <a>
+                <i class="fa fa-fire fa-fw"></i>  Hotfix</a>
+        </li> -->
+        <li ui-sref="main.app.basic.platform.id" ui-sref-active="{'active':'main.app.basic.platform.**'}">
+            <a>
+                <i class="fa fa-rocket fa-fw"></i>  Test Runs</a>
+        </li>
+        <li>
+            <a>
+                <i class="fa fa-fire fa-fw"></i>  Hotfix
+                <span class="badge pull-right">Coming Soon</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<nav ng-show="!sidebar">
+    <ul class="menu-container">
+        <li>
+            <a ui-sref="main.app.basic.dashboard.performance">
+                <i class="fa fa-dashboard"></i>
+            </a>
+        </li>
+        <li ui-sref="main.app.basic.latest.release" ui-sref-active="{'active':'main.app.basic.latest.release'}">
+            <a>
+                <i uib-tooltip="Latest Release" class="fa fa-flash fa-fw"></i>
+                <!-- <span class="left-nav-small-text"> -->
+                <!-- <span class="success-number font-12 text-center">Latest Release</span> -->
+                <!-- <span class="success-number font-12 text-center">Release</span> -->
+                <!-- </span> -->
+            </a>
+        </li>
+        <li ui-sref="main.app.basic.dashboard.performance" ui-sref-active="{'active':'main.app.basic.dashboard.performance'}">
+            <a>
+                <i uib-tooltip="Releases" class="fa fa-line-chart fa-fw"></i>
+            </a>
+        </li>
+        <!-- <li ui-sref="main.app.basic.dashboard.hotfix" ui-sref-active="{'active':'main.app.basic.dashboard.hotfix'}">
+            <a>
+                <i class="fa fa-fire fa-fw"></i>
+            </a>
+        </li> -->
+        <li ui-sref="main.app.basic.platform.id" ui-sref-active="{'active':'main.app.basic.platform.**'}">
+            <a>
+                <i uib-tooltip="Test Run" class="fa fa-rocket fa-fw"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i uib-tooltip="Hotfix" class="fa fa-fire fa-fw"></i>
+            </a>
+        </li>
+    </ul>
+</nav>

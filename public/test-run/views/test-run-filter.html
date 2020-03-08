@@ -1,0 +1,90 @@
+<div class="filter-container col-sm-12">
+    <form ng-submit="applyFilters()">
+        <div class="form-group">
+            <label class="control-label" for="suite-name">Suite Name</label>
+            <input name="suite-name" type="text" class="form-control" ng-model="test_run.filter.suite_name">
+        </div>
+        <div class="line"></div>
+        <label class="control-label">Platform</label>
+        <div class="form-group">
+            <ui-select ng-model="test_run.filter.platform">
+                <ui-select-match placeholder="Platform">{{test_run.platform_map[$select.selected]}}</ui-select-match>
+                <ui-select-choices repeat="platform in test_run.platform_list track by $index">
+                    <div class="ui-select-choices-text">{{test_run.platform_map[platform]}}</div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="line"></div>
+        <label class="control-label">Environment</label>
+        <div class="form-group">
+            <ui-select ng-model="test_run.filter.environment">
+                <ui-select-match placeholder="Environment">{{test_run.env_map[$select.selected]}}</ui-select-match>
+                <ui-select-choices repeat="env in test_run.environment_list track by $index">
+                    <div class="ui-select-choices-text">{{test_run.env_map[env]}}</div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="line"></div>
+        <label class="control-label">Realease</label>
+        <div class="form-group">
+            <ui-select ng-model="test_run.filter.release">
+                <ui-select-match placeholder="Release">{{$select.selected.releaseName}}</ui-select-match>
+                <ui-select-choices repeat="release in test_run.release_list track by $index">
+                    <div class="ui-select-choices-text">{{release.releaseName}}</div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <!-- <div class="line"></div> -->
+        <!-- <label class="control-label">Status</label>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> Completed
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="checkbox">
+                    <label class="control-label">
+                        <input type="checkbox"> In-progress
+                    </label>
+                </div>
+
+            </div>
+        </div> -->
+        <!-- <div class="line"></div>
+        <div class="row">
+            <div class="col-xs-12">
+                <label class="control-label">Dates</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Last 24 hours</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Yesterday</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Last 1 week</label>
+                </div>
+            </div> 
+</div>-->
+        <!-- <div class="radio">
+            <label>
+                <input type="radio" name="optradio">Custom Range</label>
+        </div> -->
+        <div class="line"></div>
+        <div class="row">
+            <div class="col-xs-12 filter-btn-container">
+                <div class="col-xs-6">
+                    <button type="button" ng-click="resetFilters()" class="btn btn-default">Reset</button>
+                </div>
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-primary">Apply</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

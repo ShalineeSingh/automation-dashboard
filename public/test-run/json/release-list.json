@@ -1,0 +1,14 @@
+{
+  "timeStamp": "30-07-201811: 53: 50",
+  "responseObject": [{
+    "releaseName": "Rel K1",
+    "startDate": "2018-07-18T22:51:57.827Z"
+  }, {
+    "releaseName": "Rel 1",
+    "startDate": "2018-07-17T09: 44: 39.355Z"
+  }],
+  "apiResponseStatus": "SUCCESS",
+  "page": 0,
+  "size": 0,
+  "total_elements": 0
+}

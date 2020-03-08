@@ -1,0 +1,103 @@
+.test-run-wrapper {
+  .test-run-table-wrapper {
+    padding: 0 40px;
+    &.run-details-table {
+      top: 30px;
+    }
+    min-height: 60vh;
+    .table {
+      color: #73879C;
+      font-size: 13px;
+      tr th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #ddd;
+        border-top: 0;
+        &.ascending {
+          color: $secondary;
+          .fa-sort-down {
+            display: none;
+          }
+        }
+        &.descending {
+          color: $secondary;
+          .fa-sort-up {
+            display: none;
+          }
+        }
+        .header-icons {
+          padding-left: 5px;
+          .fa-sort-up,
+          .fa-sort-down {
+            font-size: 15px;
+            position: absolute;
+          }
+        }
+      }
+      tr td {
+        vertical-align: middle;
+        height: 45px;
+      }
+      .test-name-col {
+        min-width: 100px;
+      }
+      .status-col {
+        min-width: 100px;
+      }
+      .duration-col {
+        min-width: 200px;
+      }
+      .run-id-col {
+        width: 90px;
+      }
+    }
+    .progress {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    .progress-red {
+      .progress-bar {
+        background-color: $red;
+      }
+    }
+    .progress-orange {
+      .progress-bar {
+        background-color: $orange;
+      }
+    }
+    .progress-green {
+      .progress-bar {
+        background-color: $green;
+      }
+    }
+    .progress-blue {
+      .progress-bar {
+        background-color: $light-blue;
+      }
+    }
+    .progress-bar-danger {
+      background-color: $red;
+    }
+    .progress-bar-success {
+      background-color: $green;
+    }
+  }
+}
+
+.test-stats-panel {
+  border-radius: 4px;
+  text-align: center;
+  padding: 15px;
+  min-height: 170px;
+  box-shadow: 2px 2px 2px #ccc;
+  margin-top: 10px;
+  .fa {
+    vertical-align: middle;
+  }
+  .stats-table {
+    width: 100%;
+    text-align: center;
+    td {
+      padding-bottom: 10px;
+    }
+  }
+}

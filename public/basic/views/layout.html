@@ -1,0 +1,22 @@
+<!-- Top container -->
+<div class="left-nav-container" ng-class="sidebar ? 'col-xs-2 open': 'col-xs-1 closed'" ng-include="'/public/basic/views/left-nav.html'"></div>
+<div class="muted-col" ng-class="sidebar ? 'col-xs-10': 'col-xs-11 sidebar-closed-body'">
+    <div class="top-bar-container" ng-class="{'sidebar-close' : !sidebar}">
+        <div class="pull-left toggle-menu cursor-pointer" ng-click="toggleSideBar()">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="toggle-menu pull-left">
+            <span ng-if="state.current.name === 'main.app.basic.dashboard.performance'">Dashboard</span>
+            <span ng-if="state.current.name === 'main.app.basic.platform.id'">Test Runs</span>
+            <span ng-if="state.current.name === 'main.app.basic.platform.run'">Run Details</span>
+            <span ng-if="state.current.name === 'main.app.basic.latest.release'">Latest Release</span>
+            <span ng-if="state.current.name === 'main.app.basic.dashboard.release'">Release Stats</span>
+        </div>
+        <div class="pull-right filter-menu cursor-pointer" ng-click="toggleFilter()" ng-if="show_filter">
+            <i class="fa fa-filter"></i>
+            <!-- <span class="menu-items cursor-pointer" ui-sref="main.app.basic.dashboard.detail" ui-sref-active="{'active':'main.app.basic.dashboard.detail'}">Dashboard</span>
+            <span class="menu-items cursor-pointer">Test Runs</span> -->
+        </div>
+    </div>
+    <div class="body-wrapper" ui-view="basicContent"></div>
+</div>

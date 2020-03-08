@@ -1,0 +1,69 @@
+{
+  "timeStamp": "10-08-2018 07:50:41",
+  "responseObject": {
+    "testRunDetails": {
+      "id": 78,
+      "platform": "MOBILEWEB",
+      "suiteName": "Tiket Sanity Test djsbf sdjbf",
+      "release": "NewDemo",
+      "env": "TESTING1",
+      "total_tests": 12,
+      "passed_tests": 1,
+      "failed_tests": 3,
+      "start_time": "2018-08-06T11:55:53.718Z",
+      "elapsedTime": 547,
+      "mobile_web_pref_id": 79,
+      "browser": "CHROME",
+      "headless": false,
+      "os_name": "Mac OS X",
+      "deviceID": "ksjfdsfdjshfgjsdgfjgdsfhsdjfgsjdfgsjdgfsj, dsfbsjdhgjsbgjhbdgj"
+    },
+    "testCaseResultDetails": [{
+      "id": 82,
+      "runID": 78,
+      "testGroupName": "Sanity Suite",
+      "testCaseName": "Guest_User_Book_Car_ATM",
+      "testStatus": "FAIL",
+      "testSteps": "Activity: Click Location,\t Description: Location Clicked...\t @Time :2018-08-06 17:28:15.205\\nActivity: Enter Location,\t Description: Jakarta entered as Location\t @Time :2018-08-06 17:28:16.641\\nActivity: Select location,\t Description: Jakarta Location Selected\t @Time :2018-08-06 17:28:17.765\\nActivity: Select car from list,\t Description: Car Selected from the list\t @Time :2018-08-06 17:28:24.692\\n<br>Exception in CarPage bookCar()method:: java.lang.Exception: Unable to find page element with Tagname 'orderNowButton'",
+      "errorMessage": "java.lang.Exception: Unable to find page element with Tagname 'orderNowButton'",
+      "start_time": "2018-08-06T11:58:05.963Z",
+      "end_time": "2018-08-06T11:58:45.077Z",
+      "screenshot": "https://res.cloudinary.com/dqnsruihk/image/upload/v1533556762/web/bq07b8ltodxxkhmsxuis.png"
+    }, {
+      "id": 84,
+      "runID": 78,
+      "testGroupName": "Sanity Suite",
+      "testCaseName": "Existing_User_Flight_Booking_Mandiri_Transfer_Payment",
+      "testStatus": "FAIL",
+      "testSteps": "Activity: Click on Login Button,\t Description: Login Button Clicked Successfully\t @Time :2018-08-06 17:29:53.999\\nActivity: Enter Login ID,\t Description: auliasinurarmeti@yopmail.com as email ID entered Successfully\t @Time :2018-08-06 17:29:56.418\\nActivity: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-08-06 17:29:56.677\\nActivity: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-08-06 17:29:59.345\\nActivity: Get Profile Name: ,\t Description: \"Test\" received from Tiket.com \t @Time :2018-08-06 17:30:00.417\\nWNothing to delete in cartjava.lang.NumberFormatException: null\\nActivity: Click Flight Icon,\t Description:  Flight Icon Clicked\t @Time :2018-08-06 17:30:05.715\\n<br>Exception in FlightPage SearchFlight() method :: java.lang.Exception: Unable to find page element with Tagname 'searchFlightButton'",
+      "errorMessage": "java.lang.Exception: Unable to find page element with Tagname 'searchFlightButton'",
+      "start_time": "2018-08-06T11:59:45.256Z",
+      "end_time": "2018-08-06T12:00:35.054Z",
+      "screenshot": "https://res.cloudinary.com/dqnsruihk/image/upload/v1533556874/web/dljuues19u8qaddbxsla.png"
+    }, {
+      "id": 87,
+      "runID": 78,
+      "testGroupName": "Sanity Suite",
+      "testCaseName": "Existing_User_Book_Car_BNI_Virtual_Payment",
+      "testStatus": "FAIL",
+      "testSteps": "Activity: Click on Login Button,\t Description: Login Button Clicked Successfully\t @Time :2018-08-06 17:33:11.201\\nActivity: Enter Login ID,\t Description: auliasinurarmeti@yopmail.com as email ID entered Successfully\t @Time :2018-08-06 17:33:13.030\\nActivity: Enter password,\t Description: Testing@123 as password Entered Successfully\t @Time :2018-08-06 17:33:13.483\\nActivity: Click on Login Button,\t Description: Login button clicked Successfully\t @Time :2018-08-06 17:33:16.224\\nActivity: Get Profile Name: ,\t Description: \"Test\" received from Tiket.com \t @Time :2018-08-06 17:33:17.348\\nWNothing to delete in cartjava.lang.NumberFormatException: null\\nActivity: Click Location,\t Description: Location Clicked...\t @Time :2018-08-06 17:33:35.010\\nActivity: Enter Location,\t Description: Jakarta entered as Location\t @Time :2018-08-06 17:33:36.236\\nActivity: Select location,\t Description: Jakarta Location Selected\t @Time :2018-08-06 17:33:42.400\\nActivity: Select car from list,\t Description: Car Selected from the list\t @Time :2018-08-06 17:34:02.000\\nActivity: Order car,\t Description: Car Ordered\t @Time :2018-08-06 17:34:08.230\\nActivity: Select Title,\t Description: Title Selected Successfully\t @Time :2018-08-06 17:34:08.674\\nActivity: Enter Fullname,\t Description: Andre Panggabean entered as Customer Name\t @Time :2018-08-06 17:34:09.963\\nActivity: Enter Phone Number,\t Description: 81811723834 entered as Customer Phone Number\t @Time :2018-08-06 17:34:11.155\\nActivity: Enter Pickup details,\t Description: Pickup details entered: Testing - 5th street Park Avenue Jakarta Indonesia\t @Time :2018-08-06 17:34:12.424\\nActivity: Click on book now,\t Description: Book Now clicked\t @Time :2018-08-06 17:34:17.841\\nActivity: Retrieve Order ID,\t Description: OrderID Retrieved :  47845275\t @Time :2018-08-06 17:34:27.032\\nActivity: Click on Virtual Account ,\t Description: Virtual Account Clicked\t @Time :2018-08-06 17:34:32.463\\nActivity: Click on Virtual Account:VA BNI ,\t Description: Virtual Account:VA BNI Clicked\t @Time :2018-08-06 17:34:39.833\\n<br>Exception in PaymentPage completeBooking()java.lang.Exception: Unable to find page element with Tagname 'completeBooking'\\n<br>Exception in PaymentPage selectVirtualAccountVA_BNI () method :: java.lang.Exception: java.lang.Exception: Unable to find page element with Tagname 'completeBooking'",
+      "errorMessage": "java.lang.Exception: java.lang.Exception: Unable to find page element with Tagname 'completeBooking'",
+      "start_time": "2018-08-06T12:03:01.656Z",
+      "end_time": "2018-08-06T12:05:01.146Z",
+      "screenshot": "https://res.cloudinary.com/dqnsruihk/image/upload/v1533557137/web/ftzvnq8tryoj6o17of6r.png"
+    }, {
+      "id": 83,
+      "runID": 78,
+      "testGroupName": "Sanity Suite",
+      "testCaseName": "Guest_User_Book_EventAttraction_BCA_Transfer",
+      "testStatus": "PASS",
+      "testSteps": "Activity: Click on Entertainment Icon,\t Description: Entertainment Icon Clicked \t @Time :2018-08-06 17:28:59.577\\nActivity: Enter Event name,\t Description: Wayang Orang Ngesti Pandawa Semarang <- Entered \t @Time :2018-08-06 17:29:00.500\\nActivity: Select Event ,\t Description: Wayang Orang Ngesti Pandawa Semarang selected. \t @Time :2018-08-06 17:29:05.651\\nActivity: Select Number of Tickets ,\t Description: 2 Tickets Selected. \t @Time :2018-08-06 17:29:05.969\\nActivity: Click On Book Now ,\t Description: Book Now Clicked\t @Time :2018-08-06 17:29:07.425\\nActivity: Retrieve Order ID,\t Description: OrderID Retrieved :  47845273\t @Time :2018-08-06 17:29:14.744\\nActivity: Click Transfer,\t Description: Transfer Clicked\t @Time :2018-08-06 17:29:14.954\\nActivity: Click on BCA transfer,\t Description: BCA Transfer Clicked\t @Time :2018-08-06 17:29:20.725\\nActivity: Click Complete Booking,\t Description: Complete Booking Clicked\t @Time :2018-08-06 17:29:23.004\\nActivity: Click \"Done\"Button ,\t Description: \"Done\" button clicked successfully\t @Time :2018-08-06 17:29:38.240",
+      "start_time": "2018-08-06T11:58:52.560Z",
+      "end_time": "2018-08-06T11:59:38.241Z"
+    }]
+  },
+  "apiResponseStatus": "SUCCESS",
+  "page": 0,
+  "size": 10,
+  "total_elements": 4
+}

@@ -1,0 +1,48 @@
+.modal {
+  .modal-dialog {
+    .modal-content {
+      min-height: 90vh;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+      border: none;
+      .modal-header {
+        margin: 0 24px;
+        .icon-close {
+          margin-left: 24px;
+          float: right;
+          cursor: pointer;
+          font-size: 16px;
+          color: #BBBBBB;
+          ;
+        }
+      }
+      .modal-footer {
+        padding: 24px 0;
+        margin: 0 24px;
+      }
+    }
+  }
+}
+
+.run-details-modal-container {
+  min-height: 90vh;
+  margin: 0;
+  width: auto;
+  max-height: 90vh;
+  overflow-y: scroll;
+  .nav-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+  }
+  .test-steps-list {
+    li {
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+  }
+  .screenshot-image {
+    min-height: 75vh;
+    overflow: scroll;
+  }
+}

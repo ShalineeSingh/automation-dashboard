@@ -1,0 +1,216 @@
+<div class="col-sm-12">
+    <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
+        <div class="test-stats-panel white-bg">
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
+            <table class="stats-table" ng-if="!run_details.page_loader && run_details.data.testRunDetails">
+                <tr>
+                    <td>
+                        <span class="h4 success-number">{{run_details.data.testRunDetails.id}}</span>
+                        <br>
+                        <span class="h6 text-muted">Run ID</span>
+                    </td>
+                    <td>
+                        <span class="h4">{{run_details.platform_map[run_details.data.testRunDetails.platform]}}</span>
+                        <br>
+                        <span class="h6 text-muted">Platform</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.release}}</span>
+                        <br>
+                        <span class="h6 text-muted">Release</span>
+                    </td>
+                    <td>
+                        <span class="h4">{{run_details.env_map[run_details.data.testRunDetails.env]}}</span>
+                        <br>
+                        <span class="h6 text-muted">Environment</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.suiteName}}</span>
+                        <br>
+                        <span class="h6 text-muted">Suite Name</span>
+                    </td>
+                </tr>
+            </table>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
+        </div>
+    </div>
+    <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
+        <div class="test-stats-panel white-bg">
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
+            <div ng-if="!run_details.page_loader && run_details.data.testRunDetails">
+                <span>PASSED TEST RUNS</span>
+                <p>
+                    <span class="h1">{{(run_details.data.testRunDetails.passed_tests/run_details.data.testRunDetails.total_tests)*100 | number:2}}</span>
+                    <span>%</span>
+                </p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="col-sm-6 muted-col">
+                            <div class="success-number h4">
+                                <span>
+                                    <i class="fa fa-check-circle"></i>
+                                </span>
+                                <span>{{run_details.data.testRunDetails.passed_tests}}</span>
+                                <span class="h5" style="vertical-align:bottom">Passed</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 muted-col">
+                            <div class="fail-number h4">
+                                <span>
+                                    <i class="fa fa-times-circle"></i>
+                                </span>
+                                <span>{{run_details.data.testRunDetails.failed_tests}}</span>
+                                <span class="h5" style="vertical-align:bottom">Failed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <p>({{run_details.data.testRunDetails.passed_tests + run_details.data.testRunDetails.failed_tests}} Out of {{run_details.data.testRunDetails.total_tests}})</p>
+            </div>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
+        </div>
+    </div>
+    <div ng-class="run_details.platform ==='API' ? 'col-sm-4' :'col-sm-3'">
+        <div class="test-stats-panel white-bg">
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
+            <div ng-if="!run_details.page_loader && run_details.data.testRunDetails">
+                <table class="stats-table">
+                    <tr>
+                        <td>
+                            <span class="h4">{{run_details.data.testRunDetails.start_time | date:'MMM d, y h:mm:s a'}}</span>
+                            <br>
+                            <span class="h6 text-muted">Start Time</span>
+                        </td>
+                    </tr>
+                    <tr ng-if="run_details.data.testRunDetails.end_time">
+                        <td>
+                            <span class="h4" ng-if="run_details.data.testRunDetails.end_time">{{run_details.data.testRunDetails.end_time | date:'MMM d, y h:mm:s a'}}</span>
+                            <!-- <span ng-if="!run_details.data.testRunDetails.end_time">-</span> -->
+                            <br>
+                            <span class="h6 text-muted">End Time</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="h4 success-number">{{getTimeFromSecs(run_details.data.testRunDetails.elapsedTime)}}</span>
+                            <br>
+                            <span class="h6 text-muted">Elapsed Time</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
+        </div>
+    </div>
+    <div class="col-sm-3" ng-if="run_details.platform ==='WEB'">
+        <div class="test-stats-panel white-bg">
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
+            <table class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
+                <tr>
+                    <td>
+                        <span class="h4 success-number">{{run_details.browser_map[run_details.data.testRunDetails.browser]}}</span>
+                        <br>
+                        <span class="h6 text-muted">Browser</span>
+                    </td>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.headless ? 'Yes' : 'No'}}</span>
+                        <br>
+                        <span class="h6 text-muted">Headless</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="h4">{{run_details.data.testRunDetails.os_name}}</span>
+                        <br>
+                        <span class="h6 text-muted">OS Name</span>
+                    </td>
+                </tr>
+            </table>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
+        </div>
+    </div>
+    <div class="col-sm-3" ng-if="run_details.platform ==='ANDROID' || run_details.platform ==='IOS'">
+        <div class="test-stats-panel white-bg">
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
+            <div class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
+                <div class="col-xs-12 muted-col text-ellipsis">
+                    <span class="h4" title="{{run_details.data.testRunDetails.deviceID}}">{{run_details.data.testRunDetails.deviceID}}</span>
+                    <br>
+                    <span class="h6 text-muted">Device Id</span>
+                </div>
+                <div class="col-xs-12 muted-col text-ellipsis">
+                    <span class="h4 success-number">{{run_details.data.testRunDetails.buildID}}</span>
+                    <br>
+                    <span class="h6 text-muted">Build Id</span>
+                </div>
+                <div class="col-xs-12 muted-col text-ellipsis">
+                    <span class="h4">{{run_details.data.testRunDetails.deviceName}}</span>
+                    <br>
+                    <span class="h6 text-muted">Device Name</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3" ng-if="run_details.platform ==='MOBILEWEB'">
+        <div class="test-stats-panel white-bg">
+            <!-- <div class="page-loader small" ng-if="run_details.page_loader"></div> -->
+            <div class="stats-table" ng-if="!run_details.page_loader  && run_details.data.testRunDetails">
+                <div class="col-xs-12 muted-col">
+                    <div class="col-xs-6 muted-col">
+                        <span class="h4 success-number">{{run_details.browser_map[run_details.data.testRunDetails.browser]}}</span>
+                        <br>
+                        <span class="h6 text-muted">Browser</span>
+                    </div>
+                    <div class="col-xs-6 muted-col">
+                        <span class="h4">{{run_details.data.testRunDetails.headless ? 'Yes' : 'No'}}</span>
+                        <br>
+                        <span class="h6 text-muted">Headless</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 muted-col">
+                    <div class="col-xs-6 muted-col">
+                        <span class="h4">{{run_details.data.testRunDetails.os_name}}</span>
+                        <br>
+                        <span class="h6 text-muted">OS Name</span>
+                    </div>
+                    <div class="col-xs-6 muted-col text-ellipsis" ng-if="run_details.data.testRunDetails.deviceName">
+                        <span class="h4">{{run_details.data.testRunDetails.deviceName}}</span>
+                        <br>
+                        <span class="h6 text-muted">Device Name</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 muted-col" ng-if="run_details.data.testRunDetails.deviceID">
+                    <div class="col-xs-12 muted-col text-ellipsis">
+                        <span class="h4" title="{{run_details.data.testRunDetails.deviceID}}">{{run_details.data.testRunDetails.deviceID}}</span>
+                        <br>
+                        <span class="h6 text-muted">Device Id</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 muted-col" ng-if="run_details.data.testRunDetails.buildID">
+                    <div class="col-xs-12 muted-col text-ellipsis">
+                        <span class="h4">{{run_details.data.testRunDetails.buildID}}</span>
+                        <br>
+                        <span class="h6 text-muted">Build Id</span>
+                    </div>
+                </div>
+
+            </div>
+            <p ng-if="!run_details.page_loader && !run_details.data.testRunDetails">
+                No data found
+            </p>
+        </div>
+    </div>
+</div>

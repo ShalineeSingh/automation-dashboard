@@ -1,0 +1,42 @@
+{
+  "name": "automation-dashboard",
+  "version": "1.0.0",
+  "description": "dashboard to see the test results summary",
+  "main": "app.js",
+  "scripts": {
+    "start": "gulp build && node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShalineeSingh/automation-dashboard.git"
+  },
+  "author": "Shalinee Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShalineeSingh/automation-dashboard/issues"
+  },
+  "homepage": "https://github.com/ShalineeSingh/automation-dashboard#readme",
+  "dependencies": {
+    "angular-animate": "^1.7.2",
+    "angular-chart": "^0.5.0",
+    "angular-chart.js": "^1.1.1",
+    "angular-filter": "^0.5.17",
+    "angular-resource": "^1.7.2",
+    "angular-sanitize": "^1.7.2",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angular-ui-router": "^1.0.19",
+    "express": "^4.16.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1",
+    "node-sass": "^4.9.3",
+    "path": "^0.12.7",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "ui-select": "^0.19.8",
+    "utf8": "^2.1.2"
+  },
+  "devDependencies": {
+    "angular-breadcrumb": "^0.5.0"
+  }
+}

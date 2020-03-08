@@ -1,0 +1,128 @@
+<div class="test-run-wrapper">
+    <div class="breadcrumb-container">
+        <ul class="breadcrumb">
+            <li class="cursor-pointer">
+                <a ui-sref="main.app.basic.dashboard.performance">Dashboard</a>
+            </li>
+            <li class="cursor-pointer">
+                <a ui-sref="main.app.basic.platform.id">Test Runs</a>
+            </li>
+            <li class="active">
+                Test Case Results
+                <i>(Run ID - {{run_details.run_id}})</i>
+            </li>
+        </ul>
+    </div>
+    <!-- summary section -->
+    <div ng-include="'/public/test-run/views/_run-summary.html'"></div>
+    <!-- table -->
+    <div class="row">
+        <div class="col-sm-12 white-bg loader-container" ng-if="run_details.page_loader">
+            <div class="page-loader"></div>
+        </div>
+        <div class="col-md-12 test-run-table-wrapper run-details-table" ng-if="!run_details.page_loader && run_details.data.testCaseResultDetails">
+            <div class="table-responsive">
+                <!-- <div class="page-loader" ng-if="run_details.page_loader"></div> -->
+                <table class="table table-hover white-bg">
+                    <tr>
+                        <th class="run-id-col" ng-click="sortRunDetails('id')" ng-class="{'ascending': run_details.sortable_column.id !== undefined && run_details.sortable_column.id
+                        && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.id !== undefined &&!run_details.sortable_column.id
+                        && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                            <span>Test ID</span>
+                            <span class="header-icons">
+                                <i class="fa fa-sort-up"></i>
+                                <i class="fa fa-sort-down"></i>
+                            </span>
+                        </th>
+                        <th class="test-name-col" ng-click="sortRunDetails('test_case_name')" ng-class="{'ascending': run_details.sortable_column.test_case_name !== undefined && run_details.sortable_column.test_case_name
+                    && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.test_case_name !== undefined &&!run_details.sortable_column.test_case_name
+                    && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                            <span>Test Name</span>
+                            <span class="header-icons">
+                                <i class="fa fa-sort-up"></i>
+                                <i class="fa fa-sort-down"></i>
+                            </span>
+                        </th>
+                        <th class="status-col" ng-click="sortRunDetails('status')" ng-class="{'ascending': run_details.sortable_column.status !== undefined && run_details.sortable_column.status
+                    && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.status !== undefined &&!run_details.sortable_column.status
+                    && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                            <span>Status</span>
+                            <span class="header-icons">
+                                <i class="fa fa-sort-up"></i>
+                                <i class="fa fa-sort-down"></i>
+                            </span>
+                        </th>
+                        <th class="duration-col">
+                            <span>Duration</span>
+                        </th>
+                        <th ng-click="sortRunDetails('error_message')" ng-class="{'ascending': run_details.sortable_column.error_message !== undefined && run_details.sortable_column.error_message
+                    && run_details.data.testCaseResultDetails.length > 0,'descending':run_details.sortable_column.error_message !== undefined &&!run_details.sortable_column.error_message
+                    && run_details.data.testCaseResultDetails.length > 0,'cursor-pointer' : run_details.data.testCaseResultDetails.length > 0}">
+                            <span>Error Message</span>
+                            <span class="header-icons">
+                                <i class="fa fa-sort-up"></i>
+                                <i class="fa fa-sort-down"></i>
+                            </span>
+                        </th>
+                        <th>Details</th>
+                        <!-- <th>History</th> -->
+                    </tr>
+                    <tr class="white-bg" ng-repeat="data in run_details.data.testCaseResultDetails track by $index">
+                        <td>{{data.id}}</td>
+                        <td>{{data.testCaseName}}</td>
+                        <td>
+                            <span ng-if="data.testStatus === 'PASS'" class="success-number">
+                                <i class="fa fa-check-circle"></i>
+                            </span>
+                            <span ng-if="data.testStatus === 'FAIL'" class="fail-number">
+                                <i class="fa fa-times-circle"></i>
+                            </span>
+                            <span>{{run_details.status_map[data.testStatus]}}</span>
+
+                        </td>
+                        <td>
+                            {{elapsedTime(data.start_time, data.end_time)}}
+                        </td>
+                        <td>{{data.errorMessage}}</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary" ng-click="openTestDetails(data)">Details</button>
+                        </td>
+                        <!-- <td>
+                        <button type="button" class="btn btn-primary" ng-click="openRunHistoryDetails(data)">Hisory</button>
+                    </td> -->
+                    </tr>
+                    <tr ng-if="run_details.data.testCaseResultDetails.length ===0">
+                        <td colspan="6" class="text-center" style="padding:100px">
+                            <p class="h1">No Runs Completed</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- pagination -->
+<div class="row">
+    <div class="col-sm-12 pagination-container" ng-if="!run_details.page_loader && run_details.data.testCaseResultDetails">
+        <div class="col-sm-12">
+            <div class="col-sm-10 text-center">
+                <ul uib-pagination total-items="run_details.page.total_items" ng-model="run_details.page.current_page" max-size="run_details.page.max_size"
+                    items-per-page="run_details.page.page_size" class="pagination" boundary-link-numbers="true" ng-change="getRunDetails()"></ul>
+            </div>
+            <div class="col-sm-1 page-size-container pull-right">
+                <!-- <span class="show-label">Show</span> -->
+                <ui-select ng-model="run_details.page.page_size" search-enabled="false" ng-change="changePageSize()">
+                    <ui-select-match placeholder="Size">{{$select.selected}}</ui-select-match>
+                    <ui-select-choices repeat="size in run_details.page.sizes">
+                        <div class="ui-select-choices-text">{{size}}</div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12" ng-if="!run_details.page_loader && !run_details.data.testCaseResultDetails">
+    <div class="no-data-container white-bg">
+        <p class="text-center h3 text-wrapper">No data found</p>
+    </div>
+</div>

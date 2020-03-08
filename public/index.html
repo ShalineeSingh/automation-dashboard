@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Automation Dashboard</title>
+    <meta name="description" content="Automation Dashboard">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/ui-select/dist/select.min.css">
+
+    </script>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/public/css/main.css">
+</head>
+
+<body ng-app="automation">
+    <div ui-view></div>
+</body>
+
+<script src="/node_modules/angular/angular.min.js"></script>
+<script src="/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="/node_modules/angular-resource/angular-resource.min.js"></script>
+<script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+<!-- <script src="/lib/angular-apimock/dist/angular-apimock.min.js"></script> -->
+<!-- <script src="/lib/angular-messages/angular-messages.min.js"></script> -->
+<script src="/node_modules/angular-breadcrumb/release/angular-breadcrumb.min.js"></script>
+<script src="/node_modules/angular-filter/dist/angular-filter.min.js"></script>
+<script src="/node_modules/angular-animate/angular-animate.js"></script>
+<script src="/node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="/node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+<script src="/node_modules/ui-select/dist/select.min.js"></script>
+
+<!-- shared js -->
+<script src="/public/constants.js"></script>
+<script src="/public/main.js"></script>
+<script src="/public/basic/basic.js"></script>
+<script src="/public/shared/shared.js"></script>
+<script src="/public/dashboard/dashboard.js"></script>
+<script src="/public/test-run/test-run.js"></script>
+<script src="/public/shared/services/automation.service.js"></script>
+<!-- root controller -->
+<script src="/public/basic/controllers/main.controller.js"></script>
+<!-- dashboard controller -->
+<script src="/public/dashboard/controllers/dashboard.controller.js"></script>
+<script src="/public/dashboard/controllers/release.controller.js"></script>
+<script src="/public/test-run/controllers/test-run.controller.js"></script>
+<script src="/public/test-run/controllers/run-details.controller.js"></script>
+<!-- latest release -->
+<script src="/public/latest-release/latest-release.js"></script>
+<script src="/public/latest-release/controllers/latest-release.controller.js"></script>
+
+</html>
