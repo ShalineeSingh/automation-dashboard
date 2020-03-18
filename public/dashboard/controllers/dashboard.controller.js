@@ -16,17 +16,57 @@
       $scope.labels = ["Passed", "Failed", "Pending"];
       $scope.chart_colors = ['#1ABB9C', '#E74C3C', '#F7F7F7'];
       $scope.options = {
-        tooltips: {
-          enabled: true,
-          mode: 'single',
-          callbacks: {
-            label: function (tooltipItem, data) {
-              var label = data.labels[tooltipItem.index];
-              var datasetLabel = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-              return label + ': ' + datasetLabel + '%';
-            }
+        events: false,
+        animation: {
+          duration: 500,
+          easing: "easeOutQuart",
+          onComplete: function () {
+            var ctx = this.chart.ctx;
+            // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
+            ctx.font = '12px Verdana';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'bottom';
+
+            this.data.datasets.forEach(function (dataset) {
+
+              for (var i = 0; i < dataset.data.length; i++) {
+                var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+                  total = dataset._meta[Object.keys(dataset._meta)[0]].total,
+                  mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius) / 2,
+                  start_angle = model.startAngle,
+                  end_angle = model.endAngle,
+                  mid_angle = start_angle + (end_angle - start_angle) / 2;
+
+                var x = mid_radius * Math.cos(mid_angle);
+                var y = mid_radius * Math.sin(mid_angle);
+
+                ctx.fillStyle = '#000';
+                if (Math.round(dataset.data[i] / total * 100) > 0) {
+                  var percent = String(Math.round(dataset.data[i] / total * 100)) + "%";
+                  // ctx.fill Text(dataset.data[i], model.x + x, model.y + y);
+                  // Display percent in another line, line break doesn't work for fillText
+
+                  ctx.fillText(percent, model.x + x, model.y + y);
+                }
+              }
+            });
           }
-        },
+        }
+        // onAnimationComplete: function () {
+        //   this.showTooltip(this.segments);
+        // },
+        // tooltipEvents: [],
+        // tooltips: {
+        //   enabled: true,
+        //   mode: 'single',
+        //   callbacks: {
+        //     label: function (tooltipItem, data) {
+        //       var label = data.labels[tooltipItem.index];
+        //       var datasetLabel = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+        //       return label + ': ' + datasetLabel + '%';
+        //     }
+        //   }
+        // },
       }
 
       var getDashboardData = function () {
